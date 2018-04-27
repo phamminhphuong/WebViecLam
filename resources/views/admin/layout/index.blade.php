@@ -21,7 +21,7 @@
   <!-- Morris chart -->
   <link rel="stylesheet" href="style_admin/bower_components/morris.js/morris.css">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="style_admin/style_admin/bower_components/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="style_admin/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="style_admin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->
@@ -46,8 +46,6 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
-
   @include('admin.layout.header')
   @include('admin.layout.menu')
   <div class="content-wrapper">
@@ -94,6 +92,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="style_admin/dist/js/demo.js"></script>
 <script src="style_admin/bower_components/ckeditor/ckeditor.js"></script>
+<script src="style_admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="style_admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 @yield('script') 
 </body>
 </html>
