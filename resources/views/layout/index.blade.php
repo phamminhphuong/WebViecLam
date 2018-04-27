@@ -610,9 +610,10 @@
     </div> --}} 
 
     {{-- nav --}}
-    @include('layout.nav')
+    @yield('nav')
     {{-- nav --}}
-
+    @yield('phieudangtuyen_hoso')
+    @yield('menu_tuhoso')
 
     {{-- section --}}
     @yield('content')

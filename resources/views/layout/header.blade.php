@@ -133,7 +133,7 @@
                                     <option value="54">Y tế</option>  --}}
                                 </select>
                             </div>
-
+{{--  
                             <div class="style-flat tt">
                                 <select name="tinh_thanh[]" class="select-style">
                                     <option value="">Chọn tỉnh thành</option>
@@ -203,7 +203,7 @@
                                     <option value="65">Toàn quốc</option>
                                     <option value="66">Nước ngoài</option>
                                 </select>
-                            </div>
+                            </div>  --}}
 
                             <button id="base_search" type="submit" class="btn submit btn-danger col-xs-">
                                 <i class="icon icon-xs icon-search"></i>

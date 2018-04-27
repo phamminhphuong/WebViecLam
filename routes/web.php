@@ -138,3 +138,26 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
 
 // trang chu
 Route::get('trangchu','PageController@getTrangChu');
+
+//  dang nhap
+Route::get('dangnhap','PageController@getDangNhap');
+
+//  chi tiet dang nhap nha tuyen dung
+Route::get('chitietdangnhap-nhatuyendung','PageController@getChiTietDangNhapNTD');
+//  chi tiet dang nhap nguoi tim viec
+Route::get('chitietdangnhap-nguoitimviec','PageController@getChiTietDangNhapNTV');
+
+//  dang ky
+Route::get('dangky','PageController@getDangKy');
+//  dang ky nguoi tim viec
+Route::get('chitietdangky-nguoitimviec','PageController@getChiTietDangKyNTV');
+//  dang ky nha tuyen dung
+Route::get('chitietdangky-nhatuyendung','PageController@getChiTietDangKyNTD');
+
+//  tao ho so
+Route::get('nguoitimviec-taohoso','PageController@getTaoHoSo');
+//  tao phieu dang tuyen
+Route::get('nhatuyendung-dangtintuyendung','PageController@getTaoPhieuDangTuyen');
+
+//  nha tuyen dung
+Route::get('nhatuyendung','PageController@getNhaTuyenDung');
