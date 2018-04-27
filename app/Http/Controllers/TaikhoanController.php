@@ -23,7 +23,7 @@ class TaikhoanController extends Controller
                 $this->validate($request,
                 [
                     'email'=>'required|unique:users|min:3|max:100',
-                    'password'=>'required|min:7|max:7',
+                    'password'=>'required',
                     'Resetpassword'=>'required|same:password'
                 ],
                 [
@@ -32,8 +32,6 @@ class TaikhoanController extends Controller
                     'email.min'=>'Bạn nhập ít nhất 3 ký tự',
                     'email.max'=>'Bạn phải nhập ít hơn 100 ký tự',
                     'password.required'=>'Bạn không được để trống mật khẩu',
-                    'password.min'=>'Bạn nhập nhập đủ 7 ký tự',
-                    'password.max'=>'Bạn phải nhập đủ 7 ký tự',
 
                     'Resetpassword.required'=>'Bạn không được để trống nhập lại mật khẩu',
                     'Resetpassword.same'=>'Bạn phải nhập giống mật khẩu'
