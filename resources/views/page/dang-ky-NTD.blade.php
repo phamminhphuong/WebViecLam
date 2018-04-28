@@ -22,9 +22,22 @@
                                 Đăng nhập
                             </a>
                         </div>
+                        @if(count($errors) >0) 
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $er)
+                                {{$er}}<br>
+                            @endforeach
+                        </div>
+                        @endif
 
-                        <form action="" method="POST" enctype="multipart/form-data" class="form-employers-register">
-
+                        @if(!empty($messageSuccess))
+                        <div class="alert alert-success">
+                            {!!$messageSuccess!!}
+                        </div>
+                        @endif
+                        <br/>
+                        <form action="dang-ky/nha-tuyen-dung" method="POST" enctype="multipart/form-data" class="form-employers-register">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <h3 class="title">Thông tin đăng nhập</h3>
                             <div class="group-field">
                                 <label class="label-form" for="">
@@ -55,7 +68,7 @@
                                     Tên công ty
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <input type="text" id="name" name="name" class="input-has-tooltip">
+                                <input type="text" id="name" name="TenNTD" class="input-has-tooltip">
                                 <div class="block-has-tooltip">
                                     <div class="tooltip-huong-dan">
                                         <p>Ghi tên công ty rõ ràng và đầy đủ theo giấy phép đăng ký kinh doanh.</p>
@@ -67,7 +80,7 @@
                                     Địa chỉ
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <input type="text" id="address" name="address" class="input-has-tooltip">
+                                <input type="text" id="address" name="DiaChi" class="input-has-tooltip">
                                 <div class="block-has-tooltip">
                                     <div class="tooltip-huong-dan">
                                         <p>Nhập thông tin địa chỉ công ty chi tiết, rõ ràng và chính xác: số nhà, đường, phường,
@@ -84,14 +97,22 @@
                                     Điện thoại
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <input type="text" id="phone" name="phone">
+                                <input type="text" id="phone" name="DienThoai">
+                            </div>
+
+                            <div class="group-field">
+                                <label class="label-form" for="">
+                                    Địa chỉ web
+                                    <span class="icon icon-xs icon-hoa-thi"></span>
+                                </label>
+                                <input type="text" id="diaChiWeb" name="DiaChiWeb">
                             </div>
                             <div class="group-field">
                                 <label class="label-form" for="">
                                     Sơ lược về công ty
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <textarea id="description" name="description" class="input-has-tooltip" style="height: 300px;"></textarea>
+                                <textarea id="description" name="GioiThieu" class="input-has-tooltip" style="height: 300px;"></textarea>
                                 <div class="block-has-tooltip">
                                     <div class="tooltip-huong-dan">
                                         <p>Hãy cung cấp những thông tin cơ bản như: năm thành lập, ngành nghề hoạt động chính,
@@ -106,47 +127,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">Fax</label>
-                                <input type="text" id="fax" name="fax">
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">Website</label>
-                                <input type="text" id="website" name="website">
-                            </div>
                             <div class="line-grey"></div>
-
-                            <h3 class="title">Thông tin liên hệ</h3>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Tên người liên hệ
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <input type="text" id="contact_name" name="contact_name">
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Email
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <input type="text" id="contact_email" name="contact_email">
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Điện thoại
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <input type="text" id="contact_phone" name="contact_phone">
-                            </div>
                             <div class="group-field">
                                 <div class="label-form"></div>
                                 <div class="group-right">
                                     <div style="margin-top: 8px;">
                                         Bằng việc nhấn nút đăng ký, bạn đã đồng ý với
-                                        <a href="https://www.timviecnhanh.com/bai-viet/thoa-thuan-su-dung" class="text-primaryx underline text-color-ntd" title="Thỏa thuận sử dụng">
+                                        <a href="#" class="text-primaryx underline text-color-ntd" title="Thỏa thuận sử dụng">
                                             thỏa thuận sử dụng
                                         </a>
-                                        của TVN
+                                        của chúng tôi
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +146,6 @@
                                 </button>
                                 <div class="clearfix"></div>
                             </div>
-                            <input type="hidden" name="ga5gLzvS5uvn0Z" value="578d68dd5cc9c8fa44f0cb3ccb7047b2">
                         </form>
                     </div>
                 </div>

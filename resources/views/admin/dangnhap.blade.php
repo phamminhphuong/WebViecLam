@@ -29,11 +29,10 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form"  method="post" action="admin/dangnhap">
+				<form class="login100-form validate-form"  method="post" action="dang-nhap">
 					<input type="hidden" name="_token" value="{{csrf_token()}}">
 					@if(count($errors) >0) 
 					<div class="alert alert-danger">

@@ -8,7 +8,9 @@ Route::get('dang-xuat','TaikhoanController@getDangxuat');
 
 Route::get('dang-ky','PageController@getDangKy');
 Route::get('dang-ky/nguoi-tim-viec','PageController@getDangKyNTV');
+Route::post('dang-ky/nguoi-tim-viec','PageController@postDangKyNTV');
 Route::get('dang-ky/nha-tuyen-dung','PageController@getDangKyNTD');
+Route::post('dang-ky/nha-tuyen-dung','PageController@postDangKyNTD');
 
 
 Route::get('tao-ho-so','PageController@getTaoHoSo');
