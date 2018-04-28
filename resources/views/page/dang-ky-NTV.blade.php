@@ -36,7 +36,7 @@
                         </div>
                         @endif
                         <br/>
-                        <form action="dang-ky/nha-tuyen-dung" method="POST" enctype="multipart/form-data" class="form-employers-register">
+                        <form action="dang-ky/nguoi-tim-viec" method="POST" enctype="multipart/form-data" class="form-employers-register">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <h3 class="title">Thông tin đăng nhập</h3>
                             <div class="group-field">
@@ -65,13 +65,77 @@
                             <h3 class="title">Thông tin người tìm việc</h3>
                             <div class="group-field">
                                 <label class="label-form" for="">
-                                    Tên công ty
+                                    Họ tên
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <input type="text" id="name" name="TenNTD" class="input-has-tooltip">
+                                <input type="text" id="name" name="HoTen" class="input-has-tooltip">
                                 <div class="block-has-tooltip">
                                     <div class="tooltip-huong-dan">
-                                        <p>Ghi tên công ty rõ ràng và đầy đủ theo giấy phép đăng ký kinh doanh.</p>
+                                        <p>Nhập họ tên người tìm việc</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group-field">
+                                <label class="label-form" for="">
+                                    Ngày sinh
+                                    <span class="icon icon-xs icon-hoa-thi"></span>
+                                </label>
+                                <input type="date" id="NgaySinh" name="NgaySinh" class="input-has-tooltip">
+                                <div class="block-has-tooltip">
+                                    <div class="tooltip-huong-dan">
+                                        <p>Nhập ngày sinh</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group-field">
+                                <label class="label-form" for="">
+                                    Giới tính
+                                    <span class="icon icon-xs icon-hoa-thi"></span>
+                                </label>
+                                <select name="GioiTinh" id="GioiTinh" style="width:460px;margin-left:10px;height:35px" class="form-has-tooltip">
+                                    <option value="nam">Nam</option>
+                                    <option value="nu">Nữ</option>
+                                </select>
+                               
+                                <div class="block-has-tooltip">
+                                    <div class="tooltip-huong-dan">
+                                        <p>Nhập giới tính</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group-field">
+                                <label class="label-form" for="">
+                                    Địa chỉ
+                                    <span class="icon icon-xs icon-hoa-thi"></span>
+                                </label>
+                                <input type="text" id="DiaChi" name="DiaChi" class="input-has-tooltip">
+                                <div class="block-has-tooltip">
+                                    <div class="tooltip-huong-dan">
+                                        <p>Nhập địa chỉ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group-field">
+                                <label class="label-form" for="">
+                                    Điện thoại
+                                    <span class="icon icon-xs icon-hoa-thi"></span>
+                                </label>
+                                <input type="text" id="DienThoai" name="DienThoai" class="input-has-tooltip">
+                                <div class="block-has-tooltip">
+                                    <div class="tooltip-huong-dan">
+                                        <p>Nhập địa chỉ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group-field">
+                                <label class="label-form" for="">
+                                   Tình trạng hôn nhân
+                                    <span class="icon icon-xs icon-hoa-thi"></span>
+                                </label>
+                                <input type="text" id="TinhTrangHonNhan" name="TinhTrangHonNhan" class="input-has-tooltip">
+                                <div class="block-has-tooltip">
+                                    <div class="tooltip-huong-dan">
+                                        <p>Nhập tình trạng hôn nhân</p>
                                     </div>
                                 </div>
                             </div>
@@ -83,59 +147,7 @@
                                 <input type="file" id="image" name="HinhAnh" class="form-control">
                                 <div class="block-has-tooltip">
                                     <div class="tooltip-huong-dan">
-                                       <p>Nhập hình ảnh đại diện cho công ty</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Địa chỉ
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <input type="text" id="address" name="DiaChi" class="input-has-tooltip">
-                                <div class="block-has-tooltip">
-                                    <div class="tooltip-huong-dan">
-                                        <p>Nhập thông tin địa chỉ công ty chi tiết, rõ ràng và chính xác: số nhà, đường, phường,
-                                            quận.</p>
-                                        <p>
-                                            <b>Ví dụ:</b>
-                                            Lầu 6, Tòa nhà Bitexco Nam Long, 63A Võ Văn Tần, P6, Q3, TP.Hồ Chí Minh
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Điện thoại
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <input type="text" id="phone" name="DienThoai">
-                            </div>
-
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Địa chỉ web
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <input type="text" id="diaChiWeb" name="DiaChiWeb">
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Sơ lược về công ty
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <textarea id="description" name="GioiThieu" class="input-has-tooltip" style="height: 300px;"></textarea>
-                                <div class="block-has-tooltip">
-                                    <div class="tooltip-huong-dan">
-                                        <p>Hãy cung cấp những thông tin cơ bản như: năm thành lập, ngành nghề hoạt động chính,
-                                            thành tựu đã đạt được, đính hướng phát triển tương lai...</p>
-                                        <p>
-                                            <b>Ví dụ:</b>
-                                            Vàng Quốc Tế IG được thành lập năm 2011, ngành nghề kinh doanh chính là chế tác và kinh doanh đồ trang sức, đại lý phân phối
-                                            đồ trang sức SJC và các lĩnh vực đầu tư tài chính khác nhằm đưa đến cho người
-                                            kinh doanh nhiều giải pháp mang tính đột phá, sáng tạo phù hợp với nhu cầu ngày
-                                            càng nâng cao của con người trong thế kỷ 21.
-                                        </p>
+                                       <p>Nhập hình ảnh đại diện của bạn</p>
                                     </div>
                                 </div>
                             </div>

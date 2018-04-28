@@ -64,14 +64,98 @@ class PageController extends Controller
     public function getDangKy(){
         return view('page.dang-ky');
     }
+
+    //  dang ky nguoi tim viec
     
     public function getDangKyNTV(){
         return view('page.dang-ky-NTV');
     }
-    public function postDangKyNTV(){
-        return view('page.dang-ky-NTV');
+    public function postDangKyNTV(Request $request){
+        $this->validate($request,
+        [
+            'email'=>'required|unique:users|min:3|max:100',
+            'password'=>'required',
+            'confirm_password'=>'required|same:password',
+            'HoTen'=>'required|min:3|max:100',
+            'NgaySinh'=>'required',
+            'DiaChi'=>'required|min:3|max:100',
+            'TinhTrangHonNhan'=>'required|min:3|max:100'
+        ],
+        [
+            'email.required'=>'Bạn không được để trống tên đăng nhập',
+            'email.unique'=>'Bạn không được nhập trùng với email đã tồn tại ',
+            'email.min'=>'Bạn nhập ít nhất 3 ký tự',
+            'email.max'=>'Bạn phải nhập ít hơn 100 ký tự',
+            'password.required'=>'Bạn không được để trống mật khẩu',
+            'confirm_password.required'=>'Bạn không được để trống nhập lại mật khẩu',
+            'confirm_password.same'=>'Bạn phải nhập giống mật khẩu',
+            'HoTen.required'=>'Bạn không được để trống tên nhà tuyển dụng',
+            'HoTen.min'=>'Bạn nhập tên nhà dụng ít nhất 3 ký tự',
+            'HoTen.max'=>'Bạn phải nhập tên nhà tuyển dụng ít hơn 100 ký tự',
+            'NgaySinh.required'=>'Bạn không được để trống ngày sinh',
+            'DiaChi.required'=>'Bạn không được để trống địa chỉ',
+            'DiaChi.min'=>'Bạn nhập địa chỉ ít nhất 3 ký tự',
+            'DiaChi.max'=>'Bạn phải nhập địa chỉ ít hơn 500 ký tự',
+            'TinhTrangHonNhan.required'=>'Bạn không được để trống tình trạng hôn nhân',
+            'TinhTrangHonNhan.min'=>'Bạn nhập tình trạng hôn nhân ít nhất 3 ký tự',
+            'TinhTrangHonNhan.max'=>'Bạn phải nhập tình trajgn hôn nhân ít hơn 100 ký tự',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            $loaitaikhoan=LoaiTaiKhoan::where('TenLoaiTaiKhoan', 'Người tìm việc')->first();
+            $user = new User();
+            $user->email=$request->email;
+            $user->password=bcrypt($request->password);
+            $user->MaLoaiTaiKhoan=$loaitaikhoan->id;
+            $user->save();
+
+            $nguoitimviec = new HoSoXinViec();
+            $nguoitimviec->MaTaiKhoan=$user->id;
+            $nguoitimviec->MaNganh=ChuyenNganh::first()->id;
+            $nguoitimviec->MaTrinhDo=TrinhDo::first()->id;
+            $nguoitimviec->MaCC=ChungChi::first()->id;
+            $nguoitimviec->TieuDe='';
+            $nguoitimviec->HoTen=$request->HoTen;
+            $nguoitimviec->NgaySinh=$request->NgaySinh;
+            if($request->GioiTinh=='nam'){
+                $nguoitimviec->GioiTinh="Nam";
+            }
+            else{
+                $nguoitimviec->GioiTinh="Nữ";
+            }
+            $nguoitimviec->DiaChi=$request->DiaChi;
+            $nguoitimviec->DienThoai=$request->DienThoai;
+            $nguoitimviec->TinhTrangHonNhan=$request->TinhTrangHonNhan;
+            $nguoitimviec->LuongKhoiDiem=0;  
+            $nguoitimviec->NoiLamViec='';
+            $nguoitimviec->KinhNghiem='';
+            $nguoitimviec->NguyenVongLamViec='';
+            $nguoitimviec->MaTaiKhoan = $user->id;
+            if($request->hasFile('HinhAnh')){
+                $file=$request->file('HinhAnh');
+                $name=$file->getClientOriginalName();
+                $HinhAnh=str_random(10)."_".$name;
+                $file->move('image_HoSo',$HinhAnh);
+                $nguoitimviec->HinhAnh=$HinhAnh;
+            }
+            else{
+                $nguoitimviec->HinhAnh="";
+            }
+          
+            $nguoitimviec->save();
+
+            DB::commit();
+        }
+        catch (Exception $e) {
+            DB::rollBack();
+            $validator->addMessage("Có lỗi xảy ra!!! Vui lòng kiểm tra lại");
+        }
+    $messageSuccess = "Xin chúc mừng. Bạn đã đăng ký thành công tài khoản. Vui lòng đăng nhập để sử dụng dịch vụ của chúng tôi";
+    return view('page.dang-ky-NTV', ['messageSuccess' => $messageSuccess]);
     }
     
+    //  dang ky nha tuyen dung
     public function getDangKyNTD(){
         return view('page.dang-ky-NTD');
     }
@@ -126,7 +210,6 @@ class PageController extends Controller
                 $nhatuyendung->GioiThieu=$request->GioiThieu;
                 $nhatuyendung->MaTaiKhoan = $user->id;
                 $nhatuyendung->DiaChiWeb = $request->DiaChiWeb;
-                $nhatuyendung->HinhAnh = '';
                 if($request->hasFile('HinhAnh')){
                     $file=$request->file('HinhAnh');
                     $name=$file->getClientOriginalName();
