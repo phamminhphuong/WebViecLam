@@ -9,7 +9,6 @@
                             <b>(024) 7309 8888</b>
                         </a>
                     </li>
-
                     <li>
                         <a href="index.html" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
                             <i class="icon-sprite-hs icon-head-home"></i>
@@ -41,14 +40,14 @@
                     <li>
                         <div class="logo">
                             <h1>
-                                <a href="index.html" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
-                                    <img src="" alt="Tim viec nhanh" title="Tim viec nhanh tuyển dụng việc làm 24h lương cao">
+                                <a href="/" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
+                                    <img src="image/l.png" style="height:38px;" alt="Tim viec nhanh" title="Tim viec nhanh tuyển dụng việc làm 24h lương cao">
                                 </a>
                             </h1>
                         </div>
                     </li>
                     <li>
-                        <form id="job_advance_search" role="form" action="https://www.timviecnhanh.com/vieclam/timkiem" method="GET" class="form-inline form-search-top"
+                        <form id="job_advance_search" role="form" action="#" method="GET" class="form-inline form-search-top"
                             enctype="multipart/form-data">
                             <input type="text" id="key-s" name="tu_khoa" value="" class="form-control col-xs-" placeholder="Nhập tên công việc, vị trí...">
                             <div class="style-flat">
@@ -77,7 +76,6 @@
                                 <li>
                                     <a href="viec-lam-kinh-doanh-c32.html" title="Kinh doanh">
                                         {!!$cn->TenNganh!!}
-                                        {{--  <i class="icon-sprite-hs icon-arr-head"></i>  --}}
                                        <i class="fas fa-angle-right icon-arr-head"></i>
                                     </a> 
                                 </li>

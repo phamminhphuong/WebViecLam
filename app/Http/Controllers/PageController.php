@@ -16,11 +16,6 @@ class PageController extends Controller
     public function __construct(){
         $chuyennganh=ChuyenNganh::all();
         view()->share('chuyennganh', $chuyennganh);
-        // if(Auth::check()){
-            
-        //     view()->share('nguoidung', Auth::user());
-            
-        // }
         
     }
     public function getTrangChu(){
@@ -43,8 +38,11 @@ class PageController extends Controller
 
         $phieudangtuyen_hot=PhieuDangTuyen::Where('LuongKhoiDiem','>',5)->get();
 
+        $promotion1 = QuangCao::take(1)->get()[0];
+        $promotion2 = QuangCao::skip(1)->take(1)->get()[0];
 
-        return view('page.trangchu',
+
+        return view('page.index',
             [
                 'phieudangtuyen_hot'=>$phieudangtuyen_hot, 
                 'newPosts1'=>$newPosts1,
@@ -55,47 +53,32 @@ class PageController extends Controller
                 'fastestPosts'=> $fastestPosts,
                 'postsForYou' => $postsForYou,
                 'bestSalaryPosts1' => $bestSalaryPosts1,
-                'bestSalaryPosts2' => $bestSalaryPosts2
+                'bestSalaryPosts2' => $bestSalaryPosts2,
+                'promotion1' => $promotion1,
+                'promotion2' => $promotion2
             ]);
-        // echo $phieudangtuyen;
     }
-    //  dang nhap
-    public function getDangNhap(){
-        return view('page.dangnhap');
-    }
-    // chi tiet dang nhap nha tuyen dung
-    public function getChiTietDangNhapNTD(){
-        return view('page.chitietdangnhapNTD');
-    }
-    // chi tiet dang nhap nguoi tim viec
-    public function getChiTietDangNhapNTV(){
-        return view('page.chitietdangnhapNTV');
-    }
-    //  dang ky
     public function getDangKy(){
-        return view('page.dangky');
+        return view('page.dang-ky');
     }
     
-    //  dang ky nguoi tim viec
-    public function getChiTietDangKyNTV(){
-        return view('page.chitietdangkyNTV');
+    public function getDangKyNTV(){
+        return view('page.dang-ky-NTV');
     }
     
-    //  dang ky nha tuyen dung
-    public function getChiTietDangKyNTD(){
-        return view('page.chitietdangkyNTD');
+    public function getDangKyNTD(){
+        return view('page.dang-ky-NTD');
     }
 
-    //  tao ho so
     public function getTaoHoSo(){
-        return view('page.taohoso');
+        return view('page.tao-ho-so');
     }
-    //  tao phieu dang tuyen
+
     public function getTaoPhieuDangTuyen(){
-        return view('page.dangtintuyendung');
+        return view('page.dang-tin-tuyen-dung');
     }
-    //  nha tuyen dung
+    
     public function getNhaTuyenDung(){
-        return view('page.nhatuyendung');
+        return view('page.tim-nhan-vien');
     }
 }

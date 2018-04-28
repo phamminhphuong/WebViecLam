@@ -1,12 +1,22 @@
 <?php
 
-// dang nhap admin
-Route::get('admin/dangnhap','TaikhoanController@getDangnhap');
-Route::post('admin/dangnhap','TaikhoanController@postDangnhap');
-//  dang xuat admin
-Route::get('admin/dangxuat','TaikhoanController@getDangxuat');
+// trang chu
+Route::get('/','PageController@getTrangChu');
+Route::get('dang-nhap','TaikhoanController@getDangnhap');
+Route::post('dang-nhap','TaikhoanController@postDangnhap');
+Route::get('dang-xuat','TaikhoanController@getDangxuat');
 
-Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
+Route::get('dang-ky','PageController@getDangKy');
+Route::get('dang-ky/nguoi-tim-viec','PageController@getDangKyNTV');
+Route::get('dang-ky/nha-tuyen-dung','PageController@getDangKyNTD');
+
+
+Route::get('tao-ho-so','PageController@getTaoHoSo');
+Route::get('dang-tin','PageController@getTaoPhieuDangTuyen');
+Route::get('tim-nhan-vien','PageController@getTimNhanVien');
+
+
+Route::group(['prefix' => 'admin'], function() {
     // dashboard
     Route::group(['prefix' => 'bangdieukhien'], function() {
         Route::get('index','BangdieukhienController@getBangdieukhien');
@@ -135,29 +145,3 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
     });
     
 });
-
-// trang chu
-Route::get('trangchu','PageController@getTrangChu');
-
-//  dang nhap
-Route::get('dangnhap','PageController@getDangNhap');
-
-//  chi tiet dang nhap nha tuyen dung
-Route::get('chitietdangnhap-nhatuyendung','PageController@getChiTietDangNhapNTD');
-//  chi tiet dang nhap nguoi tim viec
-Route::get('chitietdangnhap-nguoitimviec','PageController@getChiTietDangNhapNTV');
-
-//  dang ky
-Route::get('dangky','PageController@getDangKy');
-//  dang ky nguoi tim viec
-Route::get('chitietdangky-nguoitimviec','PageController@getChiTietDangKyNTV');
-//  dang ky nha tuyen dung
-Route::get('chitietdangky-nhatuyendung','PageController@getChiTietDangKyNTD');
-
-//  tao ho so
-Route::get('nguoitimviec-taohoso','PageController@getTaoHoSo');
-//  tao phieu dang tuyen
-Route::get('nhatuyendung-dangtintuyendung','PageController@getTaoPhieuDangTuyen');
-
-//  nha tuyen dung
-Route::get('nhatuyendung','PageController@getNhaTuyenDung');

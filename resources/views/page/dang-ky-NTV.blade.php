@@ -1,4 +1,4 @@
- @extends('layout.index') @section('nav') @include('layout.nav') @endsection @section('phieudangtuyen_hoso') @include('layout.phieudangtuyen_hoso')
+@extends('layout.index') @section('nav') @include('layout.nav') @endsection @section('phieudangtuyen_hoso') @include('layout.phieudangtuyen_hoso')
 @endsection @section('menu_tuhoso') @include('layout.menu_tuhoso') @endsection @section('content')
 <section class="body-home">
     <div class="container">

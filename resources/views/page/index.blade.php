@@ -32,7 +32,6 @@
             </div>
 
             <article class="block-content">
-
                 <div class="col-xs-4 outner10">
                     <ul class="list-post">
                         @foreach($newPosts1 as $post)
@@ -260,34 +259,6 @@
                         </div>
                         <div class="clearfix"></div>
                     </article>
-
-                    <script type="text/javascript">
-                        $(document).ready(function () {
-                            $('#field-hot-filter-total').on('click', function () {
-                                $('#field-hot-content').html('<center><span class="snake_loading"></span></center>');
-                                $.ajax({
-                                    type: 'GET',
-                                    url: 'https://www.timviecnhanh.com/ajax/job-field-hot-filter',
-                                    data: { order: 'total' },
-                                    success: function (response) {
-                                        $('#field-hot-content').html(response);
-                                    }
-                                });
-                            });
-
-                            $('#field-hot-filter-alphabet').on('click', function () {
-                                $('#field-hot-content').html('<center><span class="snake_loading"></span></center>');
-                                $.ajax({
-                                    type: 'GET',
-                                    url: 'https://www.timviecnhanh.com/ajax/job-field-hot-filter',
-                                    data: { order: 'alphabet' },
-                                    success: function (response) {
-                                        $('#field-hot-content').html(response);
-                                    }
-                                });
-                            });
-                        });
-                    </script>
                 </div>
                 <div class="job-hot box-content">
                     <header class="block-title">
@@ -347,26 +318,15 @@
                         </div>
                     </article>
                 </div>
+                <div class="clearfix"></div>
 
-                <!--slick slider 2 image-->
-                <div class="info_banner ml-4">
+
+                <div class="clearfix"></div>
+                <div class="mt20">
+                <a href="#">
+                        <img alt="" src="image_QuangCao/{!!$promotion1->HinhAnh!!}">
+                    </a>
                 </div>
-
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $('.info_banner').slick({
-                            dots: true,
-                            dotsClass: 'slick-dots',
-                            autoplay: true,
-                            autoplaySpeed: 10000,
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        });
-                    });
-                </script>
-
-
-
                 <div class="job-hot box-content mt26">
                     <header class="block-title">
                         <h3 class="title font-roboto text-primary">
@@ -381,7 +341,7 @@
                                 <div class="col-xs-8 job_favo_box pl0 pr0">
                                     <div class="col-xs-2 ml16 w120 mr16">
                                         <a href="vendor/{!!$post->NhaTuyenDung->id!!}" title="">
-                                            <img src="../cdn.timviecnhanh.com/asset/home/img/employer/541255a33a482_1410487715_120x120.jpg" alt="Công ty TNHH Kim Sơn Metal"
+                                            <img src="imageNTD/{!!$post->NhaTuyenDung->HinhAnh!!}" alt="Công ty TNHH Kim Sơn Metal"
                                                 class="" width="140">
                                         </a>
                                     </div>
@@ -422,34 +382,14 @@
                         @endforeach
                     </div>
                 </div>
-                <!-- hot job -->
-
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $('#nghe-hap-dan-filter-field-select').on('change', function () {
-                            var field = $(this).val();
-                            $('#nghe-hap-dan-content').html('<center><span class="snake_loading"></span></center>');
-                            $.ajax({
-                                type: 'GET',
-                                url: 'https://www.timviecnhanh.com/ajax/job-hot-for-you-filter',
-                                data: {
-                                    field: field,
-                                },
-                                success: function (response) {
-                                    $('#nghe-hap-dan-content').html(response);
-                                }
-                            });
-                        });
-                    });
-                </script>
 
                 <div class="clearfix"></div>
 
 
                 <div class="clearfix"></div>
                 <div class="mt20">
-                    <a target="_blank" href="nguoi-tim-viec/mau-cv-xin-viec.html?utm_source=timviecnhanh&amp;utm_medium=click&amp;utm_campaign=banner-gioi-thieu&amp;utm_content=pc">
-                        <img title="banner_cv" src="../cdn.timviecnhanh.com/asset/home/img/cv_tvn_pc.gif" width="616" height="240">
+                <a href="#">
+                        <img alt="" src="image_QuangCao/{!!$promotion2->HinhAnh!!}">
                     </a>
                 </div>
             </div>
@@ -562,7 +502,17 @@
 
                 <div class="block-ads outner-top-10">
                     <a href="#">
-                        <img alt="Banner hotline" src="../cdn.timviecnhanh.com/asset/home/img/hotline-TVN-171215-bac-min2.png">
+                        <img alt="" src="image_QuangCao/{!!$promotion1->HinhAnh!!}">
+                    </a>
+                </div>
+                <!-- start: Box banner -->
+                <div style="margin-top:10px;">
+                </div>
+                <!-- end: Box banner -->
+
+                <div class="block-ads outner-top-10">
+                    <a href="#">
+                        <img alt="" src="image_QuangCao/{!!$promotion2->HinhAnh!!}">
                     </a>
                 </div>
             </div>
