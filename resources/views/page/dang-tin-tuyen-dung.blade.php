@@ -1,7 +1,4 @@
-@extends('layout.index') 
-{{--  @section('nav') 
-@include('layout.nav') 
-@endsection   --}}
+@extends('layout.index')
 @section('phieudangtuyen_hoso') 
 @include('layout.dangtintuyendung')
 @endsection 
@@ -13,28 +10,7 @@
     <div class="container">
         <div class="col-xs-8 primary form26">
             <div class="inner-10">
-                <div class="box-content">
-                    <div class="box_hoso_mienphi">
-                        <p style="padding-top:14px;padding-left:14px;">Số lượng tin đăng miễn phí còn lại:
-                            <span class="bold red">3</span>
-                        </p>
-                        <div class="box_hsmp_pink">Quý khách đang sử dụng tài khoản
-                            <span class="bold">MIỄN PHÍ</span> bị giới hạn về số lượng tin đăng và quyền xem thông tin ứng viên.
-                            <br> Hãy
-                            <a href="#" target="_blank">
-                                <span class="bold red">Nâng cấp tài khoản</span>
-                            </a>
-                            để tuyển dụng nhanh và hiệu quả với nhiều quyền lợi hấp dẫn.
-                        </div>
-                        <div class="center fs12 pd-10">Để được hổ trợ vui lòng liên hệ bộ phận hổ trợ Nhà tuyển dụng của Tìm Việc Nhanh
-                            <br>Hotline:
-                            <span class="bold">024 7309 8888</span> hoặc
-                            <span class="bold">028 7309 8888</span> - Email:
-                            <span class="bold">ntd@timviecnhanh.com</span>
-                        </div>
-                    </div>
-                </div>
-                <form action="" method="POST" enctype="multipart/form-data" id="job_edit">
+                <form action="dang-tin" method="POST" enctype="multipart/form-data" id="job_edit">
                     <input type="hidden" name="id" value="">
                     <div class="box-content">
 

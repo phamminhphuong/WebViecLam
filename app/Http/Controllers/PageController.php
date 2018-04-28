@@ -16,8 +16,9 @@ use App\LoaiTaiKhoan;
 class PageController extends Controller
 {
     public function __construct(){
-        $chuyennganh=ChuyenNganh::all();
-        view()->share('chuyennganh', $chuyennganh);
+        $categories = ChuyenNganh::all();
+        $menu = ChuyenNganh::take(5)->get();
+        view()->share(['categories' => $categories, 'menu' => $menu]);
         
     }
     public function getTrangChu(){

@@ -53,7 +53,7 @@
                             <div class="style-flat">
                                 <select name="nganh_nghe[]" class="select-style">
                                     <option value="">Chọn ngành nghề</option>
-                                    @foreach($chuyennganh as $cn)
+                                    @foreach($categories as $cn)
                                         <option value="{!!$cn->id!!}">{!!$cn->TenNganh!!}</option>
                                     @endforeach
                                 </select>
@@ -72,7 +72,7 @@
                 <div class="container relative">
                     <div class="col-xs-12">
                         <ul class="list-menu-nth">
-                             @foreach($chuyennganh as $cn)
+                             @foreach($menu as $cn)
                                 <li>
                                     <a href="viec-lam-kinh-doanh-c32.html" title="Kinh doanh">
                                         {!!$cn->TenNganh!!}
