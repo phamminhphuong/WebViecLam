@@ -14,6 +14,7 @@ Route::post('dang-ky/nha-tuyen-dung','PageController@postDangKyNTD');
 
 
 Route::get('tao-ho-so','PageController@getTaoHoSo');
+Route::post('tao-ho-so','PageController@postTaoHoSo');
 Route::get('dang-tin','PageController@getTaoPhieuDangTuyen');
 Route::get('tim-nhan-vien','PageController@getTimNhanVien');
 

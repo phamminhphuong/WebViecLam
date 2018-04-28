@@ -13,6 +13,7 @@ use App\KyNangXinViec;
 use App\PhieuDangTuyen;
 use App\User;
 use App\LoaiTaiKhoan;
+use Illuminate\Support\Facades\Auth;
 class PageController extends Controller
 {
     public function __construct(){
@@ -144,14 +145,15 @@ class PageController extends Controller
             }
           
             $nguoitimviec->save();
-
             DB::commit();
         }
         catch (Exception $e) {
             DB::rollBack();
+            echo $e;
+            exit();
             $validator->addMessage("Có lỗi xảy ra!!! Vui lòng kiểm tra lại");
         }
-    $messageSuccess = "Xin chúc mừng. Bạn đã đăng ký thành công tài khoản. Vui lòng đăng nhập để sử dụng dịch vụ của chúng tôi";
+        $messageSuccess = "Xin chúc mừng. Bạn đã đăng ký thành công tài khoản. Vui lòng đăng nhập để sử dụng dịch vụ của chúng tôi";
     return view('page.dang-ky-NTV', ['messageSuccess' => $messageSuccess]);
     }
     
@@ -233,8 +235,84 @@ class PageController extends Controller
         return view('page.dang-ky-NTD', ['messageSuccess' => $messageSuccess]);
     }
 
-    public function getTaoHoSo(){
-        return view('page.tao-ho-so');
+    public function getTaoHoSo() {
+        $id = Auth::user()->id;
+        $hoSo = HoSoXinViec::where('MaTaiKhoan', $id)->first();
+        // $hoSo = HoSoXinViec::first();
+        $nganhs = ChuyenNganh::all();
+        $trinhDos = TrinhDo::all();
+        $chungChis = ChungChi::all();
+
+        return view('page.tao-ho-so', ['hoSo'=>$hoSo, 'nganhs'=>$nganhs, 'trinhDos'=>$trinhDos, 'chungChis'=>$chungChis]);
+    }
+
+    public function postTaoHoSo(Request $request){
+        $this->validate($request,
+        [
+            'TieuDe'=>'required|min:3|max:100',
+            'HoTen'=>'required|min:3|max:100',
+            'DiaChi'=>'required|min:3|max:200',
+            'DienThoai'=>'required|min:10|max:12',
+            'NgaySinh'=>'required',
+        ],
+        [
+            'TieuDe.required'=>'Bạn không được để trống tiêu đề',
+            'TieuDe.min'=>'Bạn nhập tiêu đề ít nhất 3 ký tự',
+            'TieuDe.max'=>'Bạn nhập tiêu đề không quá 100 ký tự',
+            'HoTen.required'=>'Bạn không được để trống họ tên',
+            'HoTen.min'=>'Bạn nhập họ tên ít nhất 3 ký tự',
+            'HoTen.max'=>'Bạn nhập họ tên không quá 100 ký tự',
+            'DiaChi.required'=>'Bạn không được để trống địa chỉ',
+            'DiaChi.min'=>'Bạn nhập địa chỉ ít nhất 3 ký tự',
+            'DiaChi.max'=>'Bạn nhập địa chỉ không quá 200 ký tự',
+            'DienThoai.required'=>'Bạn không được để trống điện thoại',
+            'DienThoai.min'=>'Bạn nhập điện thoại ít nhất 10 ký tự',
+            'DienThoai.max'=>'Bạn nhập điện thoại không quá 12 ký tự',
+            'NgaySinh.required'=>'Bạn không được để trống ngày sinh',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            $id = Auth::user()->id;
+            $hosoxinviec = HoSoXinViec::where('MaTaiKhoan', $id)->first();
+            // $hosoxinviec = HoSoXinViec::first();
+            $hosoxinviec->MaNganh =$request->MaNganh;
+            $hosoxinviec->MaTrinhDo=$request->MaTrinhDo;
+            $hosoxinviec->MaCC=$request->MaCC;
+            $hosoxinviec->TieuDe=$request->TieuDe;
+            
+            $hosoxinviec->NgaySinh=$request->NgaySinh;
+            $hosoxinviec->GioiTinh=$request->GioiTinh;
+            $hosoxinviec->DiaChi=$request->DiaChi;
+            $hosoxinviec->DienThoai=$request->DienThoai;
+            $hosoxinviec->TinhTrangHonNhan=$request->TinhTrangHonNhan;
+            $hosoxinviec->LuongKhoiDiem=$request->LuongKhoiDiem;
+            $hosoxinviec->NoiLamViec='';
+            $hosoxinviec->KinhNghiem=$request->KinhNghiem;
+            $hosoxinviec->NguyenVongLamViec=$request->NguyenVongLamViec;
+            if($request->hasFile('HinhAnh')){
+                $file=$request->file('HinhAnh');
+                $name=$file->getClientOriginalName();
+                $HinhAnh=str_random(10)."_".$name;
+                $file->move('image_HoSo',$HinhAnh);
+                $hosoxinviec->HinhAnh=$HinhAnh;
+            }
+            else{
+                $hosoxinviec->HinhAnh="";
+            }
+            $hosoxinviec->save();
+
+            DB::commit();
+        }
+        catch (Exception $e) {
+            DB::rollBack();
+            $validator->addMessage("Có lỗi xảy ra!!! Vui lòng kiểm tra lại");
+        }
+        $nganhs = ChuyenNganh::all();
+        $trinhDos = TrinhDo::all();
+        $chungChis = ChungChi::all();
+        $messageSuccess = "Cập nhật hồ sơ thành công";
+        return view('page.tao-ho-so', ['hoSo'=>$hosoxinviec, 'nganhs'=>$nganhs, 'trinhDos'=>$trinhDos, 'chungChis'=>$chungChis, 'messageSuccess'=>$messageSuccess]);
     }
 
     public function getTaoPhieuDangTuyen(){
