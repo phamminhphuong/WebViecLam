@@ -662,32 +662,32 @@
     </header>
     <div class="content-sidebar menu-trung-tam-ql">
         <ul>
-            <li>
-                <a href="https://www.timviecnhanh.com/nguoitimviec" title="Trang người tìm việc">
+            <!-- <li>
+                <a href="#" title="Trang người tìm việc">
                     <span class="icon icon-sm icon-tu-hs"></span>
                     Trang người tìm việc
                 </a>
             </li>
             <li class="has-child">
-				<a href="https://www.timviecnhanh.com/nguoi-tim-viec/tu-ho-so-new"><span class="icon icon-sm icon-tao-hs"></span>Tủ hồ sơ</a>
+				<a href="tu-ho-so"><span class="icon icon-sm icon-tao-hs"></span>Tủ hồ sơ</a>
             </li>
             <li>
-                <a href="https://www.timviecnhanh.com/nguoi-tim-viec/tai-khoan"><span class="icon icon-sm icon-tai-khoan"></span>Tài khoản
+                <a href="tai-khoan"><span class="icon icon-sm icon-tai-khoan"></span>Tài khoản
                                     </a>
             </li>
-            <li><a href="https://www.timviecnhanh.com/nguoi-tim-viec/danh-sach-ho-so-lam-dep"><span class="icon icon-sm icon-edit-cv icon-cv-green30"></span>Làm đẹp hồ sơ <span style="color: red; font-style: italic;">(New)</span></a></li>
-            <li><a href="https://www.timviecnhanh.com/nguoi-tim-viec/viec-lam-da-luu"><span class="icon icon-sm icon-luu"></span>Việc làm đã lưu</a></li>
-            <li><a href="https://www.timviecnhanh.com/nguoi-tim-viec/viec-lam-da-ung-tuyen"><span class="icon icon-sm icon-da-ung-tuyen"></span>Việc làm đã ứng tuyển</a></li>
-            <li><a href="https://www.timviecnhanh.com/nguoi-tim-viec/nha-tuyen-dung-da-xem-ho-so"><span class="icon icon-sm icon-eye"></span>Nhà tuyển dụng đã xem hồ sơ</a></li>
-            <li><a href="https://www.timviecnhanh.com/nguoi-tim-viec/xem-thong-bao-viec-lam"><span class="icon icon-sm icon-tao-hs"></span>Thiết lập thông báo việc làm</a></li>
+            <li><a href="danh-sach-ho-so-lam-dep"><span class="icon icon-sm icon-edit-cv icon-cv-green30"></span>Làm đẹp hồ sơ <span style="color: red; font-style: italic;">(New)</span></a></li>
+            <li><a href="viec-lam-da-luu"><span class="icon icon-sm icon-luu"></span>Việc làm đã lưu</a></li>
+            <li><a href="viec-lam-da-ung-tuyen"><span class="icon icon-sm icon-da-ung-tuyen"></span>Việc làm đã ứng tuyển</a></li>
+            <li><a href="nha-tuyen-dung-da-xem-ho-so"><span class="icon icon-sm icon-eye"></span>Nhà tuyển dụng đã xem hồ sơ</a></li>
+            <li><a href="xem-thong-bao-viec-lam"><span class="icon icon-sm icon-tao-hs"></span>Thiết lập thông báo việc làm</a></li>
             <li style="position: relative">
-                <a href="https://www.timviecnhanh.com/nguoi-tim-viec/danh-sach-thong-bao-tu-he-thong">
+                <a href="danh-sach-thong-bao-tu-he-thong">
                     <span class="icon icon-sm icon-notification_20"></span>
                     Ban quản trị thông báo
                                     </a>
             </li>
-            <li><a href="https://www.timviecnhanh.com/nguoi-tim-viec/huong-dan-thao-tac-dg52.html"><span class="icon document_guide_blue_20 document_guide_green_20 icon-sm"></span>Hướng dẫn thao tác</a></li>
-            <li class="logout"><a href="https://www.timviecnhanh.com/thoat"><span class="icon icon-sm icon-dang-xuat"></span>Đăng xuất</a></li>
+            <li><a href="huong-dan-thao-tac"><span class="icon document_guide_blue_20 document_guide_green_20 icon-sm"></span>Hướng dẫn thao tác</a></li> -->
+            <li class="logout"><a href="dang-xuat"><span class="icon icon-sm icon-dang-xuat"></span>Đăng xuất</a></li>
         </ul>
     </div>
 </div>                <!-- <div class="block-sidebar no-padding no-border">

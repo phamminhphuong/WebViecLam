@@ -204,14 +204,14 @@
                     </header>
                     <div class="content-sidebar menu-trung-tam-ql">
                         <ul>
-                            <li>
-                                <a href="https://www.timviecnhanh.com/timungvien" title="Tìm hồ sơ ứng viên">
+                            <!-- <li>
+                                <a href="tim-ho-so" title="Tìm hồ sơ ứng viên">
                                     <span class="icon_menu_s22 icon-sm icon-tkuv_s22"></span>
                                     Tìm hồ sơ ứng viên
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.timviecnhanh.com/nha-tuyen-dung/tai-khoan" title="Tài khoản">
+                                <a href="tai-khoan" title="Tài khoản">
                                     <span class="icon_menu_s22 icon-sm icon-tkhoan_s22"></span>
                                     Tài khoản
                                     <span class="red" style="font-weight: normal;">
@@ -220,63 +220,63 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.timviecnhanh.com/nhatuyendung" title="Trang nhà tuyển dụng">
+                                <a href="nha-tuyen-dung" title="Trang nhà tuyển dụng">
                                     <span class="icon_menu_s22 icon-sm icon-tntd_s22"></span>
                                     Trang nhà tuyển dụng
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.timviecnhanh.com/nha-tuyen-dung/dang-tin?pages=1" title="Đăng tin tuyển dụng" class="">
+                                <a href="dang-tin" title="Đăng tin tuyển dụng" class="">
                                     <span class="icon_menu_s22 icon-sm icon-dttd_s22"></span>
                                     Đăng tin tuyển dụng
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.timviecnhanh.com/nha-tuyen-dung/quan-ly-tin-dang" title="Quản lý tin tuyển dụng">
+                                <a href="quan-ly-tin-dang" title="Quản lý tin tuyển dụng">
                                     <span class="icon_menu_s22 icon-sm icon-qltd_s22"></span>
                                     Quản lý tin tuyển dụng
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.timviecnhanh.com/nha-tuyen-dung/ho-so-da-luu" title="Hồ sơ đã lưu">
+                                <a href="ho-so-da-luu" title="Hồ sơ đã lưu">
                                     <span class="icon_menu_s22 icon-sm icon-hsdl_s22"></span>
                                     Hồ sơ đã lưu
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.timviecnhanh.com/nha-tuyen-dung/ho-so-da-ung-tuyen" title="Hồ sơ đã ứng tuyển">
+                                <a href="ho-so-da-ung-tuyen" title="Hồ sơ đã ứng tuyển">
                                     <span class="icon_menu_s22 icon-sm icon-hsdut_s22"></span>
                                     Hồ sơ đã ứng tuyển
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.timviecnhanh.com/nha-tuyen-dung/xem-thiet-lap-thong-tin-nhan-ho-so-bang-email" title="Thiết lập thông báo hồ sơ">
+                                <a href="xem-thiet-lap-thong-tin-nhan-ho-so-bang-email" title="Thiết lập thông báo hồ sơ">
                                     <i class="fa fa-pencil-square-o font26 fix-icon-style-1"></i>
                                     Thiết lập thông báo hồ sơ
                                 </a>
                             </li>
 
                             <li>
-                                <a href="https://www.timviecnhanh.com/nha-tuyen-dung/xem-giay-phep-kinh-doanh" title="Giấy phép kinh doanh">
+                                <a href="xem-giay-phep-kinh-doanh" title="Giấy phép kinh doanh">
                                     <span class="icon_menu_s22 icon-sm icon-cover_s22"></span>
                                     Giấy phép kinh doanh
                                 </a>
                             </li>
                             <li style="position: relative">
-                                <a href="https://www.timviecnhanh.com/nha-tuyen-dung/danh-sach-thong-bao-tu-he-thong" title="Ban quản trị thông báo">
+                                <a href="danh-sach-thong-bao-tu-he-thong" title="Ban quản trị thông báo">
                                     <span class="icon-notification-green_20 icon-sm icon_menu_s22"></span>
                                     Ban quản trị thông báo
                                     <span style="line-height: 16px;background: red;padding: 0px 3px;color: #fff;font-size: 11px;position: absolute;text-align: center;top: 5px;left: 32px;font-weight: normal">1</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.timviecnhanh.com/nha-tuyen-dung/huong-dan-thao-tac-dg53.html" title="Hướng dẫn thao tác">
+                                <a href="huong-dan-thao-tac" title="Hướng dẫn thao tác">
                                     <span class="icon icon-ntd icon-sm icon-features-diff"></span>
                                     Hướng dẫn thao tác
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="logout">
-                                <a href="https://www.timviecnhanh.com/thoat" title="Đăng xuất">
+                                <a href="dang-xuat" title="Đăng xuất">
                                     <span class="icon icon-sm icon-dang-xuat"></span>
                                     Đăng xuất
                                 </a>
