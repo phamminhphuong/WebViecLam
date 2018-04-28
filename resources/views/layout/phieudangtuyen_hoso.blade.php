@@ -7,12 +7,14 @@
                     title="Tủ hồ sơ">
                     <span class="btn-name">Tạo hồ sơ</span>
                     <span class="btn-des">Tạo hồ sơ ngay để Nhà tuyển dụng nhìn thấy bạn</span>
+                    <i class="icon-sprite-hs icon-ths"></i>
                 </a>
             </div>
             <div class="btn-create btn-create-hsm">
                 <a class="btn-create-hs" href="dang-tin">
                     <span class="txt-head main-color">Đăng tin miễn phí</span>
                     <span class="txt-des">Tiếp cận hàng trăm nghìn người tìm việc</span>
+                    <i class="icon-sprite-hs icon-hsm"></i>
                 </a>
             </div>
 
