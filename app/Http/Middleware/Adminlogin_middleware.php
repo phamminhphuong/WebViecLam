@@ -20,9 +20,12 @@ class Adminlogin_middleware
             if($user->MaLoaiTaiKhoan==1){
                 return $next($request);
             }
-            else{
-                return redirect('admin/dangnhap');
-            }
+           else if($user->MaLoaiTaiKhoan==2){
+                return redirect('dang-tin');
+           }
+           else{
+               return redirect('tao-ho-so');
+           }
         }
         else{
             

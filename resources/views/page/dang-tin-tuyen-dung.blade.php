@@ -22,7 +22,20 @@
                                 </div>
                             </h3>
                         </header>
+                        @if(count($errors) >0) 
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $er)
+                                {{$er}}<br>
+                            @endforeach
+                        </div>
+                        @endif
 
+                        @if(!empty($messageSuccess))
+                        <div class="alert alert-success">
+                            {!!$messageSuccess!!}
+                        </div>
+                        @endif
+                        <br>
                         <article class="block-content outer-b-20 p-t-15">
                             <div class="group-field">
                                 <label class="label-form" for="">
@@ -52,9 +65,16 @@
                             </div>
                             <div class="group-field">
                                 <label class="label-form" for="">
+                                    Vị trí tuyển dụng
+                                    <span class="icon icon-xs icon-hoa-thi"></span>
+                                </label>
+                                <input type="text" id="title" name="ViTriTuyenDung" class="input-has-tooltip" placeholder="Nhập vị trí tuyển dụng">
+                            </div>
+                            <div class="group-field">
+                                <label class="label-form" for="">
                                     Số lượng cần tuyển
                                 </label>
-                                <input type="number" id="quantity" name="SoLuongTuyenDung" value="1" class="w100">
+                                <input type="number" id="quantity" style="width:435px" name="SoLuongTuyenDung" value="1">
                             </div>
                             <div class="group-field">
                                 <label class="label-form" for="">
@@ -92,9 +112,11 @@
                                                 <ul class="select2-results"> </ul>
                                             </div>
                                         </div>
-                                        <select id="level" name="MaTrinhDo" class="select-style select2-offscreen" tabindex="-1" style="margin-top:-20px;">
+                                        <select id="level" name="MaTrinhDo"  tabindex="-1" style="margin-top:-20px;width:455px;height:32px">
                                             <option selected="selected" value="">Chọn trình độ</option>
-                                            <option value="6">Đại học</option>
+                                            @foreach($trinhdo as $td)
+                                             <option value="{!!$td->id!!}">{!!$td->TenTrinhDo!!}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -115,9 +137,11 @@
                                                 <ul class="select2-results"> </ul>
                                             </div>
                                         </div>
-                                        <select id="level" name="MaNganh" class="select-style select2-offscreen" tabindex="-1" style="margin-top:-20px;">
+                                        <select id="level" name="MaNganh"  tabindex="-1" style="margin-top:-20px;width:455px;height:32px">
                                             <option selected="selected" value="">Chọn ngành nghề</option>
-                                            <option value="6">Đại học</option>
+                                            @foreach($chuyennganh as $cn)
+                                             <option value="{!!$cn->id!!}">{!!$cn->TenNganh!!}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -138,16 +162,18 @@
                                                 <ul class="select2-results"> </ul>
                                             </div>
                                         </div>
-                                        <select id="level" name="MaChungChi" class="select-style select2-offscreen" tabindex="-1" style="margin-top:-20px;">
+                                        <select id="level" name="MaChungChi" style="margin-top:-20px;width:455px;height:32px" tabindex="-1" style="margin-top:-20px;">
                                             <option selected="selected" value="">Chọn chứng chỉ</option>
-                                            <option value="6">Đại học</option>
+                                            @foreach($chungchi as $cc)
+                                                <option value="{!!$cc->id!!}">{!!$cc->TenChungChi!!}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="group-field">
-                                <label class="label-form" for="">
+                                <label class="label-form" for="">   
                                     Kinh nghiệm
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
@@ -155,26 +181,26 @@
                             </div>
                             <div class="group-field">
                                 <label class="label-form" for="">
+                                    Nơi làm việc
+                                    <span class="icon icon-xs icon-hoa-thi"></span>
+                                </label>
+                                <input type="text" id="title" name="NoiLamViec" class="input-has-tooltip" placeholder="Nhậpc  nơi làm việc">
+                            </div>
+                            <div class="group-field">
+                                <label class="label-form" for="">
                                     Mức lương
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <input type="text" id="title" name="LuongKhoiDiem" class="input-has-tooltip" placeholder="Nhập Lương khởi điểm">
+                                <input type="number" id="quantity" style="width:435px" name="LuongKhoiDiem" value="0">
                             </div>
                             <div class="group-field">
                                 <label class="label-form" for="">
                                     Hết hạn
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <div class="pull-left w200">
-                                    <div class="input-parent input-container">
-                                        <div class="input-parent input-container">
-                                            <input type="text" id="expired_at" name="expired_at" value="27-04-2018" class="w200 beatpicker-input beatpicker-inputnode"
-                                                data-beatpicker="1" data-beatpicker-id="beatpicker-0" readonly="readonly" style="background-image: url(&quot;undefined&quot;);">
-                                            <button class="beatpicker-clear beatpicker-clearButton button">Xóa</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                 <input type="date" name="ThoiHanNopHoSo" class="form-control">
                             </div>
+                           
                             <div class="group-field">
                                 <label class="label-form" for=""></label>
                                 <div class="group-right">

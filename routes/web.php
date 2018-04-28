@@ -15,10 +15,11 @@ Route::post('dang-ky/nha-tuyen-dung','PageController@postDangKyNTD');
 
 Route::get('tao-ho-so','PageController@getTaoHoSo');
 Route::get('dang-tin','PageController@getTaoPhieuDangTuyen');
+Route::post('dang-tin','PageController@postTaoPhieuDangTuyen');
 Route::get('tim-nhan-vien','PageController@getTimNhanVien');
 
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
     // dashboard
     Route::group(['prefix' => 'bangdieukhien'], function() {
         Route::get('index','BangdieukhienController@getBangdieukhien');

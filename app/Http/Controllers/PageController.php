@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\NhaTuyenDung;
 use App\ChungChi;
 use App\TrinhDo;
@@ -13,6 +14,7 @@ use App\KyNangXinViec;
 use App\PhieuDangTuyen;
 use App\User;
 use App\LoaiTaiKhoan;
+
 class PageController extends Controller
 {
     public function __construct(){
@@ -236,9 +238,66 @@ class PageController extends Controller
     public function getTaoHoSo(){
         return view('page.tao-ho-so');
     }
-
+    //  dang tin tuyen dung
     public function getTaoPhieuDangTuyen(){
-        return view('page.dang-tin-tuyen-dung');
+        $trinhdo=TrinhDo::all();
+        $chuyennganh=ChuyenNganh::all();
+        $chungchi=ChungChi::all();
+        return view('page.dang-tin-tuyen-dung',['trinhdo'=>$trinhdo,'chuyennganh'=>$chuyennganh,'chungchi'=>$chungchi]);
+    }
+    public function postTaoPhieuDangTuyen(Request $request){
+        $this->validate($request,
+        [
+            'TieuDe'=>'required|min:3|max:100',
+            'ViTriTuyenDung'=>'required|min:3|max:100',
+            'MoTaCV'=>'required|min:3|max:2500',
+            'NoiLamViec'=>'required|min:3|max:500',
+            'ThoiHanNopHoSo'=>'required',
+        ],
+        [
+            'TieuDe.required'=>'Bạn không được để trống tiêu đề',
+            'TieuDe.min'=>'Bạn nhập tiêu đề ít nhất 3 ký tự',
+            'TieuDe.max'=>'Bạn phải nhập tiêu đề ít hơn 100 ký tự',
+            'ViTriTuyenDung.required'=>'Bạn không được để trống vị trí tuyển dụng',
+            'ViTriTuyenDung.min'=>'Bạn nhập vị trí tuyển dụng ít nhất 3 ký tự',
+            'ViTriTuyenDung.max'=>'Bạn phải nhập vị trí tuyển dụng ít hơn 100 ký tự',
+            'MoTaCV.required'=>'Bạn không được để trống mô tả công việc',
+            'MoTaCV.min'=>'Bạn nhập mô tả công việc ít nhất 3 ký tự',
+            'MoTaCV.max'=>'Bạn phải nhập mô tả công việc ít hơn 2500 ký tự',
+            'NoiLamViec.required'=>'Bạn không được để trống nơi làm việc',
+            'NoiLamViec.min'=>'Bạn nhập nơi làm việc ít nhất 3 ký tự',
+            'NoiLamViec.max'=>'Bạn phải nhập nơi làm việc ít hơn 500 ký tự',
+            'ThoiHanNopHoSo.required'=>'Bạn không được để trống thời hạn nộp hồ sơ',
+        ]);
+        DB::beginTransaction();
+        try {
+        $phieudangtuyen = new PhieuDangTuyen();
+        $phieudangtuyen->TieuDe=$request->TieuDe;
+        $phieudangtuyen->ViTriTuyenDung=$request->ViTriTuyenDung;
+        $phieudangtuyen->SoLuongTuyenDung=$request->SoLuongTuyenDung;
+        $phieudangtuyen->MoTaCV=$request->MoTaCV;
+        $phieudangtuyen->MaTrinhDo = $request->MaTrinhDo;
+        $phieudangtuyen->MaNganh = $request->MaNganh;
+        $phieudangtuyen->MaChungChi = $request->MaChungChi;
+        $phieudangtuyen->YeuCauKinhNghiem = $request->YeuCauKinhNghiem;
+        $phieudangtuyen->NoiLamViec = $request->NoiLamViec;
+        $phieudangtuyen->LuongKhoiDiem = $request->LuongKhoiDiem;
+        $phieudangtuyen->ThoiHanNopHoSo = $request->ThoiHanNopHoSo;
+        $phieudangtuyen->MaNTD = Auth::user()->id;
+        $phieudangtuyen->Hot = 0;
+        $phieudangtuyen->save();
+        DB::commit();
+        }
+        catch (Exception $e) {
+            DB::rollBack();
+            $validator->addMessage("Có lỗi xảy ra!!! Vui lòng kiểm tra lại");
+        }
+
+    $trinhdo=TrinhDo::all();
+    $chuyennganh=ChuyenNganh::all();
+    $chungchi=ChungChi::all();
+    $messageSuccess = "Xin chúc mừng. Bạn đã tạo phiếu đăng tuyển thành công.";
+    return view('page.dang-tin-tuyen-dung', ['messageSuccess' => $messageSuccess,'trinhdo'=>$trinhdo,'chuyennganh'=>$chuyennganh,'chungchi'=>$chungchi]);
     }
     
     public function getNhaTuyenDung(){

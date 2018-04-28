@@ -109,7 +109,7 @@ class TaikhoanController extends Controller
             public function getDangxuat(){
                 Auth::logout();
                 
-                return redirect('admin/dangnhap');
+                return redirect('/');
                 
             }
 }
