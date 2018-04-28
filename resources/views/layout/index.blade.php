@@ -20,13 +20,10 @@
     <link type="text/css" rel="stylesheet" href="style_home/cdn/asset/home/plugins_frontend/Datepicker/css/BeatPicker.min3dad.css?v=20180412_5">
     <link type="text/css" rel="stylesheet" href="style_home/cdn/asset/home/css/layout3dad.css?v=20180412_5">
     <link type="text/css" rel="stylesheet" href="style_home/cdn/asset/home/css/style3dad.css?v=20180412_5">
-
-    {{-- fontanwesome --}}
     <link rel="stylesheet" href="fontAnwesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="fontAnwesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="fontAnwesome/css/fontawesome.css">
     <link rel="stylesheet" href="fontAnwesome/css/fontawesome.min.css">
-    {{-- fontanwesome --}}
 
     <link type="text/css" rel="stylesheet" href="style_home/cdn/asset/home/plugins_frontend/iCheck/skins/minimal/aero3dad.css?v=20180412_5">
 
@@ -90,5 +87,7 @@
     {{-- section --}}
     @yield('content')
     {{-- section --}}
+
+    @include('layout.footer')
 </body>
 </html>

@@ -90,14 +90,11 @@ class TaikhoanController extends Controller
                 $this->validate($request,
                 [
                     'email'=>'required',
-                    'password'=>'required|min:7|max:7',
-                   
+                    'password'=>'required',
                 ],
                 [
                     'email.required'=>'Bạn không được để trống tên đăng nhập',
-                    'password.required'=>'Bạn không được để trống mật khẩu',
-                    'password.min'=>'Bạn nhập nhập đủ 7 ký tự',
-                    'password.max'=>'Bạn phải nhập đủ 7 ký tự',
+                    'password.required'=>'Bạn không được để trống mật khẩu'
                 ]);
                 $email=$request->email;
                 $password=$request->password;

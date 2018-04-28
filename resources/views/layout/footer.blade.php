@@ -250,18 +250,4 @@
     <div id='bttop'></div>
 </div>
 
-<div class="frame-top">
-    <div class="btn-fix fix-one">
-        <a rel="nofollow" href="nha-tuyen-dung/dang-ky-tu-van-tuyen-dung.html">
-            <p>Nhà tuyển dụng đăng ký tư vấn</p>
-        </a>
-    </div>
-
-    <div class="btn-fix fix-two">
-        <a rel="nofollow" href="nguoi-tim-viec/dang-ky-tu-van-tim-viec.html">
-            <p>Người tìm việc đăng ký tư vấn</p>
-        </a>
-    </div>
-</div>
-
 <div class="tooltip-input"></div>

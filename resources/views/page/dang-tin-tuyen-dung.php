@@ -21,7 +21,7 @@
                         <div class="box_hsmp_pink">Quý khách đang sử dụng tài khoản
                             <span class="bold">MIỄN PHÍ</span> bị giới hạn về số lượng tin đăng và quyền xem thông tin ứng viên.
                             <br> Hãy
-                            <a href="http://baogia.timviecnhanh.com/" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="bold red">Nâng cấp tài khoản</span>
                             </a>
                             để tuyển dụng nhanh và hiệu quả với nhiều quyền lợi hấp dẫn.

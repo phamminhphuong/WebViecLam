@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Http\Controllers;
 
@@ -118,7 +118,7 @@ class QuangcaoController extends Controller
                 $quangcao->HinhAnh=$HinhAnh;
             }
             else{
-               
+
             }
             $quangcao->ThoiHanDangQC=$request->ThoiHanDangQC;
             $quangcao->ChiPhi=$request->ChiPhi;
