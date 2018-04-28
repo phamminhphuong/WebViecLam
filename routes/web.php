@@ -105,15 +105,7 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
         Route::get('detail/{id}','HosoxinviecController@getDetail');
     });
     
-    // hop dong quang cao
-    Route::group(['prefix' => 'hopdongquangcao'], function() {
-        Route::get('list','HopdongquangcaoController@getList');
-        Route::get('add','HopdongquangcaoController@getAdd');
-        Route::post('add','HopdongquangcaoController@postAdd');
-        Route::get('delete/{id}','HopdongquangcaoController@getDelete');
-        Route::get('detail/{id}','HopdongquangcaoController@getDetail');
-    });
-    //  quang cao
+       //  quang cao
     Route::group(['prefix' => 'quangcao'], function() {
         Route::get('list','QuangcaoController@getList');
         Route::get('add','QuangcaoController@getAdd');
@@ -161,3 +153,4 @@ Route::get('nhatuyendung-dangtintuyendung','PageController@getTaoPhieuDangTuyen'
 
 //  nha tuyen dung
 Route::get('nhatuyendung','PageController@getNhaTuyenDung');
+

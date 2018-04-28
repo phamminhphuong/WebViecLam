@@ -27,15 +27,14 @@ class CreateHoSoXinViecTable extends Migration
             $table->string('HoTen');
             $table->date('NgaySinh');
             $table->string('GioiTinh');
-            $table->string('DiaChi');
+            $table->text('DiaChi');
             $table->string('DienThoai');
-            // $table->string('Email',191)->unique();
             $table->string('TinhTrangHonNhan');
             $table->float('LuongKhoiDiem', 8, 2);
             $table->string('NoiLamViec');
-            $table->string('KinhNghiem');
+            $table->text('KinhNghiem');
             $table->string('HinhAnh');
-            $table->string('NguyenVongLamViec');
+            $table->text('NguyenVongLamViec');
             $table->timestamps();
         });
     }

@@ -24,13 +24,14 @@ class CreatePhieuDangTuyenTable extends Migration
             $table->integer('MaChungChi')->unsigned();
             $table->foreign('MaChungChi')->references('id')->on('chungchi')->onDelete('cascade');
             $table->string('TieuDe');
-            $table->string('ViTriTuyenDung');
-            $table->string('MoTaCV');
+            $table->text('ViTriTuyenDung');
+            $table->text('MoTaCV');
             $table->date('ThoiHanNopHoSo');
             $table->integer('SoLuongTuyenDung');
-            $table->string('NoiLamViec');
-            $table->string('YeuCauKinhNghiem');
+            $table->text('NoiLamViec');
+            $table->text('YeuCauKinhNghiem');
             $table->float('LuongKhoiDiem', 8, 2);
+            $table->boolean('Hot');
             $table->timestamps();
         });
     }

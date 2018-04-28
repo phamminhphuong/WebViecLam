@@ -134,7 +134,7 @@ class HosoxinviecController extends Controller
                     $hosoxinviec->HinhAnh=$HinhAnh;
                 }
                 else{
-                    $hosoxinviec->HinhAnh="";
+                   
                 }
 
                 $hosoxinviec->save();

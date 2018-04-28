@@ -16,11 +16,10 @@ class CreateNhaTuyenDungTable extends Migration
         Schema::create('nhatuyendung', function (Blueprint $table) {
             $table->increments('id');
             $table->string('TenNTD');
-            $table->string('DiaChi');
+            $table->text('DiaChi');
             $table->string('DienThoai');
-            // $table->string('Email',191)->unique();
             $table->string('DiaChiWeb');
-            $table->string('GioiThieu');
+            $table->text('GioiThieu');
             $table->string('HinhAnh');
             $table->integer('MaTaiKhoan')->unsigned();
             $table->foreign('MaTaiKhoan')->references('id')->on('users')->onDelete('cascade');

@@ -139,18 +139,7 @@
               <li><a href="admin/quangcao/add"><i class="far fa-circle small"> </i>  Thêm quảng cáo</a></li>
             </ul>
           </li>
-        <li class="treeview">
-            <a href="#">
-              <i class="fab fa-cc-visa"></i> <span> Hợp đồng quảng cáo</span>
-              <span class="pull-right-container"> 
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active"><a href="admin/hopdongquangcao/list"><i class="far fa-circle small"> </i> Danh sách hợp đồng</a></li>
-              <li><a href="admin/hopdongquangcao/add"><i class="far fa-circle small"> </i>  Thêm hợp đồng</a></li>
-            </ul>
-          </li>
+       
         <li class="treeview">
             <a href="#">
               <i class="fas fa-graduation-cap"></i> <span> Kỹ năng xin việc</span>

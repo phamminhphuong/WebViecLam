@@ -105,6 +105,14 @@
                     {!!$phieudangtuyen->LuongKhoiDiem!!}
                 </dd>
             </dl>
+            <dl class="dl-horizontal">
+                <dt>
+                   Hot
+                </dt>
+                <dd>
+                    {!!$phieudangtuyen->Hot!!}
+                </dd>
+            </dl>
             <br>
             <br>
         </div>

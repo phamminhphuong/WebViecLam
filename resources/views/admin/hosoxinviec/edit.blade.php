@@ -26,7 +26,7 @@ Sửa hồ sơ xin việc
                     <div class="col-md-10">
                         <select class="form-control" id="MaTaiKhoan" name="MaTaiKhoan">
                             @foreach($taikhoan as $tk)
-                            <option @if($tk->id==$hosoxinviec->MaTaiKhoan) {!!"selected"!!}@endif value="{!!$tk->id!!}">{!!$tk->TenTaiKhoan!!}</option>
+                            <option @if($tk->id==$hosoxinviec->MaTaiKhoan) {!!"selected"!!}@endif value="{!!$tk->id!!}">{!!$tk->email!!}</option>
                             @endforeach
                         </select>
                     </div>

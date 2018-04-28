@@ -34,7 +34,6 @@ class KynangxinviecController extends Controller
         $kynangxinviec=new KyNangXinViec();
         $kynangxinviec->TieuDe=$request->TieuDe;
         $kynangxinviec->NoiDung=$request->NoiDung;
-        $kynangxinviec->HinhAnh=$request->HinhAnh;
         $kynangxinviec->MaNTD=$request->MaNTD;
         if($request->hasFile('HinhAnh'))
         {
@@ -73,7 +72,6 @@ class KynangxinviecController extends Controller
         $kynangxinviec=KyNangXinViec::find($id);
         $kynangxinviec->TieuDe=$request->TieuDe;
         $kynangxinviec->NoiDung=$request->NoiDung;
-        $kynangxinviec->HinhAnh=$request->HinhAnh;
         $kynangxinviec->MaNTD=$request->MaNTD;
         if($request->hasFile('HinhAnh'))
         {
@@ -84,7 +82,7 @@ class KynangxinviecController extends Controller
             $kynangxinviec->HinhAnh=$HinhAnh;
         }
         else{
-            $kynangxinviec->HinhAnh='';
+           
         }
         $kynangxinviec->save();
         return redirect('admin/kynangxinviec/list');

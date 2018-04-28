@@ -23,6 +23,14 @@
             </dl>
             <dl class="dl-horizontal">
                 <dt>
+                   Nhà tuyển dụng
+                </dt>
+                <dd>
+                    {!!$quangcao->nhatuyendung->TenNTD!!}
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>
                    Tiêu đề
                 </dt>
                 <dd>
@@ -43,6 +51,62 @@
                 </dt>
                 <dd>
                     {!!$quangcao->ThoiHanDangQC!!}
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>
+                 Nội dung
+                </dt>
+                <dd>
+                    {!!$quangcao->NoiDung!!}
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>
+                 Chi phí
+                </dt>
+                <dd>
+                    {!!$quangcao->ChiPhi!!}
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>
+                 Khách hàng xác nhận
+                </dt>
+                <dd>
+                        @if($quangcao->KhachHangXacNhan)
+                            {!!"Đã xác nhận"!!}
+                        @else
+                              {!!"Chưa xác nhận"!!}
+                        @endif
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>
+                 Admin xác nhận
+                </dt>
+                <dd>
+                        @if($quangcao->AdminXacNhan)
+                        {!!"Đã xác nhận"!!}
+                    @else
+                          {!!"Chưa xác nhận"!!}
+                    @endif
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>
+                 Link
+                </dt>
+                <dd>
+                    {!!$quangcao->Link!!}
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>
+                 Ưu tiên
+                </dt>
+                <dd>
+                    {!!$quangcao->AdminXacNhan!!}
                 </dd>
             </dl>
 

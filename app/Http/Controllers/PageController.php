@@ -69,4 +69,7 @@ class PageController extends Controller
         return view('page.nhatuyendung');
     }
 
+
+ 
+
 }

@@ -17,7 +17,7 @@ class Adminlogin_middleware
     {
         if(Auth::check()){
             $user=Auth::user();
-            if($user->MaLoaiTaiKhoan==4){
+            if($user->MaLoaiTaiKhoan==1){
                 return $next($request);
             }
             else{

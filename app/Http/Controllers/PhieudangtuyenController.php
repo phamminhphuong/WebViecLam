@@ -24,32 +24,32 @@ class PhieudangtuyenController extends Controller
                 return view('admin.phieudangtuyen.add',['nhatuyendung'=>$nhatuyendung,'chuyennganh'=>$chuyennganh,'trinhdo'=>$trinhdo,'chungchi'=>$chungchi]);
             }
             public function postAdd(Request $request){
-                $this->validate($request,
-                [
-                    'TieuDe'=>'required|min:3|max:100',
-                    'ViTriTuyenDung'=>'required|min:3|max:100',
-                    'MoTaCV'=>'required|min:3|max:500',
-                    'NoiLamViec'=>'required|min:3|max:500',
-                    'ThoiHanNopHoSo'=>'required',
-                    'SoLuongTuyenDung'=>'integer',
-                ],
-                [
-                    'TieuDe.required'=>'Bạn không được để trống tiêu đề',
-                    'TieuDe.min'=>'Bạn nhập tiêu đề ít nhất 3 ký tự',
-                    'TieuDe.max'=>'Bạn phải nhập tiêu đề ít hơn 100 ký tự',
-                    'ViTriTuyenDung.required'=>'Bạn không được để trống vị trí tuyển dụng',
-                    'ViTriTuyenDung.min'=>'Bạn nhập vị trí tuyển dụng ít nhất 3 ký tự',
-                    'ViTriTuyenDung.max'=>'Bạn phải nhập vị trí tuyển dụng ít hơn 100 ký tự',
-                    'MoTaCV.required'=>'Bạn không được để trống mô tả công việc',
-                    'MoTaCV.min'=>'Bạn nhập mô tả công việc ít nhất 3 ký tự',
-                    'MoTaCV.max'=>'Bạn phải nhập mô tả công việc ít hơn 500 ký tự',
-                    'NoiLamViec.required'=>'Bạn không được để trống nơi làm việc',
-                    'NoiLamViec.min'=>'Bạn nhập nơi làm việc ít nhất 3 ký tự',
-                    'NoiLamViec.max'=>'Bạn phải nhập nơi làm việc ít hơn 500 ký tự',
-                    'ThoiHanNopHoSo.required'=>'Bạn không được để trống thời hạn nộp hồ sơ',
-                    'SoLuongTuyenDung.integer'=>'Bạn phải nhập số lượng dương',
+                // $this->validate($request,
+                // [
+                //     'TieuDe'=>'required|min:3|max:100',
+                //     'ViTriTuyenDung'=>'required|min:3|max:100',
+                //     'MoTaCV'=>'required|min:3|max:500',
+                //     'NoiLamViec'=>'required|min:3|max:500',
+                //     'ThoiHanNopHoSo'=>'required',
+                //     'SoLuongTuyenDung'=>'integer',
+                // ],
+                // [
+                //     'TieuDe.required'=>'Bạn không được để trống tiêu đề',
+                //     'TieuDe.min'=>'Bạn nhập tiêu đề ít nhất 3 ký tự',
+                //     'TieuDe.max'=>'Bạn phải nhập tiêu đề ít hơn 100 ký tự',
+                //     'ViTriTuyenDung.required'=>'Bạn không được để trống vị trí tuyển dụng',
+                //     'ViTriTuyenDung.min'=>'Bạn nhập vị trí tuyển dụng ít nhất 3 ký tự',
+                //     'ViTriTuyenDung.max'=>'Bạn phải nhập vị trí tuyển dụng ít hơn 100 ký tự',
+                //     'MoTaCV.required'=>'Bạn không được để trống mô tả công việc',
+                //     'MoTaCV.min'=>'Bạn nhập mô tả công việc ít nhất 3 ký tự',
+                //     'MoTaCV.max'=>'Bạn phải nhập mô tả công việc ít hơn 500 ký tự',
+                //     'NoiLamViec.required'=>'Bạn không được để trống nơi làm việc',
+                //     'NoiLamViec.min'=>'Bạn nhập nơi làm việc ít nhất 3 ký tự',
+                //     'NoiLamViec.max'=>'Bạn phải nhập nơi làm việc ít hơn 500 ký tự',
+                //     'ThoiHanNopHoSo.required'=>'Bạn không được để trống thời hạn nộp hồ sơ',
+                //     'SoLuongTuyenDung.integer'=>'Bạn phải nhập số lượng dương',
            
-                ]);
+                // ]);
                 $phieudangtuyen=new PhieuDangTuyen();
                 $phieudangtuyen->MaNTD=$request->MaNTD;
                 $phieudangtuyen->MaNganh =$request->MaNganh;
@@ -68,6 +68,13 @@ class PhieudangtuyenController extends Controller
                     $phieudangtuyen->YeuCauKinhNghiem='';
                 }
                 $phieudangtuyen->LuongKhoiDiem=$request->LuongKhoiDiem;
+                if($request->Hot='true'){
+                    $phieudangtuyen->Hot=1;
+                }
+                else{
+                    $phieudangtuyen->Hot=0;
+                }
+                echo $phieudangtuyen;
                 $phieudangtuyen->save();
                 return redirect('admin/phieudangtuyen/list');
             }

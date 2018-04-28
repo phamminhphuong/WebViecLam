@@ -18,6 +18,14 @@ class CreateQuangCaoTable extends Migration
             $table->string('TieuDe');
             $table->string('HinhAnh');
             $table->date('ThoiHanDangQC');
+            $table->text('NoiDung');
+            $table->float('ChiPhi', 8, 2);
+            $table->boolean('KhachHangXacNhan');
+            $table->boolean('AdminXacNhan');
+            $table->string('Link');
+            $table->integer('UuTien');
+            $table->integer('MaNTD')->unsigned();
+            $table->foreign('MaNTD')->references('id')->on('nhatuyendung')->onDelete('cascade');
             $table->timestamps();
         });
     }

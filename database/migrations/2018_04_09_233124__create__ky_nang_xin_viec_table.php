@@ -16,7 +16,7 @@ class CreateKyNangXinViecTable extends Migration
         Schema::create('kynangxinviec', function (Blueprint $table) {
             $table->increments('id');
             $table->string('TieuDe');
-            $table->string('NoiDung'); 
+            $table->text('NoiDung'); 
             $table->string('HinhAnh');
             $table->integer('MaNTD')->unsigned();
             $table->foreign('MaNTD')->references('id')->on('nhatuyendung')->onDelete('cascade');

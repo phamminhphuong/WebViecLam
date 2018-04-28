@@ -14,8 +14,8 @@ class NhaTuyenDung extends Model
     public function PhieuDangTuyen(){
         return $this->hasMany('App\NhaTuyenDung','MaNTD','id');
     }
-    public function HopDongQuangCao(){
-        return $this->hasMany('App\HopDongQuangCao','MaNTD','id');
+    public function QuangCao(){
+        return $this->hasMany('App\QuangCao','MaNTD','id');
     }
     public function KyNangXinViec(){
         return $this->hasMany('App\KyNangXinViec','MaNTD','id');

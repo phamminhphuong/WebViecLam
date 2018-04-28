@@ -45,7 +45,6 @@ class NhatuyendungController extends Controller
             $nhatuyendung->DienThoai=$request->DienThoai;
             $nhatuyendung->DiaChiWeb=$request->DiaChiWeb;
             $nhatuyendung->GioiThieu=$request->GioiThieu;
-            $nhatuyendung->HinhAnh=$request->HinhAnh;
             $nhatuyendung->MaTaiKhoan=$request->MaTaiKhoan;
             if($request->hasFile('HinhAnh'))
             {
@@ -93,21 +92,20 @@ class NhatuyendungController extends Controller
             $nhatuyendung->DienThoai=$request->DienThoai;
             $nhatuyendung->DiaChiWeb=$request->DiaChiWeb;
             $nhatuyendung->GioiThieu=$request->GioiThieu;
-            $nhatuyendung->HinhAnh=$request->HinhAnh;
             $nhatuyendung->MaTaiKhoan=$request->MaTaiKhoan;
-            if($request->hasFile('HinhAnh'))
-            {
+            if($request->hasFile('HinhAnh')){
                 $file=$request->file('HinhAnh');
                 $name=$file->getClientOriginalName();
-                $HinhAnh=str_random(6)."_".$name;
+                $HinhAnh=str_random(10)."_".$name;
                 $file->move('imageNTD',$HinhAnh);
                 $nhatuyendung->HinhAnh=$HinhAnh;
             }
             else{
-                $nhatuyendung->HinhAnh='';
+               
             }
             $nhatuyendung->save();
             return redirect('admin/nhatuyendung/list');
+         
         }
         // xoa
         public function getDelete($id){
