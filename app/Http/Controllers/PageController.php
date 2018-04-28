@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\NhaTuyenDung;
@@ -160,11 +160,4 @@ class PageController extends Controller
     public function getNhaTuyenDung(){
         return view('page.tim-nhan-vien');
     }
-<<<<<<< HEAD
-
-
- 
-
-=======
->>>>>>> 352ba0e3cead7e58f2ad5ef8d93b27d828e70bd4
 }
