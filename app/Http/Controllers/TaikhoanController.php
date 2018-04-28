@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Http\Controllers;
 
@@ -103,13 +103,11 @@ class TaikhoanController extends Controller
                     return redirect('admin/bangdieukhien/index');
                 }
                 else{
-                    return redirect('admin/dangnhap')->with('thongbao','Đăng nhập không thành công');
+                    return redirect('dang-nhap')->with('thongbao','Đăng nhập không thành công');
                 }
             }
             public function getDangxuat(){
                 Auth::logout();
-                
                 return redirect('/');
-                
             }
 }
