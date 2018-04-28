@@ -90,5 +90,7 @@
     {{-- section --}}
     @yield('content')
     {{-- section --}}
+
+    @include('layout.footer')
 </body>
 </html>

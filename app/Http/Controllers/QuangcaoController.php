@@ -77,7 +77,7 @@ class QuangcaoController extends Controller
                 $quangcao->HinhAnh=$HinhAnh;
             }
             else{
-                $quangcao->HinhAnh='';
+                
             }
             $quangcao->save();
             return redirect('admin/quangcao/list');

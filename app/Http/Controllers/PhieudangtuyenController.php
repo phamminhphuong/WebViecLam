@@ -28,7 +28,6 @@ class PhieudangtuyenController extends Controller
                 [
                     'TieuDe'=>'required|min:3|max:100',
                     'ViTriTuyenDung'=>'required|min:3|max:100',
-                    'MoTaCV'=>'required|min:3|max:500',
                     'NoiLamViec'=>'required|min:3|max:500',
                     'ThoiHanNopHoSo'=>'required',
                     'SoLuongTuyenDung'=>'integer',
@@ -42,7 +41,6 @@ class PhieudangtuyenController extends Controller
                     'ViTriTuyenDung.max'=>'Bạn phải nhập vị trí tuyển dụng ít hơn 100 ký tự',
                     'MoTaCV.required'=>'Bạn không được để trống mô tả công việc',
                     'MoTaCV.min'=>'Bạn nhập mô tả công việc ít nhất 3 ký tự',
-                    'MoTaCV.max'=>'Bạn phải nhập mô tả công việc ít hơn 500 ký tự',
                     'NoiLamViec.required'=>'Bạn không được để trống nơi làm việc',
                     'NoiLamViec.min'=>'Bạn nhập nơi làm việc ít nhất 3 ký tự',
                     'NoiLamViec.max'=>'Bạn phải nhập nơi làm việc ít hơn 500 ký tự',
