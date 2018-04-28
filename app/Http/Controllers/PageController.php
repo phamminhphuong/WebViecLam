@@ -126,6 +126,17 @@ class PageController extends Controller
                 $nhatuyendung->MaTaiKhoan = $user->id;
                 $nhatuyendung->DiaChiWeb = $request->DiaChiWeb;
                 $nhatuyendung->HinhAnh = '';
+                if($request->hasFile('HinhAnh')){
+                    $file=$request->file('HinhAnh');
+                    $name=$file->getClientOriginalName();
+                    $HinhAnh=str_random(10)."_".$name;
+                    $file->move('imageNTD',$HinhAnh);
+                    $nhatuyendung->HinhAnh=$HinhAnh;
+                }
+                else{
+                    $nhatuyendung->HinhAnh="";
+                }
+              
                 $nhatuyendung->save();
 
                 DB::commit();

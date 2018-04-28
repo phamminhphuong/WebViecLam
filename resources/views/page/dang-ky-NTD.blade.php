@@ -77,6 +77,18 @@
                             </div>
                             <div class="group-field">
                                 <label class="label-form" for="">
+                                    Hình ảnh
+                                    <span class="icon icon-xs icon-hoa-thi"></span>
+                                </label>
+                                <input type="file" id="image" name="HinhAnh" class="form-control">
+                                <div class="block-has-tooltip">
+                                    <div class="tooltip-huong-dan">
+                                       <p>Nhập hình ảnh đại diện cho công ty</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group-field">
+                                <label class="label-form" for="">
                                     Địa chỉ
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
