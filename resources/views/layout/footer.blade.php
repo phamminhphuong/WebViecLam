@@ -85,29 +85,29 @@
                         Người tìm việc </a>
                 </li>
                 <li>
-                    <a style="padding: 12px 15px;" href="nhatuyendung.html" title="Nhà tuyển dụng">
+                    <a style="padding: 12px 15px;" href="#" title="Nhà tuyển dụng">
                         Nhà tuyển dụng </a>
                 </li>
 
                 <li>
-                    <a style="padding: 12px 15px;" href="https://cdn.timviecnhanh.com/asset/home/img/Quydinhbaomat.pdf" rel="nofollow" title="Quy định bảo mật"
+                    <a style="padding: 12px 15px;" href="#" rel="nofollow" title="Quy định bảo mật"
                         target="_blank">
                         Quy định bảo mật
                     </a>
                 </li>
                 <li>
-                    <a style="padding: 12px 15px;" href="https://cdn.timviecnhanh.com/asset/home/img/Dieukhoansudung.pdf" rel="nofollow" title="Điều khoản sử dụng"
+                    <a style="padding: 12px 15px;" href="#" rel="nofollow" title="Điều khoản sử dụng"
                         target="_blank">
                         Điều khoản sử dụng
                     </a>
                 </li>
                 <li>
-                    <a style="padding: 12px 15px;" href="http://baogia.timviecnhanh.com/bao-gia-trang-chu/" rel="nofollow" title="Báo giá" target="_blank">
+                    <a style="padding: 12px 15px;" href="#" rel="nofollow" title="Báo giá" target="_blank">
                         Báo giá
                     </a>
                 </li>
                 <li>
-                    <a style="padding: 12px 15px;" href="https://cdn.timviecnhanh.com/asset/home/img/Quychetimviecnhanh.pdf" rel="nofollow" title="Quy chế Tìm việc nhanh"
+                    <a style="padding: 12px 15px;" href="#" rel="nofollow" title="Quy chế Tìm việc nhanh"
                         target="_blank">
                         Quy chế
                     </a>
@@ -141,21 +141,14 @@
                 </a>
                 <br />
 
-                <a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=5815">
+                <a href="#">
                     <img width="250" alt="" title="" src="image/m.jpg" />
                 </a>
                 <br/>
-                <a href="http://www.dmca.com/Protection/Status.aspx?ID=c7bd6972-da3d-4bcd-9d12-0692c8711372" title="DMCA.com Protection Status"
+                <a href="#" title="DMCA.com Protection Status"
                     class="dmca-badge">
                     <img src="image/l.png" alt="DMCA.com Protection Status">
                 </a>
-                <script src="../images.dmca.com/Badges/DMCABadgeHelper.min.zip"> </script>
-
-                <!--
-        <a href="" title="Tìm việc nhanh">
-            <img src="https://cdn.timviecnhanh.com/asset/home/img/vpct_300x250.gif" alt="Tìm việc nhanh" width="300">
-        </a>
-        -->
             </div>
             <div class="col-xs-8 info-right  offset20 push-left-10" style="margin-top:20px;">
                 <div class="border-b-1">

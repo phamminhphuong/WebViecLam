@@ -74,7 +74,7 @@
                         <ul class="list-menu-nth">
                              @foreach($menu as $cn)
                                 <li>
-                                    <a href="viec-lam-kinh-doanh-c32.html" title="Kinh doanh">
+                                    <a href="category/{!!$cn->id!!}" title="Kinh doanh">
                                         {!!$cn->TenNganh!!}
                                        <i class="fas fa-angle-right icon-arr-head"></i>
                                     </a> 

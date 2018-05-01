@@ -19,6 +19,10 @@ Route::get('dang-tin','PageController@getTaoPhieuDangTuyen');
 Route::post('dang-tin','PageController@postTaoPhieuDangTuyen');
 Route::get('tim-nhan-vien','PageController@getTimNhanVien');
 
+Route::get('post/{id}', 'PageController@getPostDetail');
+Route::get('vendor/{id}', 'PageController@getVendorDetail');
+Route::get('category/{id}', 'PageController@getCategoryDetail');
+
 
 Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
     // dashboard

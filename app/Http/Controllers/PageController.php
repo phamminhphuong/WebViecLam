@@ -379,4 +379,18 @@ class PageController extends Controller
     public function getNhaTuyenDung(){
         return view('page.tim-nhan-vien');
     }
+
+    public function getPostDetail($id) {
+        $post = PhieuDangTuyen::find($id);
+        return view('page.post', ['post' => $post]);
+    }
+    
+    public function getVendorDetail($id) {
+        $vendor = NhaTuyenDung::find($id);
+        return view('page.vendor', ['vendor' => $vendor]);
+    }
+    public function getCategoryDetail($id) {
+        $category = ChuyenNganh::find($id);
+        return view('page.category', ['category' => $category]);
+    }
 }

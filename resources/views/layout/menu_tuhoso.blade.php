@@ -26,11 +26,6 @@
                 <span class="text  color_none_login ">Làm đẹp hồ sơ</span>
                 <span style="color: red; font-style: italic;">(New)</span>
             </a>
-            <a href="https://auth.timviecnhanh.com/login?channel_id=3&amp;channel_key=b5a0cf5eb809b3a83214f7f35a0d29af&amp;channel_name=TIMVIECNHANH_SEEKER&amp;token=0d401cb7e7af8a1bac6c040334783fe9"
-                rel="nofollow" title="Thiết lập thông báo việc làm">
-                <span class="icon  icon_none_login_ntv  icon-sm icon-tao-hs"></span>
-                <span class="text  color_none_login ">Thiết lập thông báo việc làm</span>
-            </a>
         </div>
     </div>
 </div>
