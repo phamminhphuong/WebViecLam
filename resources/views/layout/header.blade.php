@@ -10,28 +10,28 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.html" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
+                        <a href="" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
                             <i class="icon-sprite-hs icon-head-home"></i>
                             Trang chủ
                         </a>
                     </li>
                     <li class="active">
-                        <a rel="nofollow" href="index.html" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
+                        <a rel="nofollow" href="" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
                             <i class="icon-sprite-hs icon-head-ntv"></i>
                             Người tìm việc
                         </a>
                     </li>
                     <li>
-                        <a rel="nofollow" href="nhatuyendung.html" title="Trang nhà tuyển dụng">
+                        <a rel="nofollow" href="#" title="Trang nhà tuyển dụng">
                                 <i class="icon-sprite-hs icon-head-ntv"></i>
                             Nhà tuyển dụng
                         </a>
                     </li>
                     <li>
-                        <a href="goc-nghe-nghiep/indexc990.html?utm_source=timviecnhanh.com&amp;utm_medium=referral&amp;utm_campaign=site-timviecnhanh.com&amp;utm_content=menu-header"
-                            title="Góc nghề nghiệp">
+                        <a href="ky-nang-xin-viec"
+                            title="Kỹ năng xin việc">
                             <i class=" icon-goc-nghe-nghiep "></i>
-                            Góc nghề nghiệp
+                            Kỹ năng xin việc
                         </a>
                     </li>
                 </ul>
@@ -40,7 +40,7 @@
                     <li>
                         <div class="logo">
                             <h1>
-                                <a href="/" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
+                                <a href="" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
                                     <img src="image/l.png" style="height:38px;" alt="Tim viec nhanh" title="Tim viec nhanh tuyển dụng việc làm 24h lương cao">
                                 </a>
                             </h1>
@@ -81,7 +81,7 @@
                                 </li>
                               @endforeach
                             <li>
-                                <a href="viec-lam/danh-sach-nganh.html">
+                                <a href="">
                                     <i class="icon-sprite-hs icon-arr-go-head"></i>
                                     Xem ngành khác
                                 </a>

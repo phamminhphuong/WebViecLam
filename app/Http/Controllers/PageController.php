@@ -19,7 +19,8 @@ class PageController extends Controller
     public function __construct(){
         $categories = ChuyenNganh::all();
         $menu = ChuyenNganh::take(5)->get();
-        view()->share(['categories' => $categories, 'menu' => $menu]);
+        $postsCount = PhieuDangTuyen::all()->count();
+        view()->share(['categories' => $categories, 'menu' => $menu, 'postsCount' => $postsCount]);
         
     }
     public function getTrangChu(){
@@ -392,5 +393,15 @@ class PageController extends Controller
     public function getCategoryDetail($id) {
         $category = ChuyenNganh::find($id);
         return view('page.category', ['category' => $category]);
+    }
+
+    public function getSkills() {
+        $skills = KyNangXinViec::all();
+        return view('page.ky-nang-xin-viec', ['skills'=> $skills]);
+    }
+
+    public function getSkillDetail($id) {
+        $skill = KyNangXinViec::find($id);
+        return view('page.chi-tiet-ky-nang-xin-viec', ['skill' => $skill]);
     }
 }

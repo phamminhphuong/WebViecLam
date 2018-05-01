@@ -23,6 +23,9 @@ Route::get('post/{id}', 'PageController@getPostDetail');
 Route::get('vendor/{id}', 'PageController@getVendorDetail');
 Route::get('category/{id}', 'PageController@getCategoryDetail');
 
+Route::get('ky-nang-xin-viec', 'PageController@getSkills');
+Route::get('ky-nang-xin-viec/{id}', 'PageController@getSkillDetail');
+
 
 Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
     // dashboard
