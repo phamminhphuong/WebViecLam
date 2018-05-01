@@ -404,4 +404,15 @@ class PageController extends Controller
         $skill = KyNangXinViec::find($id);
         return view('page.chi-tiet-ky-nang-xin-viec', ['skill' => $skill]);
     }
+
+    public function search(Request $request) {
+        $keyword = $request->keyword;
+        $category = $request->category;
+
+        $posts = PhieuDangTuyen::orWhere('TieuDe', 'like', '%' . $keyword . '%');
+        if($category) {
+            $posts = $posts ->where('MaNganh', $category);
+        }
+        return view('page.tim-kiem', ['posts' => $posts->get()]);
+    }
 }

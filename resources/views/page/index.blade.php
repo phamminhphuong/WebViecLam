@@ -435,13 +435,15 @@
                         </h3>
                     </header>
                     <div class="content-sidebar">
-                        <form id="box-right-home-job-search" action="#" method="GET" enctype="multipart/form-data">
+                        <form id="box-right-home-job-search" action="tim-kiem" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="content-search-advance">
-                                <input value="" type="text" class="input-style" placeholder="Nhập từ khóa" name="tu_khoa">
-
-                                <select class="select-style" name="nganh_nghe[]" id="linhvuc">
+                                <input value="" type="text" class="input-style" placeholder="Nhập từ khóa" name="keyword">
+                                <select class="select-style" name="category" id="linhvuc">
                                     <option value="">Chọn ngành nghề</option>
-                                    <option value="32">Kinh doanh</option>
+                                    @foreach($categories as $item)
+                                    <option value="{!!$item->id!!}">{!!$item->TenNganh!!}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="text-center">

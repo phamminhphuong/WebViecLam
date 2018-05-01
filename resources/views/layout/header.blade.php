@@ -47,11 +47,12 @@
                         </div>
                     </li>
                     <li>
-                        <form id="job_advance_search" role="form" action="#" method="GET" class="form-inline form-search-top"
+                        <form id="job_advance_search" role="form" action="tim-kiem" method="POST" class="form-inline form-search-top"
                             enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="text" id="key-s" name="tu_khoa" value="" class="form-control col-xs-" placeholder="Nhập tên công việc, vị trí...">
                             <div class="style-flat">
-                                <select name="nganh_nghe[]" class="select-style">
+                                <select name="category" class="select-style">
                                     <option value="">Chọn ngành nghề</option>
                                     @foreach($categories as $cn)
                                         <option value="{!!$cn->id!!}">{!!$cn->TenNganh!!}</option>
