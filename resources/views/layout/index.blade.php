@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="fontAnwesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="fontAnwesome/css/fontawesome.css">
     <link rel="stylesheet" href="fontAnwesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
 
     <link type="text/css" rel="stylesheet" href="style_home/cdn/asset/home/plugins_frontend/iCheck/skins/minimal/aero3dad.css?v=20180412_5">
 

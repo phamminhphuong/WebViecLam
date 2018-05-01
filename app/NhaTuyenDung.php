@@ -12,7 +12,7 @@ class NhaTuyenDung extends Model
         return $this->belongsTo('App\User','MaTaiKhoan','id');
     }
     public function PhieuDangTuyen(){
-        return $this->hasMany('App\NhaTuyenDung','MaNTD','id');
+        return $this->hasMany('App\PhieuDangTuyen','MaNTD','id');
     }
     public function QuangCao(){
         return $this->hasMany('App\QuangCao','MaNTD','id');
