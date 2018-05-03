@@ -25,9 +25,9 @@ class PageController extends Controller
     }
     public function getTrangChu(){
 
-        $newPosts1 = PhieuDangTuyen::take(10)->get();
-        $newPosts2 = PhieuDangTuyen::skip(10)->take(10)->get();
-        $newPosts3 = PhieuDangTuyen::skip(20)->take(10)->get();
+        $newPosts1 = PhieuDangTuyen::orderBy('created_at', 'desc')->take(10)->get();
+        $newPosts2 = PhieuDangTuyen::orderBy('created_at', 'desc')->skip(10)->take(10)->get();
+        $newPosts3 = PhieuDangTuyen::orderBy('created_at', 'desc')->skip(20)->take(10)->get();
 
 
         $postsByCategory = DB::select("select cn.id, cn.TenNganh, count(pdt.id) as soLuong from chuyennganh cn 
@@ -38,8 +38,8 @@ class PageController extends Controller
         $fastestPosts = PhieuDangTuyen::take(10)->get();
         $postsForYou = PhieuDangTuyen::take(10)->get();
 
-        $bestSalaryPosts1 = PhieuDangTuyen::take(10)->get();
-        $bestSalaryPosts2 = PhieuDangTuyen::skip(10)->take(10)->get();
+        $bestSalaryPosts1 = PhieuDangTuyen::Where('LuongKhoiDiem','>=',10)->take(10)->get();
+        $bestSalaryPosts2 = PhieuDangTuyen::Where('LuongKhoiDiem','>=',10)->skip(10)->take(10)->get();
 
         $phieudangtuyen_hot=PhieuDangTuyen::Where('LuongKhoiDiem','>',5)->get();
 
@@ -439,7 +439,7 @@ class PageController extends Controller
     // 
     public function getLuong10trieu(){
         $phieudangtuyen=PhieuDangTuyen::Where('LuongKhoiDiem','>=',10)->get();
-        return view('page.luong-10-trieu',['phieudangtuyen'=>$phieudangtuyen]);
+        return view('page.luong-10-trieu',['phieudangtuyen' => $phieudangtuyen]);
     }
     //  goi y nguoi tim viec khi tao ho so
     public function getGoiyNTV(){
