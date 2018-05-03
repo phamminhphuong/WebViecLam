@@ -18,7 +18,7 @@ class PageController extends Controller
 {
     public function __construct(){
         $categories = ChuyenNganh::all();
-        $menu = ChuyenNganh::take(5)->get();
+        $menu = ChuyenNganh::take(6)->get();
         $postsCount = PhieuDangTuyen::all()->count();
         view()->share(['categories' => $categories, 'menu' => $menu, 'postsCount' => $postsCount]);
         

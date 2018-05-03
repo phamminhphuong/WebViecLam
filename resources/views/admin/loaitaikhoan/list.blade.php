@@ -61,8 +61,8 @@ Danh sách loại tài khoản
                                     </td>
                                     <td>
                                         <a href="admin/loaitaikhoan/edit/{!!$ltk->id!!}">Sửa</a> |
-                                        <a href="admin/loaitaikhoan/detail/{!!$ltk->id!!}">Chi tiết</a> |
-                                        <a href="admin/loaitaikhoan/delete/{!!$ltk->id!!}">Xóa</a>
+                                        <a href="admin/loaitaikhoan/detail/{!!$ltk->id!!}">Chi tiết</a>
+                                        
                                     </td>
                                 </tr>
                                 @endforeach
