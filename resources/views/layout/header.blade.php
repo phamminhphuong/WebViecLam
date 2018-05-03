@@ -10,7 +10,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.html" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
+                        <a href="/" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
                             <i class="icon-sprite-hs icon-head-home"></i>
                             Trang chủ
                         </a>

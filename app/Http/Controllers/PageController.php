@@ -252,7 +252,7 @@ class PageController extends Controller
             'TieuDe'=>'required|min:3|max:100',
             'HoTen'=>'required|min:3|max:100',
             'DiaChi'=>'required|min:3|max:200',
-            'DienThoai'=>'required|min:10|max:12',
+            'DienThoai'=>'required|min:9|max:12',
             'NgaySinh'=>'required',
         ],
         [
