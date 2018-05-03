@@ -278,12 +278,12 @@
                                     <b>Lương: {!!$post->LuongKhoiDiem!!} triệu</b>
                                 </span>
                                 <span class="clearfix"></span>
-                                <a href="tuyen-ky-su-hien-truong-ha-noi-4105658.html" class="item " title="Kỹ Sư Hiện Trường">
-                                    <span class="text">Kỹ Sư Hiện Trường</span>
+                                <a href="post/{!!$post->id!!}" class="item " title="Kỹ Sư Hiện Trường">
+                                    <span class="text">{!!$post->ViTriTuyenDung!!}</span>
                                 </a>
 
 
-                                <a href="vendor/{!!$post->NhaTuyenDung->TenNTD!!}" title="">
+                                <a href="vendor/{!!$post->NhaTuyenDung->id!!}" title="">
                                     <p class="author">{!!$post->NhaTuyenDung->TenNTD!!}</p>
                                 </a>
                             </li>
@@ -297,12 +297,12 @@
                                     <b>Lương: {!!$post->LuongKhoiDiem!!} triệu</b>
                                 </span>
                                 <span class="clearfix"></span>
-                                <a href="tuyen-ky-su-hien-truong-ha-noi-4105658.html" class="item " title="Kỹ Sư Hiện Trường">
-                                    <span class="text">Kỹ Sư Hiện Trường</span>
+                                <a href="post/{!!$post->id!!}" class="item " title="Kỹ Sư Hiện Trường">
+                                    <span class="text">{!!$post->ViTriTuyenDung!!}</span>
                                 </a>
 
 
-                                <a href="vendor/{!!$post->NhaTuyenDung->TenNTD!!}" title="">
+                                <a href="vendor/{!!$post->NhaTuyenDung->id!!}" title="">
                                     <p class="author">{!!$post->NhaTuyenDung->TenNTD!!}</p>
                                 </a>
                             </li>
