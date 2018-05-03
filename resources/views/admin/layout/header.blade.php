@@ -54,7 +54,7 @@
                                 <a href="#" class="btn btn-default btn-flat">Sửa</a>
                             </div>
                             <div class="pull-right">
-                                <a href="admin/dangxuat" class="btn btn-default btn-flat">Đăng xuất</a>
+                                <a href="dang-xuat" class="btn btn-default btn-flat">Đăng xuất</a>
                             </div>
                         </li>
                     </ul>
