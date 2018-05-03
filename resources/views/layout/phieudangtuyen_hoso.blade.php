@@ -3,24 +3,38 @@
     <div class="row ml10 mr10 ">
         <div class="box-create box-create-minisite">
             <div class="btn-create">
-                <a class="btn-create-hs" href="tao-ho-so"
-                    title="Tủ hồ sơ">
+                @if(Auth::check() && Auth::user()->MaLoaiTaiKhoan==3)
+                <a class="btn-create-hs" href="tao-ho-so" title="Tủ hồ sơ">
                     <span class="btn-name">Tạo hồ sơ</span>
                     <span class="btn-des">Tạo hồ sơ ngay để Nhà tuyển dụng nhìn thấy bạn</span>
                     <i class="icon-sprite-hs icon-ths"></i>
                 </a>
+                @else
+                <a class="btn-create-hs" href="dang-nhap" title="Tủ hồ sơ">
+                    <span class="btn-name">Tạo hồ sơ</span>
+                    <span class="btn-des">Tạo hồ sơ ngay để Nhà tuyển dụng nhìn thấy bạn</span>
+                    <i class="icon-sprite-hs icon-ths"></i>
+                </a>
+                @endif
             </div>
             <div class="btn-create btn-create-hsm">
+                @if(Auth::check() && Auth::user()->MaLoaiTaiKhoan==2)
                 <a class="btn-create-hs" href="dang-tin">
                     <span class="txt-head main-color">Đăng tin miễn phí</span>
                     <span class="txt-des">Tiếp cận hàng trăm nghìn người tìm việc</span>
                     <i class="icon-sprite-hs icon-hsm"></i>
                 </a>
+                @else
+                <a class="btn-create-hs" href="dang-nhap">
+                    <span class="txt-head main-color">Đăng tin miễn phí</span>
+                    <span class="txt-des">Tiếp cận hàng trăm nghìn người tìm việc</span>
+                    <i class="icon-sprite-hs icon-hsm"></i>
+                </a>
+                @endif
             </div>
 
             <div class="btn-create login-register text-center">
-                <a rel="nofollow" class="btn-login-home" href="dang-nhap" title="Đăng nhập"
-                    rel="nofollow">
+                <a rel="nofollow" class="btn-login-home" href="dang-nhap" title="Đăng nhập" rel="nofollow">
                     <i class="icon-sprite-hs icon-login-home"></i>
                     <p class="btn-name">Đăng nhập</p>
                 </a>
