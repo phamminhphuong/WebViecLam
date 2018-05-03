@@ -33,6 +33,7 @@ Route::get('tim-kiem', 'PageController@search');
 Route::post('tim-kiem', 'PageController@search');
 
 Route::get('goi-y-nguoitimviec','PageController@getGoiyNTV');
+Route::get('goi-y-nhatuyendung','PageController@getGoiyNTD');
 Route::get('chu-y-dang-tin-tuyen-dung','PageController@getChuyDangTin');
 
 

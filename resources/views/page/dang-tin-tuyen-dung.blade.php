@@ -148,7 +148,7 @@
                             </div>
                             <div class="group-field">
                                 <label class="label-form" for="">
-                                    Ngành chứng chỉ
+                                    Chứng chỉ
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
                                 <div class="group-right">
@@ -165,7 +165,7 @@
                                         <select id="level" name="MaChungChi" style="margin-top:-20px;width:455px;height:32px" tabindex="-1" style="margin-top:-20px;">
                                             <option selected="selected" value="">Chọn chứng chỉ</option>
                                             @foreach($chungchi as $cc)
-                                                <option value="{!!$cc->id!!}">{!!$cc->TenChungChi!!}</option>
+                                                <option value="{!!$cc->id!!}"> {!!$cc->TenChungChi!!}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -188,7 +188,7 @@
                             </div>
                             <div class="group-field">
                                 <label class="label-form" for="">
-                                    Mức lương
+                                    Mức lương (triệu)
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
                                 <input type="number" id="quantity" style="width:435px" name="LuongKhoiDiem" value="0">
@@ -204,9 +204,7 @@
                             <div class="group-field">
                                 <label class="label-form" for=""></label>
                                 <div class="group-right">
-                                    <button name="submit_preview" type="submit" class="btn btn-big btn-bgwhite-tblue mr10 w140 p0" id="submit_preview" value="2">
-                                        Xem trước
-                                    </button>
+                                   
                                     <button name="submit_new" type="submit" class="btn btn-big btn-danger ml10 w140" id="submit_new" value="1">
                                         Đăng tin
                                     </button>

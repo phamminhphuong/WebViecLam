@@ -281,7 +281,6 @@ class PageController extends Controller
             'MaTrinhDo.required'=>'Bạn không được để trống mã trình độ',
             'MaCC.required'=>'Bạn không được để trống mã chứng chỉ',
             'LuongKhoiDiem.required'=>'Bạn không được để trống lương khởi điểm',
-            'LuongKhoiDiem.integer'=>'Bạn không nhập lương là một số',
             'LuongKhoiDiem.max'=>'Bạn nhập lương khởi điểm dưới 1000 triệu',
             'LuongKhoiDiem.min'=>'Bạn nhập lương khởi điểm 1 triệu',
         ]);
@@ -351,6 +350,10 @@ class PageController extends Controller
             'MoTaCV'=>'required|min:3|max:2500',
             'NoiLamViec'=>'required|min:3|max:500',
             'ThoiHanNopHoSo'=>'required',
+            'LuongKhoiDiem'=>'required|min:1|max:3',
+            'MaNganh'=>'required',
+            'MaTrinhDo'=>'required',
+            'MaChungChi'=>'required',
         ],
         [
             'TieuDe.required'=>'Bạn không được để trống tiêu đề',
@@ -366,25 +369,35 @@ class PageController extends Controller
             'NoiLamViec.min'=>'Bạn nhập nơi làm việc ít nhất 3 ký tự',
             'NoiLamViec.max'=>'Bạn phải nhập nơi làm việc ít hơn 500 ký tự',
             'ThoiHanNopHoSo.required'=>'Bạn không được để trống thời hạn nộp hồ sơ',
+            'LuongKhoiDiem.required'=>'Bạn không được để trống lương khởi điểm',
+            'LuongKhoiDiem.max'=>'Bạn nhập lương khởi điểm dưới 1000 triệu',
+            'LuongKhoiDiem.min'=>'Bạn nhập lương khởi điểm 1 triệu',
+            'MaNganh.required'=>'Bạn không được để trống chuyên ngành',
+            'MaTrinhDo.required'=>'Bạn không được để trống mã trình độ',
+            'MaChungChi.required'=>'Bạn không được để trống mã chứng chỉ',
         ]);
         DB::beginTransaction();
         try {
-        $phieudangtuyen = new PhieuDangTuyen();
-        $phieudangtuyen->TieuDe=$request->TieuDe;
-        $phieudangtuyen->ViTriTuyenDung=$request->ViTriTuyenDung;
-        $phieudangtuyen->SoLuongTuyenDung=$request->SoLuongTuyenDung;
-        $phieudangtuyen->MoTaCV=$request->MoTaCV;
-        $phieudangtuyen->MaTrinhDo = $request->MaTrinhDo;
-        $phieudangtuyen->MaNganh = $request->MaNganh;
-        $phieudangtuyen->MaChungChi = $request->MaChungChi;
-        $phieudangtuyen->YeuCauKinhNghiem = $request->YeuCauKinhNghiem;
-        $phieudangtuyen->NoiLamViec = $request->NoiLamViec;
-        $phieudangtuyen->LuongKhoiDiem = $request->LuongKhoiDiem;
-        $phieudangtuyen->ThoiHanNopHoSo = $request->ThoiHanNopHoSo;
-        $phieudangtuyen->MaNTD = Auth::user()->id;
-        $phieudangtuyen->Hot = 0;
-        $phieudangtuyen->save();
-        DB::commit();
+            $id = Auth::user()->id;
+            $ntd = NhaTuyenDung::where('MaTaiKhoan', $id)->first();
+            
+            $phieudangtuyen = new PhieuDangTuyen();
+            $phieudangtuyen->TieuDe=$request->TieuDe;
+            $phieudangtuyen->ViTriTuyenDung = $request->ViTriTuyenDung;
+            $phieudangtuyen->SoLuongTuyenDung=$request->SoLuongTuyenDung;
+            $phieudangtuyen->MoTaCV=$request->MoTaCV;
+            $phieudangtuyen->MaTrinhDo = $request->MaTrinhDo;
+            $phieudangtuyen->MaNganh = $request->MaNganh;
+            $phieudangtuyen->MaChungChi = $request->MaChungChi;
+            $phieudangtuyen->YeuCauKinhNghiem = $request->YeuCauKinhNghiem;
+            $phieudangtuyen->NoiLamViec = $request->NoiLamViec;
+            $phieudangtuyen->LuongKhoiDiem = $request->LuongKhoiDiem;
+            $phieudangtuyen->ThoiHanNopHoSo = $request->ThoiHanNopHoSo;
+            $phieudangtuyen->MaNTD = $ntd->id;
+            $phieudangtuyen->Hot = 0;
+            $phieudangtuyen->save();
+    
+            DB::commit();
         }
         catch (Exception $e) {
             DB::rollBack();
@@ -395,7 +408,9 @@ class PageController extends Controller
     $chuyennganh=ChuyenNganh::all();
     $chungchi=ChungChi::all();
     $messageSuccess = "Xin chúc mừng. Bạn đã tạo phiếu đăng tuyển thành công.";
-    return view('page.dang-tin-tuyen-dung', ['messageSuccess' => $messageSuccess,'trinhdo'=>$trinhdo,'chuyennganh'=>$chuyennganh,'chungchi'=>$chungchi]);
+    // return view('page.dang-tin-tuyen-dung', ['messageSuccess' => $messageSuccess,'trinhdo'=>$trinhdo,'chuyennganh'=>$chuyennganh,'chungchi'=>$chungchi]);
+    $hosoxinviec=HoSoXinViec::Where('MaNganh','=',$phieudangtuyen->MaNganh)->get();
+    return view('page.goi-y-nhatuyendung',['hosoxinviec'=>$hosoxinviec,'phieudangtuyen'=>$phieudangtuyen]);
     }
     
     public function getNhaTuyenDung(){
@@ -444,6 +459,10 @@ class PageController extends Controller
     //  goi y nguoi tim viec khi tao ho so
     public function getGoiyNTV(){
         return view('page.goi-y-nguoitimviec');
+    }
+    //  goi y nguoi tim viec khi tao ho so
+    public function getGoiyNTD(){
+        return view('page.goi-y-nhatuyendung');
     }
     //  chu y dang tin tuyen dung
     public function getChuyDangTin(){

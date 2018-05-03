@@ -160,11 +160,11 @@
 							</div>
 							<div class="group-field">
 								<label for="" class="label1">
-									Lương mong muốn
+									Lương mong muốn (triệu)
 									<span class="icon-hoa-thi"></span>
 								</label>
 								<div class="group-right">
-									<input type="number" name="LuongKhoiDiem" class="w253 input-has-tooltip" value="{!!$hoSo->LuongKhoiDiem!!}" /> triệu
+									<input type="number" name="LuongKhoiDiem" class="w253 input-has-tooltip" value="{!!$hoSo->LuongKhoiDiem!!}" />
 								</div>
 							</div>
 							<div class="group-field">
