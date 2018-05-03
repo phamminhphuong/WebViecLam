@@ -19,7 +19,8 @@ class PageController extends Controller
     public function __construct(){
         $categories = ChuyenNganh::all();
         $menu = ChuyenNganh::take(5)->get();
-        view()->share(['categories' => $categories, 'menu' => $menu]);
+        $postsCount = PhieuDangTuyen::all()->count();
+        view()->share(['categories' => $categories, 'menu' => $menu, 'postsCount' => $postsCount]);
         
     }
     public function getTrangChu(){
@@ -44,6 +45,7 @@ class PageController extends Controller
 
         $promotion1 = QuangCao::take(1)->get()[0];
         $promotion2 = QuangCao::skip(1)->take(1)->get()[0];
+        $number10trieu=count(PhieuDangTuyen::Where('LuongKhoiDiem','>=',10)->get());
 
 
         return view('page.index',
@@ -59,7 +61,8 @@ class PageController extends Controller
                 'bestSalaryPosts1' => $bestSalaryPosts1,
                 'bestSalaryPosts2' => $bestSalaryPosts2,
                 'promotion1' => $promotion1,
-                'promotion2' => $promotion2
+                'promotion2' => $promotion2,
+                'number10trieu'=> $number10trieu
             ]);
     }
     public function getDangKy(){
@@ -254,6 +257,11 @@ class PageController extends Controller
             'DiaChi'=>'required|min:3|max:200',
             'DienThoai'=>'required|min:9|max:12',
             'NgaySinh'=>'required',
+            'MaNganh'=>'required',
+            'MaTrinhDo'=>'required',
+            'MaCC'=>'required',
+            'LuongKhoiDiem'=>'required|min:1|max:3'
+            
         ],
         [
             'TieuDe.required'=>'Bạn không được để trống tiêu đề',
@@ -269,6 +277,13 @@ class PageController extends Controller
             'DienThoai.min'=>'Bạn nhập điện thoại ít nhất 10 ký tự',
             'DienThoai.max'=>'Bạn nhập điện thoại không quá 12 ký tự',
             'NgaySinh.required'=>'Bạn không được để trống ngày sinh',
+            'MaNganh.required'=>'Bạn không được để trống chuyên ngành',
+            'MaTrinhDo.required'=>'Bạn không được để trống mã trình độ',
+            'MaCC.required'=>'Bạn không được để trống mã chứng chỉ',
+            'LuongKhoiDiem.required'=>'Bạn không được để trống lương khởi điểm',
+            'LuongKhoiDiem.integer'=>'Bạn không nhập lương là một số',
+            'LuongKhoiDiem.max'=>'Bạn nhập lương khởi điểm dưới 1000 triệu',
+            'LuongKhoiDiem.min'=>'Bạn nhập lương khởi điểm 1 triệu',
         ]);
 
         DB::beginTransaction();
@@ -282,7 +297,13 @@ class PageController extends Controller
             $hosoxinviec->TieuDe=$request->TieuDe;
             
             $hosoxinviec->NgaySinh=$request->NgaySinh;
-            $hosoxinviec->GioiTinh=$request->GioiTinh;
+            if($request->GioiTinh=='nam'){
+                $hosoxinviec->GioiTinh="Nam";
+            }
+            else{
+                $hosoxinviec->GioiTinh="Nữ";
+            }
+            // $hosoxinviec->GioiTinh=$request->GioiTinh;
             $hosoxinviec->DiaChi=$request->DiaChi;
             $hosoxinviec->DienThoai=$request->DienThoai;
             $hosoxinviec->TinhTrangHonNhan=$request->TinhTrangHonNhan;
@@ -301,7 +322,6 @@ class PageController extends Controller
                 $hosoxinviec->HinhAnh="";
             }
             $hosoxinviec->save();
-
             DB::commit();
         }
         catch (Exception $e) {
@@ -312,7 +332,9 @@ class PageController extends Controller
         $trinhDos = TrinhDo::all();
         $chungChis = ChungChi::all();
         $messageSuccess = "Cập nhật hồ sơ thành công";
-        return view('page.tao-ho-so', ['hoSo'=>$hosoxinviec, 'nganhs'=>$nganhs, 'trinhDos'=>$trinhDos, 'chungChis'=>$chungChis, 'messageSuccess'=>$messageSuccess]);
+        // return view('page.tao-ho-so', ['hoSo'=>$hosoxinviec, 'nganhs'=>$nganhs, 'trinhDos'=>$trinhDos, 'chungChis'=>$chungChis, 'messageSuccess'=>$messageSuccess]);
+        $phieudangtuyen=PhieuDangTuyen::Where('MaNganh','=',$hosoxinviec->MaNganh)->get();
+        return view('page.goi-y-nguoitimviec',['hosoxinviec'=>$hosoxinviec,'phieudangtuyen'=>$phieudangtuyen]);
     }
     //  dang tin tuyen dung
     public function getTaoPhieuDangTuyen(){
@@ -392,5 +414,39 @@ class PageController extends Controller
     public function getCategoryDetail($id) {
         $category = ChuyenNganh::find($id);
         return view('page.category', ['category' => $category]);
+    }
+
+    public function getSkills() {
+        $skills = KyNangXinViec::all();
+        return view('page.ky-nang-xin-viec', ['skills'=> $skills]);
+    }
+
+    public function getSkillDetail($id) {
+        $skill = KyNangXinViec::find($id);
+        return view('page.chi-tiet-ky-nang-xin-viec', ['skill' => $skill]);
+    }
+
+    public function search(Request $request) {
+        $keyword = $request->keyword;
+        $category = $request->category;
+
+        $posts = PhieuDangTuyen::orWhere('TieuDe', 'like', '%' . $keyword . '%');
+        if($category) {
+            $posts = $posts ->where('MaNganh', $category);
+        }
+        return view('page.tim-kiem', ['posts' => $posts->get()]);
+    }
+    // 
+    public function getLuong10trieu(){
+        $phieudangtuyen=PhieuDangTuyen::Where('LuongKhoiDiem','>=',10)->get();
+        return view('page.luong-10-trieu',['phieudangtuyen'=>$phieudangtuyen]);
+    }
+    //  goi y nguoi tim viec khi tao ho so
+    public function getGoiyNTV(){
+        return view('page.goi-y-nguoitimviec');
+    }
+    //  chu y dang tin tuyen dung
+    public function getChuyDangTin(){
+        return view('page.chu-y-dang-tin-tuyen-dung');
     }
 }

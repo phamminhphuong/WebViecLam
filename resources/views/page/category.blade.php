@@ -50,7 +50,7 @@
                                         <b class="">{!!$item->TieuDe!!}</b>
                                     </a>
                                     <a href="vendor/{!!$item->NhaTuyenDung->id!!}" title="">
-                                        <p class="meta">{vendor/{!!$item->NhaTuyenDung->TenNTD!!}}</p>
+                                        <p class="meta">vendor/{!!$item->NhaTuyenDung->TenNTD!!}</p>
                                     </a>
 
                                     <div class="block-manage-job-ntd pb12">

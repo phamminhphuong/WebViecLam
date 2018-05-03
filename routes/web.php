@@ -23,6 +23,18 @@ Route::get('post/{id}', 'PageController@getPostDetail');
 Route::get('vendor/{id}', 'PageController@getVendorDetail');
 Route::get('category/{id}', 'PageController@getCategoryDetail');
 
+Route::get('ky-nang-xin-viec', 'PageController@getSkills');
+Route::get('ky-nang-xin-viec/{id}', 'PageController@getSkillDetail');
+
+Route::get('luong-10-trieu', 'PageController@getLuong10trieu');
+
+
+Route::get('tim-kiem', 'PageController@search');
+Route::post('tim-kiem', 'PageController@search');
+
+Route::get('goi-y-nguoitimviec','PageController@getGoiyNTV');
+Route::get('chu-y-dang-tin-tuyen-dung','PageController@getChuyDangTin');
+
 
 Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
     // dashboard
@@ -31,7 +43,7 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
     });
     // chuyen nganh
     Route::group(['prefix' => 'chuyennganh'], function() {
-        Route::get('list','ChuyennganhController@getList');
+        Route::get('    ','ChuyennganhController@getList');
         Route::get('add','ChuyennganhController@getAdd');
         Route::post('add','ChuyennganhController@postAdd');
         Route::get('edit/{id}','ChuyennganhController@getEdit');

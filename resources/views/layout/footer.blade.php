@@ -3,7 +3,7 @@
     <div class="container">
         <div class="inner10">
             <div class="title text-primary">
-                <img src="../cdn.timviecnhanh.com/asset/home/img/call.png" alt="Hotline miền Bắc" class="img-call"> Hotline cho Nhà tuyển dụng miền Bắc (từ Huế trở ra)
+                <img src="../cdn.timviecnhanh.com/asset/home/img/call.png" alt="Hotline miền Bắc" class="img-call"> Hotline cho Nhà tuyển dụng ở Quảng Nam
             </div>
             <span class="text col-xs-2 no-padding w188">
                 <b class="text-danger">0911 737 526</b>
@@ -20,56 +20,11 @@
             <span class="text col-xs-2 no-padding w188">
                 <b class="text-danger">0918 968 792</b>
                 Ms. Lê Huyền </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0911 737 786</b>
-                Ms. Kim Ngân </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0917 593 899</b>
-                Ms. Ngọc Mai </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0911 423 938</b>
-                Ms. Dung </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0918 968 803</b>
-                Ms. Nga </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0911 737 522</b>
-                Ms. Bẩy </span>
+        
 
             <div class="blank17"></div>
-            <div class="title text-primary">
-                <img src="../cdn.timviecnhanh.com/asset/home/img/call.png" alt="Hotline miền Nam" class="img-call"> Hotline cho Nhà tuyển dụng miền Nam (từ Đà Nẵng trở vào)
-            </div>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0917 278 493</b>
-                Ms. Phúc </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0917 593 896</b>
-                Ms. Thụy Vy </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0917 588 670</b>
-                Ms. Hoàng Dung </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0915 299 337</b>
-                Ms. Khuyên </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0917 998 675</b>
-                Ms. Kim Ly </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0917 278 496</b>
-                Ms. Mai Vi </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0917 593 895</b>
-                Ms. Phạm Thủy </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0911 521 278</b>
-                Ms. Hồng Thảo </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0915 299 339</b>
-                Ms. Thanh Thuý </span>
-            <span class="text col-xs-2 no-padding w188">
-                <b class="text-danger">0917 278 507</b>
-                Ms. Hồng Liên </span>
+           
+    
             <div class="blank0"></div>
         </div>
     </div>
@@ -89,7 +44,7 @@
                         Nhà tuyển dụng </a>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a style="padding: 12px 15px;" href="#" rel="nofollow" title="Quy định bảo mật"
                         target="_blank">
                         Quy định bảo mật
@@ -111,9 +66,9 @@
                         target="_blank">
                         Quy chế
                     </a>
-                </li>
+                </li> --}}
                 <li>
-                    <a style="padding: 12px 15px;" href="goc-nghe-nghiep/index4a3d.html?utm_source=timviecnhanh.com&amp;utm_medium=referral&amp;utm_campaign=site-timviecnhanh.com&amp;utm_content=menu-footer"
+                    <a style="padding: 12px 15px;" href="ky-nang-xin-viec"
                         class="bd-left" title="Góc nghề nghiệp">
                         Góc nghề nghiệp
                     </a>
@@ -191,7 +146,7 @@
                 <p>
                 <a href="" style="font-size:16px">Tìm việc làm -</a>
                 @foreach($categories as $ct)
-                  <a href="" style="font-size:16px">{!!$ct->TenNganh!!} -</a>
+                  <a href="category/{!!$ct->id!!}" style="font-size:16px">{!!$ct->TenNganh!!} -</a>
                 @endforeach
                 </p>
             </div>

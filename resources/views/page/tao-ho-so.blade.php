@@ -84,29 +84,30 @@
 										Ngày sinh
 										<span class="icon icon-xs icon-hoa-thi"></span>
 									</label>
-									<input type="date" name="NgaySinh" class="w253 input-has-tooltip"  value="{!!$hoSo->NgaySinh!!}/>
-									<div class="clearfix"></div>
+									<input type="date" name="NgaySinh" class="w253 input-has-tooltip" value="{!!$hoSo->NgaySinh!!}" />
+									<div class=" clearfix "></div>
 								</div>
-								<div class="group-field">
-									<label class="label1">
+								<div class="group-field ">
+									<label class="label1 ">
 										Giới tính
-										<span class="icon icon-xs icon-hoa-thi"></span>
+										<span class="icon icon-xs icon-hoa-thi "></span>
 									</label>
-									<div class="w253-inline">
-										<select name="GioiTinh" id="" class="w253 input-has-tooltip form-control" style="background: white;padding: 5px 20px;">
-											<option value="Nam" selected>Nam</option>
-											<option value="Nữ">Nữ</option>
+									<div class="w253-inline ">
+										<select name="GioiTinh " id=" " class="w253 input-has-tooltip form-control " style="background: white;padding:
+									 5px 20px; ">
+											<option value="nam" selected>Nam</option>
+											<option value="nu">Nữ</option>
 										</select>
 									</div>
 								</div>
-								<div class="group-field">
-									<label class="label1">
+								<div class="group-field ">
+									<label class="label1 ">
 										Chỗ ở hiện tại
-										<span class="icon icon-xs icon-hoa-thi"></span>
+										<span class="icon icon-xs icon-hoa-thi "></span>
 									</label>
-									<div class="w253-inline">
-										<div class="style-button w218 mb0" style="">
-											<input type="text" id="address" name="DiaChi" value="{!!$hoSo->DiaChi!!}" class="w253 input-has-tooltip" placeholder="Nhập địa chỉ">
+									<div class="w253-inline ">
+										<div class="style-button w218 mb0 " style=" ">
+											<input type="text " id="address " name="DiaChi" value="{!!$hoSo->DiaChi!!}" class="w253 input-has-tooltip" placeholder="Nhập địa chỉ">
 										</div>
 									</div>
 								</div>
@@ -144,7 +145,8 @@
 									<span class="icon-hoa-thi"></span>
 								</label>
 								<div class="group-right">
-									<input type="number" name="KinhNghiem" value="{!!$hoSo->KinhNghiem!!}" class="w253 input-has-tooltip" />
+									<input type="text" name="KinhNghiem" value="{!!$hoSo->KinhNghiem!!}" class="w253 input-has-tooltip" placeholder="Nhập kinh nghiệm"
+									/>
 								</div>
 							</div>
 							<div class="group-field">
@@ -162,7 +164,7 @@
 									<span class="icon-hoa-thi"></span>
 								</label>
 								<div class="group-right">
-									<input type="number" name="LuongKhoiDiem" class="w253 input-has-tooltip" value="{!!$hoSo->LuongKhoiDiem!!}" />
+									<input type="number" name="LuongKhoiDiem" class="w253 input-has-tooltip" value="{!!$hoSo->LuongKhoiDiem!!}" /> triệu
 								</div>
 							</div>
 							<div class="group-field">
@@ -171,7 +173,8 @@
 									<span class="icon-hoa-thi"></span>
 								</label>
 								<div class="group-right">
-									<input type="text" name="NguyenVongLamViec" class="w253 input-has-tooltip" value="{!!$hoSo->NguyenVongLamViec!!}" />
+									<input type="text" name="NguyenVongLamViec" class="w253 input-has-tooltip" value="{!!$hoSo->NguyenVongLamViec!!}" placeholder="Nhập nguyện vọng làm việc"
+									/>
 								</div>
 							</div>
 							<div class="group-field">
@@ -318,6 +321,94 @@
  --></div>
 		</div>
 		<div class="clearfix"></div>
+	</div>
+	{{-- viec lam thich hop --}}
+	{{-- <div class="container" style="margin-bottom:20px">
+		<div class="inner-10">
+			<div class="box-content">
+				<header class="block-title">
+					<h3 class="title font-roboto text-primary">
+						<span class="text">Việc làm thích hợp với bạn</span>
+						<span class="line"></span>
+					</h3>
+				</header>
+				<article id="cv-trong-ngay" class="block-content">
+					<div id="job-hot-field-content">
+						<ul class="list-post-has-thumbnail no-style">
+							<li class="col-xs-6 offset20">
+
+								<a href="https://www.timviecnhanh.com/tuyen-ke-toan-kho-ha-noi-4138424.html" title="Kế Toán Kho" class="col-xs-2 no-padding text-center offset10">
+									<span class="frame-th-list">
+										<img src="https://cdn.timviecnhanh.com/asset/home/img/employer/5ae98130a9366_1525252400.png" alt="CÔNG TY TNHH ROYAL BLINDS VIỆT NAM">
+									</span>
+								</a>
+								<div class="intro col-xs-4 offset20 push-left-10">
+									<a href="https://www.timviecnhanh.com/tuyen-ke-toan-kho-ha-noi-4138424.html" title="Kế Toán Kho">
+										<b class="">
+											Kế Toán Kho </b>
+									</a>
+									<a href="https://www.timviecnhanh.com/cong-ty-tnhh-royal-blinds-viet-nam-tuyen-dung-2953896.html" title="CÔNG TY TNHH ROYAL BLINDS VIỆT NAM">
+										<p class="meta">CÔNG TY TNHH ROYAL BLINDS VIỆT...</p>
+									</a>
+									<p>
+										- Mức lương:
+										<b>
+											5-7 triệu </b>
+										- Thời hạn:
+										<b>31-05-2018</b>
+									</p>
+									<p>
+										- Tỉnh/Thành phố:
+										<b> Hà Nội</b>
+									</p>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							<li class="col-xs-6 offset20 push-left-20">
+
+								<a href="https://www.timviecnhanh.com/tuyen-nhan-vien-phat-trien-thi-truong-luong-10-trieu-thang-ho-chi-minh-4129805.html"
+								 title="Nhân Viên Phát Triển Thị Trường Lương 10 Triệu / Tháng" class="col-xs-2 no-padding text-center offset10">
+									<span class="frame-th-list">
+										<img src="https://cdn.timviecnhanh.com/asset/home/img/employer/5aeabe1808acb_1525333528.png" alt="Công Ty TNHH Nhất Lộ Phát 168">
+									</span>
+								</a>
+								<div class="intro col-xs-4 offset20 push-left-10">
+									<a href="https://www.timviecnhanh.com/tuyen-nhan-vien-phat-trien-thi-truong-luong-10-trieu-thang-ho-chi-minh-4129805.html"
+									 title="Nhân Viên Phát Triển Thị Trường Lương 10 Triệu / Tháng">
+										<b class="">
+											Nhân Viên Phát Triển Thị Trường Lương 10... </b>
+									</a>
+
+
+									<a href="https://www.timviecnhanh.com/cong-ty-tnhh-nhat-lo-phat-168-tuyen-dung-2952252.html" title="Công Ty TNHH Nhất Lộ Phát 168">
+										<p class="meta">Công Ty TNHH Nhất Lộ Phát 168</p>
+									</a>
+									<p>
+										- Mức lương:
+										<b>
+											7-10 triệu </b>
+										- Thời hạn:
+										<b>19-05-2018</b>
+									</p>
+									<p>
+
+										- Tỉnh/Thành phố:
+										<b> Hồ Chí Minh</b>
+
+									</p>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							<div class="clearfix"></div>
+						</ul>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div> --}}
+	</div>
+
+	<div class="clearfix"></div>
 	</div>
 </section>
 @endsection

@@ -184,7 +184,7 @@
                                     Nơi làm việc
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <input type="text" id="title" name="NoiLamViec" class="input-has-tooltip" placeholder="Nhậpc  nơi làm việc">
+                                <input type="text" id="title" name="NoiLamViec" class="input-has-tooltip" placeholder="Nhập nơi làm việc">
                             </div>
                             <div class="group-field">
                                 <label class="label-form" for="">
@@ -316,7 +316,7 @@
                         <img alt="Banner hotline" src="https://cdn.timviecnhanh.com/asset/home/img/hotline-TVN-171215-bac-min2.png">
                     </a>
                 </div>
-                <a href="https://timviecnhanh.com/chu-y-khi-dang-tin-tuyen-dung.html" class="btn btn-big btn-chu-y-sd" target="_blank">
+                <a href="chu-y-dang-tin-tuyen-dung" class="btn btn-big btn-chu-y-sd" target="_blank">
                     <span class="icon icon-sm"></span>
                     Chú ý khi đăng tin tuyển dụng
                 </a>
