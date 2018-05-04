@@ -1,8 +1,4 @@
-@extends('layout.index') 
-@section('menu_tuhoso')
-    @include('layout.menu_tuhoso')
-@endsection
-@section('content')
+@extends('layout.index') @section('menu_tuhoso') @include('layout.menu_tuhoso') @endsection @section('content')
 <section class="body-home">
     <div class="container">
         <div class="col-xs-8 primary">
@@ -46,21 +42,37 @@
                         <div class="clearfix"></div>
 
                         <div class="btn-create btn-create-hsm">
+                            @if(Auth::check() && Auth::user()->MaLoaiTaiKhoan==2)
                             <a class="btn-create-hs" href="dang-tin">
-                                <span class="txt-head">Đăng tin miễn phí</span>
+                                <span class="txt-head main-color">Đăng tin miễn phí</span>
                                 <span class="txt-des">Tiếp cận hàng trăm nghìn người tìm việc</span>
                                 <i class="icon-sprite-hs icon-hsm"></i>
                             </a>
+                            @else
+                            <a class="btn-create-hs" href="dang-nhap">
+                                <span class="txt-head main-color">Đăng tin miễn phí</span>
+                                <span class="txt-des">Tiếp cận hàng trăm nghìn người tìm việc</span>
+                                <i class="icon-sprite-hs icon-hsm"></i>
+                            </a>
+                            @endif
                         </div>
 
                         <div class="clearfix"></div>
 
                         <div class="btn-create">
+                            @if(Auth::check() && Auth::user()->MaLoaiTaiKhoan==3)
                             <a class="btn-create-hs" href="tao-ho-so" title="Tủ hồ sơ">
-                                <span class="txt-head">Tạo hồ sơ</span>
-                                <span class="txt-des">Cách nhanh nhất để được mời phỏng vấn</span>
+                                <span class="btn-name">Tạo hồ sơ</span>
+                                <span class="btn-des">Tạo hồ sơ ngay để Nhà tuyển dụng nhìn thấy bạn</span>
                                 <i class="icon-sprite-hs icon-ths"></i>
                             </a>
+                            @else
+                            <a class="btn-create-hs" href="dang-nhap" title="Tủ hồ sơ">
+                                <span class="btn-name">Tạo hồ sơ</span>
+                                <span class="btn-des">Tạo hồ sơ ngay để Nhà tuyển dụng nhìn thấy bạn</span>
+                                <i class="icon-sprite-hs icon-ths"></i>
+                            </a>
+                            @endif
                         </div>
 
                         <div class="clearfix"></div>

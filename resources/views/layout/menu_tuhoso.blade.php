@@ -1,6 +1,6 @@
 <div class="line-full tool-ntd tool-ntd-a">
-    <div class="container">
-        <div class="inner-10">
+    <div class="container" style="padding-top:15px">
+        {{--  <div class="inner-10">
             <a href="#"
                 rel="nofollow" title="Tủ hồ sơ">
                 <span class="icon  icon_none_login_ntv  icon-sm icon-tao-hs"></span>
@@ -26,6 +26,7 @@
                 <span class="text  color_none_login ">Làm đẹp hồ sơ</span>
                 <span style="color: red; font-style: italic;">(New)</span>
             </a>
-        </div>
+        </div>  --}}
+        <marquee>Trung tâm giới thiệu việc làm tỉnh Quảng Nam - Giúp tìm việc - Tìm nhân viên</marquee>
     </div>
 </div>

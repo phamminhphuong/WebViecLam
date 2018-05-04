@@ -104,7 +104,7 @@
                                         {!!$item->NoiLamViec!!}
                                     </td>
                                     <td class="text-center w15">
-                                        {!!$item->LuongKhoiDiem!!}</td>
+                                        {!!$item->LuongKhoiDiem!!} triệu</td>
                                     <td class="text-center w15 last">
                                         {!!$item->created_at!!}</td>
                                 </tr>

@@ -20,96 +20,96 @@
                         <table id="example1" class="table table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="example1_info">
                             <thead>
                                 <tr role="row">
-                                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                                    {{--  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
                             Tài khoản
-                        : activate to sort column descending" style="width: 99.7988px;">
+                        : activate to sort column descending">
                                         Mã phiếu đăng tuyển
-                                    </th>
+                                    </th>  --}}
                                     <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
                             Tài khoản
-                        : activate to sort column descending" style="width: 99.7988px;">
+                        : activate to sort column descending">
                                         Mã nhà tuyển dụng
                                     </th>
                                     <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
                             Tài khoản
-                        : activate to sort column descending" style="width: 99.7988px;">
+                        : activate to sort column descending">
                                         Mã ngành
                                     </th>
                                     <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
                             Tài khoản
-                        : activate to sort column descending" style="width: 99.7988px;">
+                        : activate to sort column descending">
                                         Mã trình độ
                                     </th>
                                     <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
                             Tài khoản
-                        : activate to sort column descending" style="width: 99.7988px;">
+                        : activate to sort column descending">
                                         Mã chứng chỉ
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending">
                                         Tiêu đề
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending">
                                         Vị trí tuyển dụng
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" style="width:150px">
                                         Mô tả công việc
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending">
                                         Thời hạn nộp hồ sơ
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending">
                                         Số lượng tuyển dụng
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending">
                                         Nơi làm việc
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" style="width:50px">
                                         Yêu cầu kinh nghiệm
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending">
                                         Lương khởi điểm
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending">
                                         Hot
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending">
                                     Thời gian tạo
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending">
                                     Thời gian sửa
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Mật khẩu
-: activate to sort column ascending" style="width: 239.799px;">
+: activate to sort column ascending">
                                     Tùy chọn
                                     </th>
                             </thead>
                             <tbody>
                                 @foreach($phieudangtuyen as $pdt)
                                 <tr role="row" class="odd">
-                                    <td class="sorting_1">
+                                    {{--  <td class="sorting_1">
                                         {!!$pdt->id!!}
-                                    </td>
+                                    </td>  --}}
                                     <td>
                                         {!!$pdt->nhatuyendung->TenNTD!!}
                                     </td>

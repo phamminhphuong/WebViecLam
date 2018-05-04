@@ -44,7 +44,7 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
     });
     // chuyen nganh
     Route::group(['prefix' => 'chuyennganh'], function() {
-        Route::get('    ','ChuyennganhController@getList');
+        Route::get('list','ChuyennganhController@getList');
         Route::get('add','ChuyennganhController@getAdd');
         Route::post('add','ChuyennganhController@postAdd');
         Route::get('edit/{id}','ChuyennganhController@getEdit');

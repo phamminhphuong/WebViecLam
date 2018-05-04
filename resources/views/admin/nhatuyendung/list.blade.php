@@ -22,55 +22,55 @@
                                 <tr role="row">
                                     <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
                             Tài khoản
-                        : activate to sort column descending" style="width: 99.7988px;">
+                        : activate to sort column descending">
                                         Mã nhà tuyển dụng
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" >
                                         Tên nhà tuyển dụng
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" >
                                         Địa chỉ
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" >
                                         Điện thoại
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" >
                                        Địa chỉ web
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" >
                                         Giới thiệu
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" >
                                         Hình ảnh
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" >
                                         Mã tài khoản
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                             Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" >
                                     Thời gian tạo
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Mật khẩu
-                        : activate to sort column ascending" style="width: 239.799px;">
+                        : activate to sort column ascending" >
                                     Thời gian sửa
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Mật khẩu
-: activate to sort column ascending" style="width: 239.799px;">
+: activate to sort column ascending" >
                                     Tùy chọn
                                     </th>
                             </thead>
