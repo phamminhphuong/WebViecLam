@@ -27,6 +27,6 @@
                 <span style="color: red; font-style: italic;">(New)</span>
             </a>
         </div>  --}}
-        <marquee>Trung tâm giới thiệu việc làm tỉnh Quảng Nam - Giúp tìm việc - Tìm nhân viên</marquee>
+        <marquee>Trung tâm giới thiệu việc làm tỉnh Quảng Nam - Giúp tìm việc - Tìm nhân viên - Nhanh - Chính xác</marquee>
     </div>
 </div>

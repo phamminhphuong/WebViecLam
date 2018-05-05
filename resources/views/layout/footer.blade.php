@@ -3,7 +3,7 @@
     <div class="container">
         <div class="inner10">
             <div class="title text-primary">
-                <img src="../cdn.timviecnhanh.com/asset/home/img/call.png" alt="Hotline miền Bắc" class="img-call"> Hotline cho Nhà tuyển dụng ở Quảng Nam
+                <img src="../cdn.timviecnhanh.com/asset/home/img/call.png" alt="" class="img-call"> Hotline cho Nhà tuyển dụng ở Quảng Nam
             </div>
             <span class="text col-xs-2 no-padding w188">
                 <b class="text-danger">0911 737 526</b>
@@ -115,7 +115,7 @@
                         <b>Trụ sở: </b> Thôn Tiên Tráng, Xã Tiên Hà, Huyện Tiên Phước, Quảng Nam
 
                         <br>
-                        <b>Điện thoại: </b>(028) 7309 8888 |
+                        <b>Điện thoại: </b>(0235) 811453 |
                         <b>Fax: </b>(028) 393 018 00
                         <br>
                         <b>Email hỗ trợ NTD:</b> admin@gmail.com |
