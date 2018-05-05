@@ -467,6 +467,11 @@ class PageController extends Controller
         $nhatuyendung=NhaTuyenDung::all();
         return view('page.danh-sach-nha-tuyen-dung',['nhatuyendung'=>$nhatuyendung]);
     }
+
+    public function danhSachNguoiTimViec() {
+        $hosoes = HoSoXinViec::all();
+        return view('page.danh-sach-nguoi-tim-viec', ['hosoes' => $hosoes]);
+    }
     public function getLuong10trieu(){
         $phieudangtuyen=PhieuDangTuyen::Where('LuongKhoiDiem','>=',10)->get();
         return view('page.luong-10-trieu',['phieudangtuyen' => $phieudangtuyen]);
@@ -482,5 +487,10 @@ class PageController extends Controller
     //  chu y dang tin tuyen dung
     public function getChuyDangTin(){
         return view('page.chu-y-dang-tin-tuyen-dung');
+    }
+
+    public function getProfileDetail($id) {
+        $hoso = HoSoXinViec::find($id);
+        return view('page.chi-tiet-ho-so', ['hoso' => $hoso]);
     }
 }

@@ -22,6 +22,7 @@ Route::get('tim-nhan-vien','PageController@getTimNhanVien');
 Route::get('post/{id}', 'PageController@getPostDetail');
 Route::get('vendor/{id}', 'PageController@getVendorDetail');
 Route::get('category/{id}', 'PageController@getCategoryDetail');
+Route::get('profile/{id}', 'PageController@getProfileDetail');
 
 Route::get('ky-nang-xin-viec', 'PageController@getSkills');
 Route::get('ky-nang-xin-viec/{id}', 'PageController@getSkillDetail');
@@ -33,6 +34,7 @@ Route::get('tim-kiem', 'PageController@search');
 Route::post('tim-kiem', 'PageController@search');
 
 Route::get('danh-sach-nha-tuyen-dung', 'PageController@danhSachNhaTuyenDung');
+Route::get('danh-sach-nguoi-tim-viec', 'PageController@danhSachNguoiTimViec');
 
 
 
@@ -97,6 +99,9 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
         Route::post('edit/{id}','TaikhoanController@postEdit');
         Route::get('delete/{id}','TaikhoanController@getDelete');
         Route::get('detail/{id}','TaikhoanController@getDetail');
+        Route::get('update-profile','TaikhoanController@getUpdateProfile');
+        Route::post('update-profile','TaikhoanController@postUpdateProfile');
+        Route::post('change-password','TaikhoanController@postChangePassword');
     });
     
     // nha tuyen dung

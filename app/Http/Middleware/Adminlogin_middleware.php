@@ -29,7 +29,7 @@ class Adminlogin_middleware
         }
         else{
             
-            return redirect('admin/dangnhap');
+            return redirect('dang-nhap');
             
         }
         

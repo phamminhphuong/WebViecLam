@@ -19,8 +19,8 @@
                             Trang chủ
                         </a>
                     </li>
-                    <li class="active">
-                        <a rel="nofollow" href="" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
+                    <li class="">
+                        <a rel="nofollow" href="danh-sach-nguoi-tim-viec" title="Tim viec lam nhanh, tìm kiếm việc làm, tuyển dụng lương cao">
                             <i class="icon-sprite-hs icon-head-ntv"></i>
                             Người tìm việc
                         </a>
@@ -54,7 +54,7 @@
                         <form id="job_advance_search" role="form" action="tim-kiem" method="POST" class="form-inline form-search-top"
                             enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <input type="text" id="key-s" name="tu_khoa" value="" class="form-control col-xs-" placeholder="Nhập tên công việc, vị trí...">
+                            <input type="text" id="key-s" name="keyword" value="" class="form-control col-xs-" placeholder="Nhập tên công việc, vị trí...">
                             <div class="style-flat">
                                 <select name="category" class="select-style">
                                     <option value="">Chọn ngành nghề</option>

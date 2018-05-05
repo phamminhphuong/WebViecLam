@@ -51,7 +51,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Sửa</a>
+                                <a href="admin/taikhoan/update-profile" class="btn btn-default btn-flat">Sửa</a>
                             </div>
                             <div class="pull-right">
                                 <a href="dang-xuat" class="btn btn-default btn-flat">Đăng xuất</a>
