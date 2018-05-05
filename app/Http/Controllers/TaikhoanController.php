@@ -23,7 +23,7 @@ class TaikhoanController extends Controller
                 $this->validate($request,
                 [
                     'email'=>'required|unique:users|min:3|max:100',
-                    'password'=>'required',
+                    'password'=>'required|min:6|max:8',
                     'Resetpassword'=>'required|same:password'
                 ],
                 [
@@ -32,7 +32,8 @@ class TaikhoanController extends Controller
                     'email.min'=>'Bạn nhập ít nhất 3 ký tự',
                     'email.max'=>'Bạn phải nhập ít hơn 100 ký tự',
                     'password.required'=>'Bạn không được để trống mật khẩu',
-
+                    'password.min'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
+                    'password.max'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
                     'Resetpassword.required'=>'Bạn không được để trống nhập lại mật khẩu',
                     'Resetpassword.same'=>'Bạn phải nhập giống mật khẩu'
                 ]);
@@ -52,15 +53,13 @@ class TaikhoanController extends Controller
             public function postEdit(Request $request, $id){
                 $this->validate($request,
                 [
-
-                    'password'=>'required|min:7|max:7',
+                    'password'=>'required|min:6|max:8',
                     'Resetpassword'=>'required|same:password'
                 ],
                 [
                     'password.required'=>'Bạn không được để trống mật khẩu',
-                    'password.min'=>'Bạn nhập nhập đủ 7 ký tự',
-                    'password.max'=>'Bạn phải nhập đủ 7 ký tự',
-
+                    'password.min'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
+                    'password.max'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
                     'Resetpassword.required'=>'Bạn không được để trống nhập lại mật khẩu',
                     'Resetpassword.same'=>'Bạn phải nhập giống mật khẩu'
                 ]);

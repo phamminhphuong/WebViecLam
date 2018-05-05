@@ -44,7 +44,7 @@
                                     Email
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <input type="text" id="email" name="email">
+                                <input type="email" id="email" name="email">
                             </div>
                             <div class="group-field">
                                 <label class="label-form" for="">

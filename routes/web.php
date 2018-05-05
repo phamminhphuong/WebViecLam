@@ -32,6 +32,11 @@ Route::get('luong-10-trieu', 'PageController@getLuong10trieu');
 Route::get('tim-kiem', 'PageController@search');
 Route::post('tim-kiem', 'PageController@search');
 
+Route::get('danh-sach-nha-tuyen-dung', 'PageController@danhSachNhaTuyenDung');
+
+
+
+
 Route::get('goi-y-nguoitimviec','PageController@getGoiyNTV');
 Route::get('goi-y-nhatuyendung','PageController@getGoiyNTD');
 Route::get('chu-y-dang-tin-tuyen-dung','PageController@getChuyDangTin');

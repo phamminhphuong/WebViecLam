@@ -451,7 +451,11 @@ class PageController extends Controller
         }
         return view('page.tim-kiem', ['posts' => $posts->get()]);
     }
-    // 
+    // danh sach phieu dang tuyen
+    public function danhSachNhaTuyenDung(){
+        $nhatuyendung=NhaTuyenDung::all();
+        return view('page.danh-sach-nha-tuyen-dung',['nhatuyendung'=>$nhatuyendung]);
+    }
     public function getLuong10trieu(){
         $phieudangtuyen=PhieuDangTuyen::Where('LuongKhoiDiem','>=',10)->get();
         return view('page.luong-10-trieu',['phieudangtuyen' => $phieudangtuyen]);

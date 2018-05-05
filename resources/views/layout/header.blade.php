@@ -26,7 +26,7 @@
                         </a>
                     </li>
                     <li>
-                        <a rel="nofollow" href="#" title="Trang nhà tuyển dụng">
+                        <a rel="nofollow" href="danh-sach-nha-tuyen-dung" title="Trang nhà tuyển dụng">
                                 <i class="icon-sprite-hs icon-head-ntv"></i>
                             Nhà tuyển dụng
                         </a>
