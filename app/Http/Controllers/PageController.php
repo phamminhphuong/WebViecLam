@@ -78,12 +78,13 @@ class PageController extends Controller
         $this->validate($request,
         [
             'email'=>'required|unique:users|min:3|max:100',
-            'password'=>'required',
+            'password'=>'required|min:6|max:8',
             'confirm_password'=>'required|same:password',
             'HoTen'=>'required|min:3|max:100',
             'NgaySinh'=>'required',
-            'DiaChi'=>'required|min:3|max:100',
-            'TinhTrangHonNhan'=>'required|min:3|max:100'
+            'DiaChi'=>'required|min:3|max:200',
+            'DienThoai' => 'required|regex:/(0)[0-9]{9,11}/',
+            'TinhTrangHonNhan'=>'required|min:3|max:200',
         ],
         [
             'email.required'=>'Bạn không được để trống tên đăng nhập',
@@ -91,18 +92,22 @@ class PageController extends Controller
             'email.min'=>'Bạn nhập ít nhất 3 ký tự',
             'email.max'=>'Bạn phải nhập ít hơn 100 ký tự',
             'password.required'=>'Bạn không được để trống mật khẩu',
+            'password.min'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
+            'password.max'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
             'confirm_password.required'=>'Bạn không được để trống nhập lại mật khẩu',
             'confirm_password.same'=>'Bạn phải nhập giống mật khẩu',
-            'HoTen.required'=>'Bạn không được để trống tên nhà tuyển dụng',
-            'HoTen.min'=>'Bạn nhập tên nhà dụng ít nhất 3 ký tự',
-            'HoTen.max'=>'Bạn phải nhập tên nhà tuyển dụng ít hơn 100 ký tự',
+            'HoTen.required'=>'Bạn không được để trống họ tên',
+            'HoTen.min'=>'Bạn nhập họ tên ít nhất 3 ký tự',
+            'HoTen.max'=>'Bạn phải nhập họ tên ít hơn 100 ký tự',
             'NgaySinh.required'=>'Bạn không được để trống ngày sinh',
             'DiaChi.required'=>'Bạn không được để trống địa chỉ',
             'DiaChi.min'=>'Bạn nhập địa chỉ ít nhất 3 ký tự',
-            'DiaChi.max'=>'Bạn phải nhập địa chỉ ít hơn 500 ký tự',
+            'DiaChi.max'=>'Bạn phải nhập địa chỉ ít hơn 200 ký tự',
+            'DienThoai.required'=>'Bạn không được để trống điện thoại',
+            'DienThoai.regex'=>'Bạn phải nhập điện thoại  từ 10-12 số và phải bắt đầu bằng số 0',
             'TinhTrangHonNhan.required'=>'Bạn không được để trống tình trạng hôn nhân',
             'TinhTrangHonNhan.min'=>'Bạn nhập tình trạng hôn nhân ít nhất 3 ký tự',
-            'TinhTrangHonNhan.max'=>'Bạn phải nhập tình trajgn hôn nhân ít hơn 100 ký tự',
+            'TinhTrangHonNhan.max'=>'Bạn phải nhập tình trajgn hôn nhân ít hơn 200 ký tự',
         ]);
 
         DB::beginTransaction();
@@ -170,12 +175,13 @@ class PageController extends Controller
         $this->validate($request,
             [
                 'email'=>'required|unique:users|min:3|max:100',
-                'password'=>'required',
+                'password'=>'required|min:6|max:8',
                 'confirm_password'=>'required|same:password',
                 'TenNTD'=>'required|min:3|max:100',
-                'DiaChi'=>'required|min:3|max:500',
-                'GioiThieu'=>'required|min:3',
-                'DiaChiWeb'=>'required|min:3|max:100'
+                'DiaChi'=>'required|min:3|max:200',
+                'GioiThieu'=>'required|min:3|max:2500',
+                'DienThoai' => 'required|regex:/(0)[0-9]{9,11}/',
+                'DiaChiWeb' => ['required', 'unique:nhatuyendung','regex:/(www.)[A-Za-z0-9]{1,55}[.](com|vn|edu|info|net)$/'],
             ],
             [
                 'email.required'=>'Bạn không được để trống tên đăng nhập',
@@ -183,6 +189,8 @@ class PageController extends Controller
                 'email.min'=>'Bạn nhập ít nhất 3 ký tự',
                 'email.max'=>'Bạn phải nhập ít hơn 100 ký tự',
                 'password.required'=>'Bạn không được để trống mật khẩu',
+                'password.min'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
+                'password.max'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
                 'confirm_password.required'=>'Bạn không được để trống nhập lại mật khẩu',
                 'confirm_password.same'=>'Bạn phải nhập giống mật khẩu',
                 'TenNTD.required'=>'Bạn không được để trống tên nhà tuyển dụng',
@@ -190,12 +198,15 @@ class PageController extends Controller
                 'TenNTD.max'=>'Bạn phải nhập tên nhà tuyển dụng ít hơn 100 ký tự',
                 'DiaChi.required'=>'Bạn không được để trống địa chỉ',
                 'DiaChi.min'=>'Bạn nhập địa chỉ ít nhất 3 ký tự',
-                'DiaChi.max'=>'Bạn phải nhập địa chỉ ít hơn 500 ký tự',
+                'DiaChi.max'=>'Bạn phải nhập địa chỉ ít hơn 200 ký tự',
                 'GioiThieu.required'=>'Bạn không được để trống giới thiệu',
                 'GioiThieu.min'=>'Bạn nhập giới thiệu web ít nhất 3 ký tự',
+                'GioiThieu.max'=>'Bạn nhập giới thiệu web ít nhất 2500 ký tự',
+                'DienThoai.required'=>'Bạn không được để trống điện thoại',
+                'DienThoai.regex'=>'Bạn phải nhập điện thoại  từ 10-12 số và phải bắt đầu bằng số 0',
                 'DiaChiWeb.required'=>'Bạn không được để trống địa chỉ web',
-                'DiaChiWeb.min'=>'Bạn nhập địa chỉ web ít nhất 3 ký tự',
-                'DiaChiWeb.max'=>'Bạn phải nhập địa chỉ web ít hơn 100 ký tự',
+                'DiaChiWeb.unique'=>'Bạn nhập địa chỉ web trùng với địa chỉ web đã tồn tại',
+                'DiaChiWeb.regex'=>'Bạn phải nhập địa chỉ web có độ dài từ 3-63 ký tự bắng đầu bằng www và kết thúc bằng .com hoặc .vn hoặc . edu hoặc .info hoặc .net',
             ]);
 
             DB::beginTransaction();
@@ -226,7 +237,7 @@ class PageController extends Controller
                     $nhatuyendung->HinhAnh="";
                 }
               
-                $nhatuyendung->save();
+                // $nhatuyendung->save();
 
                 DB::commit();
             }

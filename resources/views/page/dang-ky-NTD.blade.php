@@ -141,8 +141,8 @@
                             </div>
                             <div class="line-grey"></div>
                             <div class="group-field">
-                                <div class="label-form"></div>
-                                <div class="group-right">
+                                {{--  <div class="label-form"></div>  --}}
+                                {{--  <div class="group-right">
                                     <div style="margin-top: 8px;">
                                         Bằng việc nhấn nút đăng ký, bạn đã đồng ý với
                                         <a href="#" class="text-primaryx underline text-color-ntd" title="Thỏa thuận sử dụng">
@@ -150,7 +150,7 @@
                                         </a>
                                         của chúng tôi
                                     </div>
-                                </div>
+                                </div>  --}}
                             </div>
                             <div class="row-btn">
                                 <button type="submit" class="btn-big btn-danger col-xs-2 col-push-2 w140">

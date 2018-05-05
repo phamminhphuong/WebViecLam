@@ -42,14 +42,14 @@
 
                             <li class="col-xs-6 offset20" style="padding-bottom:30px;">
 
-                                <a href="vendor/{!!$post->NhaTuyenDung->id!!}" title="" class="col-xs-2 no-padding text-center offset10">
+                                <a href="vendor/{!!$ntd->id!!}" title="" class="col-xs-2 no-padding text-center offset10">
                                     <span class="frame-th-list"><img src="imageNTD/{!!$ntd->HinhAnh!!}" alt=""></span>
                                 </a>
                                 <div class="intro col-xs-4 offset20 push-left-10">
-                                    <a href="vendor/{!!$post->NhaTuyenDung->id!!}" title="Nhân Viên Văn Phòng - Phòng Kinh Doanh">
+                                    <a href="vendor/{!!$ntd->id!!}" title="Nhân Viên Văn Phòng - Phòng Kinh Doanh">
                                         <b class="">{!!$ntd->TenNTD!!}</b>
                                     </a>
-                                    <a href="{!!$ntd->id!!}" title="">
+                                    <a href="vendor/{!!$ntd->id!!}" title="">
                                         {{--  <p class="meta">{!!$ntd->TenNTD!!}</p>  --}}
                                     </a>
 

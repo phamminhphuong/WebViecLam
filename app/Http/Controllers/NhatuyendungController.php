@@ -24,11 +24,8 @@ class NhatuyendungController extends Controller
                 'TenNTD'=>'required|min:3|max:100',
                 'DiaChi'=>'required|min:3|max:500',
                 'DienThoai' => 'required|regex:/(0)[0-9]{9,11}/',
-                
-                // 'DiaChiWeb' => 'required|regex:/(www.)[0-9]{9,11}/',
-
-                'DiaChiWeb' => ['required', 'unique:nhatuyendung','regex:/(www.)[A-Za-z0-9]{3,55}[.](com|vn)$/'],
-                'GioiThieu'=>'required|min:3|',
+                'DiaChiWeb' => ['required', 'unique:nhatuyendung','regex:/(www.)[A-Za-z0-9]{1,55}[.](com|vn|edu|info|net)$/'],
+                'GioiThieu'=>'required|min:3|max:2500',
             ],
             [
                 'TenNTD.required'=>'Bạn không được để trống tên nhà tuyển dụng',
@@ -36,18 +33,15 @@ class NhatuyendungController extends Controller
                 'TenNTD.max'=>'Bạn phải nhập tên nhà tuyển dụng ít hơn 100 ký tự',
                 'DiaChi.required'=>'Bạn không được để trống địa chỉ',
                 'DiaChi.min'=>'Bạn nhập địa chỉ ít nhất 3 ký tự',
-                'DiaChi.max'=>'Bạn phải nhập địa chỉ ít hơn 500 ký tự',
-
+                'DiaChi.max'=>'Bạn phải nhập địa chỉ ít hơn 200 ký tự',
                 'DienThoai.required'=>'Bạn không được để trống điện thoại',
                 'DienThoai.regex'=>'Bạn phải nhập điện thoại  từ 10-12 số và phải bắt đầu bằng số 0',
-
                 'DiaChiWeb.required'=>'Bạn không được để trống địa chỉ web',
                 'DiaChiWeb.unique'=>'Bạn nhập địa chỉ web trùng với địa chỉ web đã tồn tại',
-                'DiaChiWeb.regex'=>'Bạn phải nhập địa chỉ web có độ dài từ 3-63 ký tự bắng đầu bằng www và kết thúc bằng .com',
-
-
+                'DiaChiWeb.regex'=>'Bạn phải nhập địa chỉ web có độ dài từ 3-63 ký tự bắng đầu bằng www và kết thúc bằng .com hoặc .vn hoặc . edu hoặc .info hoặc .net',
                 'GioiThieu.required'=>'Bạn không được để trống giới thiệu',
                 'GioiThieu.min'=>'Bạn nhập giới thiệu web ít nhất 3 ký tự',
+                'GioiThieu.max'=>'Bạn nhập giới thiệu web nhiều nhất 2500 ký tự',
             ]);
             $nhatuyendung=new NhaTuyenDung();
             $nhatuyendung->TenNTD=$request->TenNTD;
@@ -67,7 +61,7 @@ class NhatuyendungController extends Controller
             else{
                 $nhatuyendung->HinhAnh='';
             }
-            // $nhatuyendung->save();
+            $nhatuyendung->save();
             return redirect('admin/nhatuyendung/list');
         }
         // sua
@@ -80,9 +74,10 @@ class NhatuyendungController extends Controller
             $this->validate($request,
             [
                 'TenNTD'=>'required|min:3|max:100',
-                'DiaChi'=>'required|min:3|max:500',
-                'DiaChiWeb'=>'required|min:3|max:100',
-                'GioiThieu'=>'required|min:3|',
+                'DiaChi'=>'required|min:3|max:200',
+                'DienThoai' => 'required|regex:/(0)[0-9]{9,11}/',
+                // 'DiaChiWeb' => ['required', 'unique:nhatuyendung','regex:/(www.)[A-Za-z0-9]{1,55}[.](com|vn|edu|info|net)$/'],
+                'GioiThieu'=>'required|min:3|max:2500',
             ],
             [
                 'TenNTD.required'=>'Bạn không được để trống tên nhà tuyển dụng',
@@ -90,17 +85,23 @@ class NhatuyendungController extends Controller
                 'TenNTD.max'=>'Bạn phải nhập tên nhà tuyển dụng ít hơn 100 ký tự',
                 'DiaChi.required'=>'Bạn không được để trống địa chỉ',
                 'DiaChi.min'=>'Bạn nhập địa chỉ ít nhất 3 ký tự',
-                'DiaChiWeb.required'=>'Bạn không được để trống địa chỉ web',
-                'DiaChiWeb.min'=>'Bạn nhập địa chỉ web ít nhất 3 ký tự',
-                'DiaChiWeb.max'=>'Bạn phải nhập địa chỉ web ít hơn 100 ký tự',
+                'DiaChi.max'=>'Bạn nhập địa chỉ nhiều nhất 200 ký tự',
+
+                'DienThoai.required'=>'Bạn không được để trống điện thoại',
+                'DienThoai.regex'=>'Bạn phải nhập điện thoại  từ 10-12 số và phải bắt đầu bằng số 0',
+
+                // 'DiaChiWeb.required'=>'Bạn không được để trống địa chỉ web',
+                // 'DiaChiWeb.unique'=>'Bạn nhập địa chỉ web trùng với địa chỉ web đã tồn tại',
+                // 'DiaChiWeb.regex'=>'Bạn phải nhập địa chỉ web có độ dài từ 3-63 ký tự bắng đầu bằng www và kết thúc bằng .com hoặc .vn hoặc . edu hoặc .info hoặc .net',
                 'GioiThieu.required'=>'Bạn không được để trống giới thiệu',
                 'GioiThieu.min'=>'Bạn nhập giới thiệu web ít nhất 3 ký tự',
+                'GioiThieu.max'=>'Bạn nhập giới thiệu web nhiều nhất nhất 2500 ký tự',
             ]);
             $nhatuyendung=NhaTuyenDung::find($id);
             $nhatuyendung->TenNTD=$request->TenNTD;
             $nhatuyendung->DiaChi=$request->DiaChi;
             $nhatuyendung->DienThoai=$request->DienThoai;
-            $nhatuyendung->DiaChiWeb=$request->DiaChiWeb;
+            // $nhatuyendung->DiaChiWeb=$request->DiaChiWeb;
             $nhatuyendung->GioiThieu=$request->GioiThieu;
             $nhatuyendung->MaTaiKhoan=$request->MaTaiKhoan;
             if($request->hasFile('HinhAnh')){

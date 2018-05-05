@@ -47,7 +47,7 @@
             <div class="form-group">
                 <b class="control-label col-md-2"> Địa chỉ web</b>
                 <div class="col-md-10">
-                    <input class="form-control text-box single-line" data-val="true" data-val-length="The field TenSanPham must be a string with a maximum length of 50."
+                    <input class="form-control text-box single-line" data-val="true" disabled="disabled" data-val-length="The field TenSanPham must be a string with a maximum length of 50."
                         data-val-length-max="50" id="DiaChiWeb" name="DiaChiWeb" type="text" value="{!!$nhatuyendung->DiaChiWeb!!}" placeholder="Nhập địa chỉ web">
                 </div>
             </div>

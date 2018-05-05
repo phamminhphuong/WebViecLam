@@ -112,10 +112,10 @@
                                                 <ul class="select2-results"> </ul>
                                             </div>
                                         </div>
-                                        <select id="level" name="MaTrinhDo"  tabindex="-1" style="margin-top:-20px;width:455px;height:32px">
+                                        <select id="level" name="MaTrinhDo"  tabindex="-1" style="margin-top:-20px;padding-left:10px;width:455px;height:32px">
                                             <option selected="selected" value="">Chọn trình độ</option>
                                             @foreach($trinhdo as $td)
-                                             <option value="{!!$td->id!!}">{!!$td->TenTrinhDo!!}</option>
+                                                 <option value="{!!$td->id!!}">{!!$td->TenTrinhDo!!}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -137,7 +137,7 @@
                                                 <ul class="select2-results"> </ul>
                                             </div>
                                         </div>
-                                        <select id="level" name="MaNganh"  tabindex="-1" style="margin-top:-20px;width:455px;height:32px">
+                                        <select id="level" name="MaNganh"  tabindex="-1" style="margin-top:-20px;padding-left:10px;width:455px;height:32px">
                                             <option selected="selected" value="">Chọn ngành nghề</option>
                                             @foreach($chuyennganh as $cn)
                                              <option value="{!!$cn->id!!}">{!!$cn->TenNganh!!}</option>
@@ -162,7 +162,7 @@
                                                 <ul class="select2-results"> </ul>
                                             </div>
                                         </div>
-                                        <select id="level" name="MaChungChi" style="margin-top:-20px;width:455px;height:32px" tabindex="-1" style="margin-top:-20px;">
+                                        <select id="level" name="MaChungChi" style="margin-top:-20px;padding-left:10px;width:455px;height:32px" tabindex="-1" style="margin-top:-20px;">
                                             <option selected="selected" value="">Chọn chứng chỉ</option>
                                             @foreach($chungchi as $cc)
                                                 <option value="{!!$cc->id!!}"> {!!$cc->TenChungChi!!}</option>

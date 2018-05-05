@@ -7,11 +7,13 @@
         <div class="box-header with-border">
             <h4>Phiếu đăng tuyển</h4>
         </div>
-        @if(count($errors) >0) @foreach($errors->all() as $er)
+        @if(count($errors) >0)
         <div class="alert alert-danger">
-            {{$er}}
-        </div>
-        @endforeach @endif
+         @foreach($errors->all() as $er)
+            {{$er}}<br>
+        @endforeach
+     </div> 
+     @endif
         <br>
         <form action="admin/phieudangtuyen/add" method="post">
             <input type="hidden" name="_token" value="{{csrf_token()}}">

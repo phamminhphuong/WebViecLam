@@ -80,7 +80,7 @@
                                     Ngày sinh
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <input type="date" id="NgaySinh" name="NgaySinh" class="input-has-tooltip">
+                                <input type="date" id="NgaySinh" name="NgaySinh">
                                 <div class="block-has-tooltip">
                                     <div class="tooltip-huong-dan">
                                         <p>Nhập ngày sinh</p>
@@ -92,7 +92,7 @@
                                     Giới tính
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <select name="GioiTinh" id="GioiTinh" style="width:460px;margin-left:10px;height:35px" class="form-has-tooltip">
+                                <select name="GioiTinh" id="GioiTinh" style="width:460px;padding-left:10px;margin-left:10px;height:35px" class="form-has-tooltip">
                                     <option value="nam">Nam</option>
                                     <option value="nu">Nữ</option>
                                 </select>
@@ -153,7 +153,7 @@
                             </div>
                             <div class="line-grey"></div>
                             <div class="group-field">
-                                <div class="label-form"></div>
+                                {{--  <div class="label-form"></div>
                                 <div class="group-right">
                                     <div style="margin-top: 8px;">
                                         Bằng việc nhấn nút đăng ký, bạn đã đồng ý với
@@ -162,7 +162,7 @@
                                         </a>
                                         của chúng tôi
                                     </div>
-                                </div>
+                                </div>  --}}
                             </div>
                             <div class="row-btn">
                                 <button type="submit" class="btn-big btn-danger col-xs-2 col-push-2 w140">

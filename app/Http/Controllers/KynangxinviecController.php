@@ -21,7 +21,7 @@ class KynangxinviecController extends Controller
         $this->validate($request,
         [
             'TieuDe'=>'required|min:3|max:100',
-            'NoiDung'=>'required|min:3',
+            'NoiDung'=>'required|min:3|max:2500',
         ],
         [
             'TieuDe.required'=>'Bạn không được để trống tiêu đề',
@@ -29,6 +29,7 @@ class KynangxinviecController extends Controller
             'TieuDe.max'=>'Bạn phải nhập tiêu đề ít hơn 100 ký tự',
             'NoiDung.required'=>'Bạn không được để trống nội dung',
             'NoiDung.min'=>'Bạn nhập nội dung ít nhất 3 ký tự',
+            'NoiDung.max'=>'Bạn nhập nội dung nhiều nhất 2500 ký tự',
         
         ]);
         $kynangxinviec=new KyNangXinViec();
@@ -59,7 +60,7 @@ class KynangxinviecController extends Controller
         $this->validate($request,
         [
             'TieuDe'=>'required|min:3|max:100',
-            'NoiDung'=>'required|min:3',
+            'NoiDung'=>'required|min:3|max:2500',
         ],
         [
             'TieuDe.required'=>'Bạn không được để trống tiêu đề',
@@ -67,6 +68,7 @@ class KynangxinviecController extends Controller
             'TieuDe.max'=>'Bạn phải nhập tiêu đề ít hơn 100 ký tự',
             'NoiDung.required'=>'Bạn không được để trống nội dung',
             'NoiDung.min'=>'Bạn nhập nội dung ít nhất 3 ký tự',
+            'NoiDung.max'=>'Bạn nhập nội dung nhiều nhất 2500 ký tự',
         
         ]);
         $kynangxinviec=KyNangXinViec::find($id);

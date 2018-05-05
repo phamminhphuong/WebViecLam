@@ -11,12 +11,14 @@
         <div class="box-header with-border">
             <h4>Kỹ năng xin việc</h4>
         </div>
-        @if(count($errors) >0)
+        @if(count($errors) >0)  
+        <div class="alert alert-danger">
             @foreach($errors->all() as $er)
-                <div class="alert alert-danger">
+              
                     {{$er}}
-                </div>
-            @endforeach
+               
+            @endforeach 
+        </div>
         @endif
         <br>
         <form action="admin/kynangxinviec/edit/{!!$kynangxinviec->id!!}" enctype="multipart/form-data" method="post">
