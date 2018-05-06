@@ -237,7 +237,7 @@ class PageController extends Controller
                     $nhatuyendung->HinhAnh="";
                 }
               
-                // $nhatuyendung->save();
+                $nhatuyendung->save();
 
                 DB::commit();
             }
@@ -263,11 +263,16 @@ class PageController extends Controller
     public function postTaoHoSo(Request $request){
         $this->validate($request,
         [
-            'TieuDe'=>'required|min:3|max:100',
+
             'HoTen'=>'required|min:3|max:100',
-            'DiaChi'=>'required|min:3|max:200',
-            'DienThoai'=>'required|min:9|max:12',
+            'DienThoai' => 'required|regex:/(0)[0-9]{9,11}/',
             'NgaySinh'=>'required',
+            'DiaChi'=>'required|min:3|max:200',
+            'TieuDe'=>'required|min:3|max:100',
+            'KinhNghiem'=>'required|min:3|max:200',
+            'TinhTrangHonNhan'=>'required|min:3|max:200',
+            'NguyenVongLamViec'=>'required|min:3|max:2500',
+        
             'MaNganh'=>'required',
             'MaTrinhDo'=>'required',
             'MaCC'=>'required',
@@ -275,25 +280,37 @@ class PageController extends Controller
             
         ],
         [
-            'TieuDe.required'=>'Bạn không được để trống tiêu đề',
-            'TieuDe.min'=>'Bạn nhập tiêu đề ít nhất 3 ký tự',
-            'TieuDe.max'=>'Bạn nhập tiêu đề không quá 100 ký tự',
+
             'HoTen.required'=>'Bạn không được để trống họ tên',
             'HoTen.min'=>'Bạn nhập họ tên ít nhất 3 ký tự',
             'HoTen.max'=>'Bạn nhập họ tên không quá 100 ký tự',
+            'DienThoai.required'=>'Bạn không được để trống điện thoại',
+            'DienThoai.regex'=>'Bạn phải nhập điện thoại  từ 10-12 số và phải bắt đầu bằng số 0',
+            'NgaySinh.required'=>'Bạn không được để trống ngày sinh',
             'DiaChi.required'=>'Bạn không được để trống địa chỉ',
             'DiaChi.min'=>'Bạn nhập địa chỉ ít nhất 3 ký tự',
-            'DiaChi.max'=>'Bạn nhập địa chỉ không quá 200 ký tự',
-            'DienThoai.required'=>'Bạn không được để trống điện thoại',
-            'DienThoai.min'=>'Bạn nhập điện thoại ít nhất 10 ký tự',
-            'DienThoai.max'=>'Bạn nhập điện thoại không quá 12 ký tự',
-            'NgaySinh.required'=>'Bạn không được để trống ngày sinh',
+            'DiaChi.max'=>'Bạn nhập địa chỉ không quá 200 ký tự', 
+            'TieuDe.required'=>'Bạn không được để trống tiêu đề',
+            'TieuDe.min'=>'Bạn nhập tiêu đề ít nhất 3 ký tự',
+            'TieuDe.max'=>'Bạn nhập tiêu đề không quá 100 ký tự',
+            'KinhNghiem.required'=>'Bạn không được để trống kinh nghiệm',
+            'KinhNghiem.min'=>'Bạn nhập kinh nghiệm làm việc ít nhất 3 ký tự',
+            'KinhNghiem.max'=>'Bạn nhập kinh nghiệm làm việc không quá 200 ký tự',
+            'TinhTrangHonNhan.required'=>'Bạn không được để trống tình trạng hôn nhân',
+            'TinhTrangHonNhan.min'=>'Bạn nhập tình trạng hôn nhân ít nhất 3 ký tự',
+            'TinhTrangHonNhan.max'=>'Bạn nhập tình trạng hôn nhân không quá 200 ký tự',
+           
+            'NguyenVongLamViec.required'=>'Bạn không được để trống nguyện vọng làm việc',
+            'NguyenVongLamViec.min'=>'Bạn nhập nguyện vọng làm việc ít nhất 3 ký tự',
+            'NguyenVongLamViec.max'=>'Bạn nhập nguyện vọng làm việc không quá 2500 ký tự',
+           
             'MaNganh.required'=>'Bạn không được để trống chuyên ngành',
             'MaTrinhDo.required'=>'Bạn không được để trống mã trình độ',
             'MaCC.required'=>'Bạn không được để trống mã chứng chỉ',
             'LuongKhoiDiem.required'=>'Bạn không được để trống lương khởi điểm',
             'LuongKhoiDiem.max'=>'Bạn nhập lương khởi điểm dưới 1000 triệu',
             'LuongKhoiDiem.min'=>'Bạn nhập lương khởi điểm 1 triệu',
+
         ]);
 
         DB::beginTransaction();
@@ -359,7 +376,8 @@ class PageController extends Controller
             'TieuDe'=>'required|min:3|max:100',
             'ViTriTuyenDung'=>'required|min:3|max:100',
             'MoTaCV'=>'required|min:3|max:2500',
-            'NoiLamViec'=>'required|min:3|max:500',
+            'NoiLamViec'=>'required|min:3|max:200',
+            'YeuCauKinhNghiem'=>'required|min:3|max:200',
             'ThoiHanNopHoSo'=>'required',
             'LuongKhoiDiem'=>'required|min:1|max:3',
             'MaNganh'=>'required',
@@ -378,7 +396,10 @@ class PageController extends Controller
             'MoTaCV.max'=>'Bạn phải nhập mô tả công việc ít hơn 2500 ký tự',
             'NoiLamViec.required'=>'Bạn không được để trống nơi làm việc',
             'NoiLamViec.min'=>'Bạn nhập nơi làm việc ít nhất 3 ký tự',
-            'NoiLamViec.max'=>'Bạn phải nhập nơi làm việc ít hơn 500 ký tự',
+            'NoiLamViec.max'=>'Bạn phải nhập nơi làm việc ít hơn 200 ký tự',
+            'YeuCauKinhNghiem.required'=>'Bạn không được để trống yêu cầu kinh nghiệm',
+            'YeuCauKinhNghiem.min'=>'Bạn nhập yêu cầu kinh nghiệm ít nhất 3 ký tự',
+            'YeuCauKinhNghiem.max'=>'Bạn phải nhập yêu cầu kinh nghiệm ít hơn 200 ký tự',
             'ThoiHanNopHoSo.required'=>'Bạn không được để trống thời hạn nộp hồ sơ',
             'LuongKhoiDiem.required'=>'Bạn không được để trống lương khởi điểm',
             'LuongKhoiDiem.max'=>'Bạn nhập lương khởi điểm dưới 1000 triệu',
@@ -469,7 +490,7 @@ class PageController extends Controller
     }
 
     public function danhSachNguoiTimViec() {
-        $hosoes = HoSoXinViec::all();
+        $hosoes = HoSoXinViec::where('TieuDe','!=', '')->get();
         return view('page.danh-sach-nguoi-tim-viec', ['hosoes' => $hosoes]);
     }
     public function getLuong10trieu(){
@@ -492,5 +513,156 @@ class PageController extends Controller
     public function getProfileDetail($id) {
         $hoso = HoSoXinViec::find($id);
         return view('page.chi-tiet-ho-so', ['hoso' => $hoso]);
+    }
+    //  thay doi thong tin nha tuyen dung
+    public function getThayDoiTTNTDDN(){
+        $id = Auth::user()->id;
+        $nhatuyendung = NhaTuyenDung::where('MaTaiKhoan', $id)->first();
+        return view('page.thay-doi-thong-tin-nha-tuyen-dung',['nhatuyendung'=>$nhatuyendung]);
+    }
+    public function postThayDoiTTNTDDN(Request $request){
+        $this->validate($request,
+        [
+            'password'=>'required|min:6|max:8',
+            'confirm_password'=>'required|same:password',
+        ],
+        [
+            'password.required'=>'Bạn không được để trống mật khẩu',
+            'password.min'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
+            'password.max'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
+            'confirm_password.required'=>'Bạn không được để trống nhập lại mật khẩu',
+            'confirm_password.same'=>'Bạn phải nhập giống mật khẩu',
+        ]);
+        $id = Auth::user()->id;
+        $nhatuyendung = NhaTuyenDung::where('MaTaiKhoan', $id)->first();
+        $user=User::find($id);
+        $user->password=bcrypt($request->password);
+        $user->save();
+        return view('page.thay-doi-thong-tin-nha-tuyen-dung',['nhatuyendung'=>$nhatuyendung, 'messageSuccess' => 'Bạn đã thay đổi thông tin đăng nhập thành công']);
+    }
+    public function postThayDoiTTNTCT(Request $request){
+        $this->validate($request,
+            [
+                'TenNTD'=>'required|min:3|max:100',
+                'DiaChi'=>'required|min:3|max:200',
+                'GioiThieu'=>'required|min:3|max:2500',
+                'DienThoai' => 'required|regex:/(0)[0-9]{9,11}/',
+                // 'DiaChiWeb' => ['required', 'unique:nhatuyendung','regex:/(www.)[A-Za-z0-9]{1,55}[.](com|vn|edu|info|net)$/'],
+            ],
+            [
+                'TenNTD.required'=>'Bạn không được để trống tên nhà tuyển dụng',
+                'TenNTD.min'=>'Bạn nhập tên nhà dụng ít nhất 3 ký tự',
+                'TenNTD.max'=>'Bạn phải nhập tên nhà tuyển dụng ít hơn 100 ký tự',
+                'DiaChi.required'=>'Bạn không được để trống địa chỉ',
+                'DiaChi.min'=>'Bạn nhập địa chỉ ít nhất 3 ký tự',
+                'DiaChi.max'=>'Bạn phải nhập địa chỉ ít hơn 200 ký tự',
+                'GioiThieu.required'=>'Bạn không được để trống giới thiệu',
+                'GioiThieu.min'=>'Bạn nhập giới thiệu web ít nhất 3 ký tự',
+                'GioiThieu.max'=>'Bạn nhập giới thiệu web ít nhất 2500 ký tự',
+                'DienThoai.required'=>'Bạn không được để trống điện thoại',
+                'DienThoai.regex'=>'Bạn phải nqhập điện thoại  từ 10-12 số và phải bắt đầu bằng số 0',
+                // 'DiaChiWeb.required'=>'Bạn không được để trống địa chỉ web',
+                // 'DiaChiWeb.unique'=>'Bạn nhập địa chỉ web trùng với địa chỉ web đã tồn tại',
+                // 'DiaChiWeb.regex'=>'Bạn phải nhập địa chỉ web có độ dài từ 3-63 ký tự bắng đầu bằng www và kết thúc bằng .com hoặc .vn hoặc . edu hoặc .info hoặc .net',
+            ]);
+
+        $id = Auth::user()->id;
+        $nhatuyendung = NhaTuyenDung::where('MaTaiKhoan', $id)->first();
+        $idNTD=$nhatuyendung->id;
+        $nhatuyendung =NhaTuyenDung::find($id);
+        $nhatuyendung->TenNTD=$request->TenNTD;
+        $nhatuyendung->DiaChi=$request->DiaChi;
+        $nhatuyendung->DienThoai=$request->DienThoai;
+        $nhatuyendung->GioiThieu=$request->GioiThieu;
+        // $nhatuyendung->MaTaiKhoan = $user->id;
+        // $nhatuyendung->DiaChiWeb = $request->DiaChiWeb;
+        if($request->hasFile('HinhAnh')){
+            $file=$request->file('HinhAnh');
+            $name=$file->getClientOriginalName();
+            $HinhAnh=str_random(10)."_".$name;
+            $file->move('imageNTD',$HinhAnh);
+            $nhatuyendung->HinhAnh=$HinhAnh;
+        }
+        else{
+            $nhatuyendung->HinhAnh="";
+        }
+
+        $nhatuyendung->save();
+        return view('page.thay-doi-thong-tin-nha-tuyen-dung',['nhatuyendung'=>$nhatuyendung, 'messageSuccess' => 'Bạn đã thay đổi thông tin đăng nhập thành công']);
+    }
+
+    public function postChangePassword(Request $request) {
+        $validator = \Validator::make($request->all(),
+        [
+            'password'=>'required|min:6|max:8',
+            'repassword'=>'required|same:password',
+        ],
+        [
+            'password.required'=>'Bạn không được để trống mật khẩu',
+            'password.min'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
+            'password.max'=>'Bạn nhập mật khẩu trong khoảng 6-8 ký tự',
+            'repassword.required'=>'Bạn không được để trống nhập lại mật khẩu',
+            'repassword.same'=>'Bạn phải nhập giống mật khẩu',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('tao-ho-so')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        $id = Auth::user()->id;
+        $nhatuyendung = NhaTuyenDung::where('MaTaiKhoan', $id)->first();
+        $user=User::find($id);
+        $user->password=bcrypt($request->password);
+        $user->save();
+
+        // $id = Auth::user()->id;
+        $hoSo = HoSoXinViec::where('MaTaiKhoan', $id)->first();
+        // $hoSo = HoSoXinViec::first();
+        $nganhs = ChuyenNganh::all();
+        $trinhDos = TrinhDo::all();
+        $chungChis = ChungChi::all();
+        return view('page.tao-ho-so', ['hoSo'=>$hoSo, 'nganhs'=>$nganhs, 'trinhDos'=>$trinhDos, 'chungChis'=>$chungChis, 'messageSuccess' => 'Bạn đã thay đổi thông tin đăng nhập thành công']);
+    }
+    //  tao ky nang xin viec
+    public function getTaoKyNangXinViec(){
+        return view('page.tao-ky-nang-xin-viec');
+    }
+    public function postTaoKyNangXinViec(Request $request){
+        $this->validate($request,
+            [
+                'TieuDe'=>'required|min:3|max:100',
+                'NoiDung'=>'required|min:3|max:2500',
+                
+            ],
+            [
+                'TieuDe.required'=>'Bạn không được để trống tên tiêu đề của kỹ năng xin việc',
+                'TieuDe.min'=>'Bạn nhập tiều đề ít nhất 3 ký tự',
+                'TieuDe.max'=>'Bạn phải nhập tiêu đề ít hơn 100 ký tự',
+                'NoiDung.required'=>'Bạn không được để trống tên nội dung',
+                'NoiDung.min'=>'Bạn nhập nội dung ít nhất 3 ký tự',
+                'NoiDung.max'=>'Bạn phải nhập nội dung ít hơn 2500 ký tự',
+                
+            ]);
+
+        $id = Auth::user()->id;
+        $nhatuyendung = NhaTuyenDung::where('MaTaiKhoan', $id)->first();
+        $kynangxinviec=new KyNangXinViec();
+        $kynangxinviec->TieuDe=$request->TieuDe;
+        $kynangxinviec->NoiDung=$request->NoiDung;
+        if($request->hasFile('HinhAnh')){
+            $file=$request->file('HinhAnh');
+            $name=$file->getClientOriginalName();
+            $HinhAnh=str_random(10)."_".$name;
+            $file->move('image_KyNang',$HinhAnh);
+            $kynangxinviec->HinhAnh=$HinhAnh;
+        }
+        else{
+            $kynangxinviec->HinhAnh="";
+        }
+        $kynangxinviec->MaNTD=$nhatuyendung->id;
+
+        $kynangxinviec->save();
+        return view('page.tao-ky-nang-xin-viec',[ 'messageSuccess' => 'Bạn đã tạo kỹ năng xin việc thành công thành công']);
     }
 }

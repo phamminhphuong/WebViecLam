@@ -34,6 +34,7 @@ class HosoxinviecController extends Controller
                     'TinhTrangHonNhan'=>'required|min:3|max:200',
                     'DienThoai' => 'required|regex:/(0)[0-9]{9,11}/',
                     'NgaySinh'=>'required',
+                    'LuongKhoiDiem'=>'required|min:1|max:3'
                 ],
                 [
                     'TieuDe.required'=>'Bạn không được để trống tiêu đề',
@@ -57,6 +58,9 @@ class HosoxinviecController extends Controller
                     'DienThoai.required'=>'Bạn không được để trống điện thoại',
                     'DienThoai.regex'=>'Bạn phải nhập điện thoại  từ 10-12 số và phải bắt đầu bằng số 0',
                     'NgaySinh.required'=>'Bạn không được để trống ngày sinh',
+                    'LuongKhoiDiem.required'=>'Bạn không được để trống lương khởi điểm',
+                    'LuongKhoiDiem.max'=>'Bạn nhập lương khởi điểm dưới 1000 triệu',
+                    'LuongKhoiDiem.min'=>'Bạn nhập lương khởi điểm 1 triệu',
                 ]);
                 $hosoxinviec=new HoSoXinViec();
                 $hosoxinviec->MaTaiKhoan=$request->MaTaiKhoan;

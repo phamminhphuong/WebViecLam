@@ -1,39 +1,56 @@
 <div class="container">
     <div class="row ml10 mr10 ">
         <div class="box-create box-create-minisite">
-                            <div class="btn-create">
-                    <a class="btn-create-hs" href="#" title="Báo giá" target="_blank">
-                        <span class="txt-head">Báo phí dịch vụ</span>
-                        <span class="txt-des">Tuyển dụng nhanh<br>Chi phí rẻ</span>
-                        <i class="icon-sprite-hs-new icon-money-usd"></i>
-                    </a>
+            <div class="btn-create">
+                @if(Auth::check() && Auth::user()->MaLoaiTaiKhoan==3)
+                <a class="btn-create-hs" href="tao-ho-so" title="Tủ hồ sơ">
+                    <span class="btn-name">Tạo hồ sơ</span>
+                    <span class="btn-des">Tạo hồ sơ ngay để Nhà tuyển dụng nhìn thấy bạn</span>
+                    <i class="icon-sprite-hs icon-ths"></i>
+                </a>
+                @else
+                <a class="btn-create-hs" href="dang-nhap" title="Tủ hồ sơ">
+                    <span class="btn-name">Tạo hồ sơ</span>
+                    <span class="btn-des">Tạo hồ sơ ngay để Nhà tuyển dụng nhìn thấy bạn</span>
+                    <i class="icon-sprite-hs icon-ths"></i>
+                </a>
+                @endif
+            </div>
+            <div class="btn-create btn-create-hsm">
+                @if(Auth::check() && Auth::user()->MaLoaiTaiKhoan==2)
+                <a class="btn-create-hs" href="dang-tin">
+                    <span class="txt-head main-color">Đăng tin miễn phí</span>
+                    <span class="txt-des">Tiếp cận hàng trăm nghìn người tìm việc</span>
+                    <i class="icon-sprite-hs icon-hsm"></i>
+                </a>
+                @else
+                <a class="btn-create-hs" href="dang-nhap">
+                    <span class="txt-head main-color">Đăng tin miễn phí</span>
+                    <span class="txt-des">Tiếp cận hàng trăm nghìn người tìm việc</span>
+                    <i class="icon-sprite-hs icon-hsm"></i>
+                </a>
+                @endif
+            </div>
+            <div class="btn-create box-login-ntd">
+                <img src="image/icon_avatar.jpg" width="68" height="68" alt="Công ty một thành viên">
+                <div class="info-login">
+                    <p>Công ty một thành viên</p>
+                    <p>
+                        <span>CSKH:</span>
+                    </p>
+                    <p>ĐT: </p>
+                    <p class="info-tk">
+                    </p>
+                    <p class="info-logged">Quản lý</p>
                 </div>
-                                        <div class="btn-create btn-create-hsm">
-                    <a class="btn-create-hs " href="dang-tin">
-                        <span class="txt-head main-color">Đăng tin miễn phí</span>
-                        <span class="txt-des">Tiếp cận hàng trăm nghìn người tìm việc</span>
-                        <i class="icon-sprite-hs icon-hsm"></i>
-                    </a>
-                </div>
-            
-                                <div class="btn-create box-login-ntd">
-                        <img src="image/icon_avatar.jpg" width="68" height="68" alt="Công ty một thành viên">
-                        <div class="info-login">
-                            <p>Công ty một thành viên</p>
-                            <p><span>CSKH:</span> </p>
-                            <p>ĐT: </p>
-                            <p class="info-tk">
-                                                            </p>
-                            <p class="info-logged">Quản lý</p>
-                        </div>
-                    </div>
+            </div>
 
-                    <div class="menu-user top-menu-user hidden menu-user-boxlogin">
-                        <img src="image/arrow-top.png" alt="" class="arrow">
-                        <!-- -->
-                        <div class="content-sidebar menu-trung-tam-ql">
-                            <ul>
-                                <!-- <li>
+            <div class="menu-user top-menu-user hidden menu-user-boxlogin">
+                <img src="image/arrow-top.png" alt="" class="arrow">
+                <!-- -->
+                <div class="content-sidebar menu-trung-tam-ql">
+                    <ul>
+                        <!-- <li>
                                     <a href="#" title="Tìm hồ sơ ứng viên">
                                         <i class="icon-menu-ntd icon-thsuv"></i>
                                         Tìm hồ sơ ứng viên
@@ -115,17 +132,22 @@
                             <li>
                                 <a href="dang-ky-dich-vu" class="btn-menu-login" title="Đăng ký dịch vụ" target="_blank">Đăng ký dịch vụ</a>
                             </li> -->
-                            <li class="logout">
-                                <i class="icon-menu-ntd icon-dx"></i>
-                                <a href="dang-xuat" title="Đăng xuất" class="underline">
-                                    Đăng xuất
-                                </a>
-                            </li>
-                        </ul>
-                        </div>
-                        <!-- -->
-                    </div>
-                
+
+                        <li class="logout">
+
+                            <a href="dang-xuat" title="Đăng xuất" class="underline">
+                                Đăng xuất
+                            </a>
+                            <a href="thay-doi-thong-tin-nha-tuyen-dung1" title="Thay đổi thông tin nhà tuyển dụng" class="underline">
+                                Thay đổi thông tin công ty
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- -->
+            </div>
+
         </div>
         <div class="clearfix"></div>
     </div>

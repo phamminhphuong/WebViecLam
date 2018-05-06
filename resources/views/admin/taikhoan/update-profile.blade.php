@@ -59,13 +59,13 @@
                     <b class="control-label col-md-2"> Họ tên</b>
                     <div class="col-md-10">
                         <input class="form-control text-box single-line" data-val="true" data-val-length="The field TenSanPham must be a string with a maximum length of 50."
-                            data-val-length-max="50" id="HoTen" name="HoTen" type="text" value="{!!$hoso->HoTen!!}" placeholder="Nhập họ tên">
+                            data-val-length-max="50" id="HoTen" name="HoTen" type="text" value="{!!empty($hoso)?'':$hoso->HoTen!!}" placeholder="Nhập họ tên">
                     </div>
                 </div>
                 <div class="form-group">
                     <b class="control-label col-md-2"> Ngày sinh </b>
                     <div class="col-md-10">
-                        <input type="date" class="form-control" name="NgaySinh" value="{!!$hoso->NgaySinh!!}">
+                        <input type="date" class="form-control" name="NgaySinh" value="{!!empty($hoso)?'':$hoso->NgaySinh!!}">
                     </div>
                 </div>
                 <div class="form-group">
@@ -81,14 +81,14 @@
                     <b class="control-label col-md-2">Địa chỉ</b>
                     <div class="col-md-10">
                         <input class="form-control text-box single-line" data-val="true" data-val-length="The field TenSanPham must be a string with a maximum length of 50."
-                            data-val-length-max="50" id="DiaChi" name="DiaChi" type="text" value="{!!$hoso->DiaChi!!}" placeholder="Nhập địa chỉ">
+                            data-val-length-max="50" id="DiaChi" name="DiaChi" type="text" value="{!!empty($hoso)?'':$hoso->DiaChi!!}" placeholder="Nhập địa chỉ">
                     </div>
                 </div>
                 <div class="form-group">
                     <b class="control-label col-md-2">Điện thoại</b>
                     <div class="col-md-10">
                         <input class="form-control text-box single-line" data-val="true" data-val-length="The field TenSanPham must be a string with a maximum length of 50."
-                            data-val-length-max="50" id="DienThoai" name="DienThoai" type="text" value="{!!$hoso->DienThoai!!}"
+                            data-val-length-max="50" id="DienThoai" name="DienThoai" type="text" value="{!!empty($hoso)?'':$hoso->DienThoai!!}"
                             placeholder="Nhập điện thoại">
                     </div>
                 </div>
@@ -113,9 +113,4 @@
         <a href="admin/taikhoan/list">Danh sách</a>
     </div>
 </section>
-
-<script>
-    console.log('{!!$hoso->NgaySinh!!}');
-
-</script>
 @endsection

@@ -36,16 +36,25 @@ Route::post('tim-kiem', 'PageController@search');
 Route::get('danh-sach-nha-tuyen-dung', 'PageController@danhSachNhaTuyenDung');
 Route::get('danh-sach-nguoi-tim-viec', 'PageController@danhSachNguoiTimViec');
 
+//  thay doi thong tin nha tuyen dung
+Route::get('thay-doi-thong-tin-nha-tuyen-dung1','PageController@getThayDoiTTNTDDN');
+Route::post('thay-doi-thong-tin-nha-tuyen-dung1','PageController@postThayDoiTTNTDDN');
+Route::post('thay-doi-thong-tin-nha-tuyen-dung2','PageController@postThayDoiTTNTCT');
 
 
+Route::post('change-password', 'PageController@postChangePassword');
 
 Route::get('goi-y-nguoitimviec','PageController@getGoiyNTV');
 Route::get('goi-y-nhatuyendung','PageController@getGoiyNTD');
 Route::get('chu-y-dang-tin-tuyen-dung','PageController@getChuyDangTin');
+//  tao ky nang xin viec
+Route::get('tao-ky-nang-xin-viec','PageController@getTaoKyNangXinViec');
+Route::post('tao-ky-nang-xin-viec','PageController@postTaoKyNangXinViec');
+
 
 
 Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
-    // dashboard
+    // bang dieu khien
     Route::group(['prefix' => 'bangdieukhien'], function() {
         Route::get('index','BangdieukhienController@getBangdieukhien');
     });

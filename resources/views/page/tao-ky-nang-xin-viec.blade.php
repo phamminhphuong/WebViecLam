@@ -10,13 +10,14 @@
     <div class="container">
         <div class="col-xs-8 primary form26">
             <div class="inner-10">
-                <form action="dang-tin" method="POST" enctype="multipart/form-data" id="job_edit">
-                    
+                <form action="tao-ky-nang-xin-viec" method="POST" enctype="multipart/form-data" id="job_edit">
                     <div class="box-content">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <header class="block-title">
                             <h3 class="title font-roboto text-primary">
-                                <span class="text">Đăng tin tuyển dụng</span>
+                                <span class="text">Tạo kỹ năng xin việc
+
+                                </span>
                                 <span class="line"></span>
                                 <div class="pull-right">
                                 </div>
@@ -46,165 +47,44 @@
                                 <div class="block-has-tooltip">
                                     <div class="tooltip-huong-dan">
                                         <p>
-                                            Nêu chức danh/ vị trí cần tuyển
+                                            Nhập tiêu đề kỹ năng xin việc
                                         </p>
-                                        <p>
-                                            <b>Ví dụ:</b>
-                                            <br> - Nhân viên kinh doanh Bất động sản, Giám đốc điều hành...
-                                        </p>
-                                        <p>
-                                            Bạn có thể đưa lên tiêu đề 1 số yêu cầu đặc biệt hay điều cần nhấn mạnh khác liên quan đến công việc nhưng không được quá
-                                            dài và không được chứa các từ: "Gấp", "Cần tuyển", "Tuyển", "Hot".
-                                        </p>
-                                        <p>
-                                            <b>Ví dụ:</b>
-                                            <br> - Nhân viên bán hàng biết tiếng Nhật, Kỹ sư cầu đường trên 5 năm kinh nghiệm...
-                                        </p>
+                                      
+                                      
                                     </div>
                                 </div>
                             </div>
+                        
                             <div class="group-field">
                                 <label class="label-form" for="">
-                                    Vị trí tuyển dụng
+                                    Nội dung
                                     <span class="icon icon-xs icon-hoa-thi"></span>
                                 </label>
-                                <input type="text" id="title" name="ViTriTuyenDung" class="input-has-tooltip" placeholder="Nhập vị trí tuyển dụng">
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Số lượng cần tuyển
-                                </label>
-                                <input type="number" id="quantity" style="width:435px" name="SoLuongTuyenDung" value="1">
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Mô tả công việc
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <textarea id="description" name="MoTaCV" class="input-has-tooltip" style="height: 300px;" placeholder="Nhập mô tả công việc"></textarea>
+                                <textarea id="description" name="NoiDung" class="input-has-tooltip" style="height: 300px;" placeholder="Nhập nội dung của kỹ năng xin việc"></textarea>
                                 <div class="block-has-tooltip">
                                     <div class="tooltip-huong-dan">
                                         <p>
-                                            Mô tả một số nhiệm vụ, công việc chính mà người được tuyển sẽ thực hiện.
+                                            Nội dung của kỹ năng xin việc chia sẻ những kiến thức đi phỏng vấn cũng như những vấn đề khi đi làm phát sinh.
                                         </p>
-                                        <p>
-                                            <b>Ví dụ:</b>
-                                            <br> - Soạn giáo án và giảng dạy tiếng Nhật cho các bạn du học sinh
-                                            <br> - Biên phiên dịch và soạn thảo các văn bản, hợp đồng
-                                            <br>
-                                        </p>
+                                      
                                     </div>
                                 </div>
                             </div>
                             <div class="group-field">
-                                <label class="label-form" for="">
-                                    Trình độ
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <div class="group-right">
-                                    <div style="" class="style-button w220">
-                                        <div class="select2-container select-style" id="s2id_level">
-                                            <input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen8">
-                                            <div class="select2-drop select2-display-none level select2-with-searchbox">
-                                                <div class="select2-search">
-                                                    <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
-                                                        spellcheck="false" class="select2-input"> </div>
-                                                <ul class="select2-results"> </ul>
-                                            </div>
+                                    <label class="label-form" for="">
+                                        Hình ảnh
+                                        <span class="icon icon-xs icon-hoa-thi"></span>
+                                    </label>
+                                    <input type="file" id="image" name="HinhAnh" class="form-control">
+                                    <div class="block-has-tooltip">
+                                        <div class="tooltip-huong-dan">
+                                           <p>Nhập hình ảnh đại diện cho công ty</p>
                                         </div>
-                                        <select id="level" name="MaTrinhDo"  tabindex="-1" style="margin-top:-20px;padding-left:10px;width:455px;height:32px">
-                                            <option selected="selected" value="">Chọn trình độ</option>
-                                            @foreach($trinhdo as $td)
-                                                 <option value="{!!$td->id!!}">{!!$td->TenTrinhDo!!}</option>
-                                            @endforeach
-                                        </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Ngành nghề
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <div class="group-right">
-                                    <div style="" class="style-button w220">
-                                        <div class="select2-container select-style" id="s2id_level">
-                                            <input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen8">
-                                            <div class="select2-drop select2-display-none level select2-with-searchbox">
-                                                <div class="select2-search">
-                                                    <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
-                                                        spellcheck="false" class="select2-input"> </div>
-                                                <ul class="select2-results"> </ul>
-                                            </div>
-                                        </div>
-                                        <select id="level" name="MaNganh"  tabindex="-1" style="margin-top:-20px;padding-left:10px;width:455px;height:32px">
-                                            <option selected="selected" value="">Chọn ngành nghề</option>
-                                            @foreach($chuyennganh as $cn)
-                                             <option value="{!!$cn->id!!}">{!!$cn->TenNganh!!}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Chứng chỉ
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <div class="group-right">
-                                    <div style="" class="style-button w220">
-                                        <div class="select2-container select-style" id="s2id_level">
-                                            <input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen8">
-                                            <div class="select2-drop select2-display-none level select2-with-searchbox">
-                                                <div class="select2-search">
-                                                    <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
-                                                        spellcheck="false" class="select2-input"> </div>
-                                                <ul class="select2-results"> </ul>
-                                            </div>
-                                        </div>
-                                        <select id="level" name="MaChungChi" style="margin-top:-20px;padding-left:10px;width:455px;height:32px" tabindex="-1" style="margin-top:-20px;">
-                                            <option selected="selected" value="">Chọn chứng chỉ</option>
-                                            @foreach($chungchi as $cc)
-                                                <option value="{!!$cc->id!!}"> {!!$cc->TenChungChi!!}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="group-field">
-                                <label class="label-form" for="">   
-                                    Kinh nghiệm
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <input type="text" id="title" name="YeuCauKinhNghiem" class="input-has-tooltip" placeholder="Yêu cầu kinh nghiệm">
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Nơi làm việc
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <input type="text" id="title" name="NoiLamViec" class="input-has-tooltip" placeholder="Nhập nơi làm việc">
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Mức lương (triệu)
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                <input type="number" id="quantity" style="width:435px" name="LuongKhoiDiem" value="0">
-                            </div>
-                            <div class="group-field">
-                                <label class="label-form" for="">
-                                    Hết hạn
-                                    <span class="icon icon-xs icon-hoa-thi"></span>
-                                </label>
-                                 <input type="date" name="ThoiHanNopHoSo" class="form-control">
-                            </div>
-                           
                             <div class="group-field">
                                 <label class="label-form" for=""></label>
                                 <div class="group-right">
-                                   
                                     <button name="submit_new" type="submit" class="btn btn-big btn-danger ml10 w140" id="submit_new" value="1">
                                         Đăng tin
                                     </button>
@@ -304,7 +184,7 @@
                                     <span class="icon icon-sm icon-dang-xuat"></span>
                                     Đăng xuất
                                 </a>
-                                <a href="tao-ky-nang-xin-viec" title="Tạo kỹ năng xin việc">
+                                <a href="dang-xuat" title="Đăng xuất">
                                     <span class="icon icon-sm icon-dang-xuat"></span>
                                     Tạo kỹ năng xin việc
                                 </a>

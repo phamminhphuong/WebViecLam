@@ -165,7 +165,6 @@ class TaikhoanController extends Controller
                 $hoso->NoiLamViec='';
                 $hoso->KinhNghiem='';
                 $hoso->NguyenVongLamViec='';
-                $hoso->HinhAnh='';
                 if($request->hasFile('HinhAnh')){
                     $file=$request->file('HinhAnh');
                     $name=$file->getClientOriginalName();
@@ -174,7 +173,7 @@ class TaikhoanController extends Controller
                     $hoso->HinhAnh=$HinhAnh;
                 }
                 else{
-                    $hoso->HinhAnh="";
+                    
                 }
 
                 $hoso->save();

@@ -46,6 +46,42 @@
 					@endif
 					<br>
 					<div class="line-grey m-b-5" id="thong_bao_sc"></div>
+					<form action="change-password" method="POST" enctype="multipart/form-data" class="create-pro-form" id="form_ho_so">
+						<input type="hidden" name="_token" value="{{csrf_token()}}">
+						<header class="block-title" id="block-title-seeker-info">
+							<h3 class="title_block_nored">
+								Thông tin đăng nhập
+							</h3>
+						</header>
+						<article class="content-box group-collapse create-pro-form taohoso" id="div_tao_hs">
+							<div id="seeker-info">
+								<div class="group-field">
+									<label class="label1">
+										Mật khẩu
+										<span class="icon icon-xs icon-hoa-thi"></span>
+									</label>
+									<input type="password" name="password" class="w253 input-has-tooltip" value="" />
+									<div class="clearfix"></div>
+								</div>
+								<div class="group-field">
+									<label class="label1">
+										Nhập lại mật khẩu
+										<span class="icon icon-xs icon-hoa-thi"></span>
+									</label>
+									<input type="password" name="repassword" class="w253 input-has-tooltip" value="" />
+									<div class="clearfix"></div>
+								</div>
+								<div class="group-field">
+									<label class="label-form" for=""></label>
+									<div class="group-right" >
+										<button name="submit_new" type="submit" class="btn btn-big btn-danger ml10 w140" id="submit_new" style="float:right; margin-right:120px" value="1">
+											Cập nhật
+										</button>
+									</div>
+								</div>
+							</div>
+						</article>	
+					</form>
 					<form action="tao-ho-so" method="POST" enctype="multipart/form-data" class="create-pro-form" id="form_ho_so">
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						<header class="block-title" id="block-title-seeker-info">

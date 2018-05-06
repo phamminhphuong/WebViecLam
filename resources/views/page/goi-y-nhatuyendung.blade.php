@@ -329,17 +329,17 @@
                             @foreach($hosoxinviec as $hsxv)
                             <li class="col-xs-6 offset20">
 
-                                <a href="" title="Kế Toán Kho" class="col-xs-2 no-padding text-center offset10">
+                                <a href="profile/{!!$hsxv->id!!}" title="Kế Toán Kho" class="col-xs-2 no-padding text-center offset10">
                                     <span class="frame-th-list">
                                         <img src="image_HoSo/{!!$hsxv->HinhAnh!!}" alt="image">
                                     </span>
                                 </a>
                                 <div class="intro col-xs-4 offset20 push-left-10">
-                                    <a href="" title="Kế Toán Kho">
+                                    <a href="profile/{!!$hsxv->id!!}" title="Kế Toán Kho">
                                         <b class="">
                                             {!!$hsxv->TieuDe!!} </b>
                                     </a>
-                                    <a href="" title="CÔNG TY TNHH ROYAL BLINDS VIỆT NAM">
+                                    <a href="profile/{!!$hsxv->id!!}" title="CÔNG TY TNHH ROYAL BLINDS VIỆT NAM">
                                         <p class="meta">{!!$hsxv->HoTen!!}</p>
                                     </a>
                                     <p>
