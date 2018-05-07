@@ -215,6 +215,16 @@
 							</div>
 							<div class="group-field">
 								<label for="" class="label1">
+									Nơi làm việc
+									<span class="icon-hoa-thi"></span>
+								</label>
+								<div class="group-right">
+									<input type="text" name="NoiLamViec" class="w253 input-has-tooltip" value="{!!$hoSo->NoiLamViec!!}" placeholder="Nhập nơi làm việc"
+									/>
+								</div>
+							</div>
+							<div class="group-field">
+								<label for="" class="label1">
 									Trình độ cao nhất
 									<span class="icon-hoa-thi"></span>
 								</label>

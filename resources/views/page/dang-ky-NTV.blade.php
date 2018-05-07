@@ -163,7 +163,7 @@
                                         của chúng tôi
                                     </div>
                                 </div>  --}}
-                            </div>
+                        </div>
                             <div class="row-btn">
                                 <button type="submit" class="btn-big btn-danger col-xs-2 col-push-2 w140">
                                     <i class="icon-sprite-hs icon_sm_2017 icon-register-home_2017"></i>Đăng ký

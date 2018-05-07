@@ -324,7 +324,7 @@
                 <div class="clearfix"></div>
                 <div class="mt20">
                 <a href="#">
-                        <img alt="" src="image_QuangCao/{!!$promotion1->HinhAnh!!}">
+                        <img alt="" style="width:630px;height:200px" src="image_QuangCao/{!!$promotion1->HinhAnh!!}">
                     </a>
                 </div>
                 <div class="job-hot box-content mt26">
@@ -342,7 +342,7 @@
                                     <div class="col-xs-2 ml16 w120 mr16">
                                         <a href="vendor/{!!$post->NhaTuyenDung->id!!}" title="">
                                             <img src="imageNTD/{!!$post->NhaTuyenDung->HinhAnh!!}" alt="Công ty TNHH Kim Sơn Metal"
-                                                class="" width="140">
+                                                class="">
                                         </a>
                                     </div>
                                     <div class="col-xs-5 pr0 w456">
@@ -389,7 +389,7 @@
                 <div class="clearfix"></div>
                 <div class="mt20">
                 <a href="#">
-                        <img alt="" src="image_QuangCao/{!!$promotion2->HinhAnh!!}">
+                        <img alt="" style="width:630px;height:200px" src="image_QuangCao/{!!$promotion2->HinhAnh!!}">
                     </a>
                 </div>
             </div>

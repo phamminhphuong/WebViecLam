@@ -43,8 +43,8 @@ class PageController extends Controller
 
         $phieudangtuyen_hot=PhieuDangTuyen::Where('LuongKhoiDiem','>',5)->get();
 
-        $promotion1 = QuangCao::take(1)->get()[0];
-        $promotion2 = QuangCao::skip(1)->take(1)->get()[0];
+        $promotion1 = QuangCao::inRandomOrder()->first();
+        $promotion2 = QuangCao::inRandomOrder()->first();
         $number10trieu=count(PhieuDangTuyen::Where('LuongKhoiDiem','>=',10)->get());
 
 
@@ -272,6 +272,7 @@ class PageController extends Controller
             'KinhNghiem'=>'required|min:3|max:200',
             'TinhTrangHonNhan'=>'required|min:3|max:200',
             'NguyenVongLamViec'=>'required|min:3|max:2500',
+            'NoiLamViec'=>'required|min:3|max:200',
         
             'MaNganh'=>'required',
             'MaTrinhDo'=>'required',
@@ -303,6 +304,9 @@ class PageController extends Controller
             'NguyenVongLamViec.required'=>'Bạn không được để trống nguyện vọng làm việc',
             'NguyenVongLamViec.min'=>'Bạn nhập nguyện vọng làm việc ít nhất 3 ký tự',
             'NguyenVongLamViec.max'=>'Bạn nhập nguyện vọng làm việc không quá 2500 ký tự',
+            'NoiLamViec.required'=>'Bạn không được để trống nơi làm viêc',
+            'NoiLamViec.min'=>'Bạn nhập nơi làm việc ít nhất 3 ký tự',
+            'NoiLamViec.max'=>'Bạn nhập nơi làm việc không quá 200 ký tự',
            
             'MaNganh.required'=>'Bạn không được để trống chuyên ngành',
             'MaTrinhDo.required'=>'Bạn không được để trống mã trình độ',
@@ -335,7 +339,7 @@ class PageController extends Controller
             $hosoxinviec->DienThoai=$request->DienThoai;
             $hosoxinviec->TinhTrangHonNhan=$request->TinhTrangHonNhan;
             $hosoxinviec->LuongKhoiDiem=$request->LuongKhoiDiem;
-            $hosoxinviec->NoiLamViec='';
+            $hosoxinviec->NoiLamViec=$request->NoiLamViec;
             $hosoxinviec->KinhNghiem=$request->KinhNghiem;
             $hosoxinviec->NguyenVongLamViec=$request->NguyenVongLamViec;
             if($request->hasFile('HinhAnh')){
